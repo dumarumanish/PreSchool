@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="dev.ecommerce.api.krennovatech.net" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Krenova\\Project\\eCommerce\\Src\\eCommerce\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

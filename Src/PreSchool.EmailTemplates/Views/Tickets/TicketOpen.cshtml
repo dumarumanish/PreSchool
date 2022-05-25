@@ -1,0 +1,39 @@
+﻿@model PreSchool.EmailTemplates.ViewModels.TicketOpenEmailViewModel
+
+@{
+    Layout = "_EmailLayoutHtml";
+}
+
+    <div class="content" style="padding: 0 24px 24px;">
+        <div class="welcome"
+             style="font-size: 20px; font-weight: 700; margin-bottom: 24px; font-family: 'Open Sans', 'Lato', sans-serif;">
+            @Model.Subject
+        </div>
+        <div class="greeting" style="margin-bottom: 14px;">
+            <span style="margin-right: 2px;">Dear </span>
+            <span style="font-weight: 700;">@Model.UserName</span>,
+        </div>
+
+        <div style="margin-bottom: 14px;">
+            Thank you for reaching Hattiya with a ticket. Your ticket with the following details has been received.
+        </div>
+
+        <div style="margin-bottom: 14px;">
+            Ticket ID:@Model.TicketId
+        </div>
+        <div style="margin-bottom: 14px;">
+            Ticket Date:@Model.TicketDate
+        </div>
+        <div style="margin-bottom: 14px;">
+            Details on Ticket:@Model.Detail
+        </div>
+        <div style="margin-bottom: 14px;">
+            Hattiya service representative will look into your ticket and will reply you within 24-48 hours. Please feel free to reach to us with any additional questions or concerns.
+        </div>
+    </div>
+
+
+
+
+
+

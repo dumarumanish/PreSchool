@@ -1,0 +1,19 @@
+﻿@model PreSchool.EmailTemplates.ViewModels.ResendVerificationCodeEmailViewModel
+
+@{
+    Layout = "_EmailLayoutHtml";
+}
+
+<p>
+    Dear <b> @Model.Username </b>,
+</p>
+
+<p>We received a request to resend your verification code.</p>
+<p>
+    Please use the reset code <b> @Model.Code</b> to verify your account.
+</p>
+
+<p>
+    If you haven’t requested for resend the verification code, we request you to immediately inform our support department at <a href="mailto: @Model.SupportLink">@Model.SupportLink</a> for further assistance.
+
+</p>

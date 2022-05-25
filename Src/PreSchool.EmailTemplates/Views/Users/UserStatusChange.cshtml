@@ -1,0 +1,17 @@
+﻿@model PreSchool.EmailTemplates.ViewModels.UserStatusChangeEmailViewModel
+
+@{
+    Layout = "_EmailLayoutHtml";
+}
+
+<p>
+    Dear <b>@Model.Username</b>,
+</p>
+<p>
+    This is to inform you that our administrative team, has kept your <b>user status </b> on <b> @Model.UserStatus </b> status, due to <b> @Model.Remark.</b>
+
+</p>
+<p>
+    We would request you to contact support department at  <a href="mailto: @Model.SupportLink"> @Model.SupportLink</a>  for further updates on activation of your membership.
+
+</p>

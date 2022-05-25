@@ -1,0 +1,535 @@
+SELECT 1
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+SELECT 1
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+SELECT 1
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [Notification].[ActivityType] AS [a]
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+SELECT 1
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+SELECT 1
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+SELECT 1
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+SELECT COUNT(*)
+FROM [Notification].[ActivityType] AS [a]
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+    SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+    FROM [AppUser].[AppUser] AS [a]
+<<<<<<< HEAD
+=======
+    WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND (([a].[Username] = @__loginCommand_UserName_0) AND ((([a].[AppUserTypeId] = 1) OR ([a].[AppUserTypeId] = 2)) OR ([a].[AppUserTypeId] = 3)))
+) AS [t]
+LEFT JOIN [AppUser].[Password] AS [p] ON [t].[Id] = [p].[AppUserId]
+LEFT JOIN [AppUser].[LoginHistory] AS [l] ON [t].[Id] = [l].[AppUserId]
+LEFT JOIN (
+    SELECT [a0].[Id], [a0].[AppUserId], [a0].[CreatedBy], [a0].[CreatedOn], [a0].[IsDeleted], [a0].[ModifiedBy], [a0].[ModifiedOn], [a0].[RoleId]
+    FROM [AppUser].[AppUserRole] AS [a0]
+    WHERE [a0].[IsDeleted] <> CAST(1 AS bit)
+) AS [t0] ON [t].[Id] = [t0].[AppUserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[AppUserId], [u].[CreatedBy], [u].[CreatedOn], [u].[IsDeleted], [u].[ModifiedBy], [u].[ModifiedOn], [u].[StoreId]
+    FROM [Store].[User] AS [u]
+    WHERE [u].[IsDeleted] <> CAST(1 AS bit)
+) AS [t1] ON [t].[Id] = [t1].[AppUserId]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[AppUserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[IsAssociateUser], [u0].[IsDeleted], [u0].[ModifiedBy], [u0].[ModifiedOn], [u0].[VendorId]
+    FROM [Vendor].[User] AS [u0]
+    WHERE [u0]2022-02-24 20:10:40.719 +05:45 [INF] Web Application Starts...
+2022-02-24 20:10:45.957 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-24 20:10:46.102 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-24 20:10:48.370 +05:45 [INF] Executed DbCommand (298ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-24 20:10:48.682 +05:45 [INF] Executed DbCommand (296ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-24 20:10:49.039 +05:45 [INF] Executed DbCommand (352ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-24 20:10:49.318 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-24 20:10:49.611 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-24 20:10:49.632 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-24 20:10:49.911 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-24 20:10:50.209 +05:45 [INF] Executed DbCommand (295ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-24 20:10:50.715 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:51.020 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-24 20:10:51.304 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:51.586 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-24 20:10:51.896 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:52.174 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-24 20:10:52.458 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:52.741 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:53.059 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-24 20:10:53.462 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:53.743 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:54.070 +05:45 [INF] Executed DbCommand (288ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:54.371 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-24 20:10:54.653 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-24 20:10:54.940 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-24 20:10:55.221 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-24 20:10:55.503 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:55.782 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:56.064 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:56.346 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:56.628 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-24 20:10:56.914 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:57.202 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-24 20:10:57.486 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:57.765 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-24 20:10:58.048 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notification].[ActivityType] AS [a]
+2022-02-24 20:10:58.430 +05:45 [INF] User profile is available. Using 'C:\Users\Sanjeeb\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-24 20:10:58.514 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-24 20:10:58.514 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-24 20:10:58.639 +05:45 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:44375/notifications/negotiate  
+2022-02-24 20:10:58.642 +05:45 [INF] Server sanjeeb-pc:23404:57df7a0e successfully announced in 114.3275 ms
+2022-02-24 20:10:58.647 +05:45 [INF] Server sanjeeb-pc:23404:57df7a0e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-24 20:10:58.656 +05:45 [INF] Server sanjeeb-pc:23404:57df7a0e all the dispatchers started
+2022-02-24 20:10:58.674 +05:45 [INF] CORS policy execution successful.
+2022-02-24 20:10:58.688 +05:45 [INF] Request finished in 51.3291ms 204 
+2022-02-24 20:10:58.705 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/notifications/negotiate text/plain;charset=UTF-8 0
+2022-02-24 20:10:58.706 +05:45 [INF] CORS policy execution successful.
+2022-02-24 20:10:59.026 +05:45 [INF] Successfully validated the token.
+2022-02-24 20:10:59.032 +05:45 [INF] Executing endpoint '/notifications/negotiate'
+2022-02-24 20:10:59.041 +05:45 [INF] Executed endpoint '/notifications/negotiate'
+2022-02-24 20:10:59.043 +05:45 [INF] HTTP POST /notifications/negotiate responded 200 in 11.1536 ms
+2022-02-24 20:10:59.044 +05:45 [INF] Request finished in 339.4018ms 200 application/json
+2022-02-24 20:10:59.067 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/notifications?id=31Z68P4n2W43jSllsvg26A&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBVc2VySWQiOiI0IiwiVXNlclBlcm1pc3NzaW9ucyI6IjEsMTIsMTYsMzEsMzIsMzMsMzQsMzUiLCJTdG9yZUlkIjoiIiwidW5pcXVlX25hbWUiOiJzdXBlcmFkbWluIiwiQXBwdXNlclR5cGUiOiIxIiwiVmVuZG9ySWQiOiIiLCJDdXN0b21lcklkIjoiIiwibmJmIjoxNjQ1NjkzMDA5LCJleHAiOjE2NDYyOTc4MDksImlhdCI6MTY0NTY5MzAwOX0.IkE3QJ3YK-1dSGKOfsyHEjcEI01NecsWdbTHmpELcMU  
+2022-02-24 20:10:59.067 +05:45 [INF] CORS policy execution successful.
+2022-02-24 20:10:59.071 +05:45 [INF] Successfully validated the token.
+2022-02-24 20:10:59.071 +05:45 [INF] Executing endpoint '/notifications'
+2022-02-24 20:12:48.587 +05:45 [INF] Executed endpoint '/notifications'
+2022-02-24 20:12:48.588 +05:45 [INF] HTTP GET /notifications?id=31Z68P4n2W43jSllsvg26A&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBVc2VySWQiOiI0IiwiVXNlclBlcm1pc3NzaW9ucyI6IjEsMTIsMTYsMzEsMzIsMzMsMzQsMzUiLCJTdG9yZUlkIjoiIiwidW5pcXVlX25hbWUiOiJzdXBlcmFkbWluIiwiQXBwdXNlclR5cGUiOiIxIiwiVmVuZG9ySWQiOiIiLCJDdXN0b21lcklkIjoiIiwibmJmIjoxNjQ1NjkzMDA5LCJleHAiOjE2NDYyOTc4MDksImlhdCI6MTY0NTY5MzAwOX0.IkE3QJ3YK-1dSGKOfsyHEjcEI01NecsWdbTHmpELcMU responded 101 in 109516.8134 ms
+2022-02-24 20:12:48.595 +05:45 [INF] Request finished in 109528.0977ms 101 
+>>>>>>> 1f2f645a0d61e26bc03c2b1c5549d24c8070d9eb

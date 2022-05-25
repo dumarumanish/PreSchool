@@ -1,0 +1,13 @@
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\bin\Debug\netcoreapp3.1\eCommerce.Data.deps.json
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\bin\Debug\netcoreapp3.1\eCommerce.Data.runtimeconfig.json
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\bin\Debug\netcoreapp3.1\eCommerce.Data.runtimeconfig.dev.json
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\bin\Debug\netcoreapp3.1\eCommerce.Data.dll
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\bin\Debug\netcoreapp3.1\eCommerce.Data.pdb
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\obj\Debug\netcoreapp3.1\eCommerce.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\obj\Debug\netcoreapp3.1\eCommerce.Data.AssemblyInfoInputs.cache
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\obj\Debug\netcoreapp3.1\eCommerce.Data.AssemblyInfo.cs
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\obj\Debug\netcoreapp3.1\eCommerce.Data.csproj.CoreCompileInputs.cache
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\obj\Debug\netcoreapp3.1\eCommerce.Data.dll
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\obj\Debug\netcoreapp3.1\eCommerce.Data.pdb
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\obj\Debug\netcoreapp3.1\eCommerce.Data.genruntimeconfig.cache
+D:\Krenova\Project\eCommerce\Src\eCommerce.Data\obj\Debug\netcoreapp3.1\eCommerce.Data.csproj.AssemblyReference.cache

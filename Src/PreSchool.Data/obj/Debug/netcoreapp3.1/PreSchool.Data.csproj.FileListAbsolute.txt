@@ -1,0 +1,13 @@
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\bin\Debug\netcoreapp3.1\PreSchool.Data.deps.json
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\bin\Debug\netcoreapp3.1\PreSchool.Data.runtimeconfig.json
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\bin\Debug\netcoreapp3.1\PreSchool.Data.runtimeconfig.dev.json
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\bin\Debug\netcoreapp3.1\PreSchool.Data.dll
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\bin\Debug\netcoreapp3.1\PreSchool.Data.pdb
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\obj\Debug\netcoreapp3.1\PreSchool.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\obj\Debug\netcoreapp3.1\PreSchool.Data.AssemblyInfoInputs.cache
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\obj\Debug\netcoreapp3.1\PreSchool.Data.AssemblyInfo.cs
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\obj\Debug\netcoreapp3.1\PreSchool.Data.csproj.CoreCompileInputs.cache
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\obj\Debug\netcoreapp3.1\PreSchool.Data.dll
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\obj\Debug\netcoreapp3.1\PreSchool.Data.pdb
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\obj\Debug\netcoreapp3.1\PreSchool.Data.genruntimeconfig.cache
+D:\Krenova\Project\PreSchool\Src\PreSchool.Data\obj\Debug\netcoreapp3.1\PreSchool.Data.csproj.AssemblyReference.cache

@@ -1,0 +1,17 @@
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\bin\Debug\netcoreapp3.1\PreSchool.EmailTemplates.Views.dll
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\bin\Debug\netcoreapp3.1\PreSchool.EmailTemplates.Views.pdb
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\bin\Debug\netcoreapp3.1\PreSchool.Application.deps.json
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\bin\Debug\netcoreapp3.1\PreSchool.Application.dll
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\bin\Debug\netcoreapp3.1\PreSchool.Application.pdb
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\bin\Debug\netcoreapp3.1\PreSchool.Data.dll
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\bin\Debug\netcoreapp3.1\PreSchool.EmailTemplates.dll
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\bin\Debug\netcoreapp3.1\PreSchool.Data.pdb
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\bin\Debug\netcoreapp3.1\PreSchool.EmailTemplates.pdb
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\obj\Debug\netcoreapp3.1\PreSchool.Application.csproj.AssemblyReference.cache
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\obj\Debug\netcoreapp3.1\PreSchool.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\obj\Debug\netcoreapp3.1\PreSchool.Application.AssemblyInfoInputs.cache
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\obj\Debug\netcoreapp3.1\PreSchool.Application.AssemblyInfo.cs
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\obj\Debug\netcoreapp3.1\PreSchool.Application.csproj.CoreCompileInputs.cache
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\obj\Debug\netcoreapp3.1\PreSchool.Application.csproj.CopyComplete
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\obj\Debug\netcoreapp3.1\PreSchool.Application.dll
+D:\Krenova\Project\PreSchool\Src\PreSchool.Application\obj\Debug\netcoreapp3.1\PreSchool.Application.pdb

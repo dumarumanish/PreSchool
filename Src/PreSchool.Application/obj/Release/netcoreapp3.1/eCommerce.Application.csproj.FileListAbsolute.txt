@@ -1,0 +1,17 @@
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\bin\Release\netcoreapp3.1\eCommerce.EmailTemplates.Views.dll
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\bin\Release\netcoreapp3.1\eCommerce.EmailTemplates.Views.pdb
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\bin\Release\netcoreapp3.1\eCommerce.Application.deps.json
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\bin\Release\netcoreapp3.1\eCommerce.Application.dll
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\bin\Release\netcoreapp3.1\eCommerce.Application.pdb
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\bin\Release\netcoreapp3.1\eCommerce.Data.dll
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\bin\Release\netcoreapp3.1\eCommerce.EmailTemplates.dll
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\bin\Release\netcoreapp3.1\eCommerce.Data.pdb
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\bin\Release\netcoreapp3.1\eCommerce.EmailTemplates.pdb
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\obj\Release\netcoreapp3.1\eCommerce.Application.AssemblyInfoInputs.cache
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\obj\Release\netcoreapp3.1\eCommerce.Application.AssemblyInfo.cs
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\obj\Release\netcoreapp3.1\eCommerce.Application.csproj.CoreCompileInputs.cache
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\obj\Release\netcoreapp3.1\eCommerce.Application.csproj.CopyComplete
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\obj\Release\netcoreapp3.1\eCommerce.Application.dll
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\obj\Release\netcoreapp3.1\eCommerce.Application.pdb
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\obj\Release\netcoreapp3.1\eCommerce.Application.csproj.AssemblyReference.cache
+D:\Krenova\Project\eCommerce\Src\eCommerce.Application\obj\Release\netcoreapp3.1\eCommerce.Application.GeneratedMSBuildEditorConfig.editorconfig

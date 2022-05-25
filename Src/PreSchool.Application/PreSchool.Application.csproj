@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.7.22" />
+    <PackageReference Include="Hangfire.Core" Version="1.7.22" />
+    <PackageReference Include="Hangfire.MemoryStorage" Version="1.7.0" />
+    <PackageReference Include="MailKit" Version="2.9.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.7.1" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PreSchool.Data\PreSchool.Data.csproj" />
+    <ProjectReference Include="..\PreSchool.EmailTemplates\PreSchool.EmailTemplates.csproj" />
+  </ItemGroup>
+
+</Project>

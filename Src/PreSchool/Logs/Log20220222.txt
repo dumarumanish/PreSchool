@@ -1,0 +1,1441 @@
+2022-02-22 12:43:10.009 +05:45 [INF] Web Application Starts...
+2022-02-22 12:43:17.369 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-22 12:43:17.493 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 12:43:19.596 +05:45 [INF] Executed DbCommand (306ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:43:19.918 +05:45 [INF] Executed DbCommand (293ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-22 12:43:20.191 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:43:20.474 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-22 12:43:20.763 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-22 12:43:20.814 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-22 12:43:21.090 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:43:21.370 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-22 12:43:21.884 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:22.188 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-22 12:43:22.481 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:22.768 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-22 12:43:23.126 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:23.407 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-22 12:43:23.699 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:23.977 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:24.343 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-22 12:43:24.842 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:25.122 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:25.496 +05:45 [INF] Executed DbCommand (296ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:25.814 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-22 12:43:26.112 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-22 12:43:26.394 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-22 12:43:26.690 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-22 12:43:26.970 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:27.251 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:27.535 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:27.814 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:28.095 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-22 12:43:28.373 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:28.659 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-22 12:43:28.939 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:29.214 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:43:30.563 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-22 12:43:30.851 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-22 12:43:30.851 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-22 12:43:31.079 +05:45 [INF] Server desktop-03qevr8:10588:69eacc9f successfully announced in 181.0381 ms
+2022-02-22 12:43:31.093 +05:45 [INF] Server desktop-03qevr8:10588:69eacc9f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-22 12:43:31.365 +05:45 [INF] Server desktop-03qevr8:10588:69eacc9f all the dispatchers started
+2022-02-22 12:43:31.491 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/  
+2022-02-22 12:43:31.491 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-22 12:43:31.542 +05:45 [INF] Request finished in 47.4184ms 200 
+2022-02-22 12:43:31.654 +05:45 [INF] Request finished in 170.0715ms 301 
+2022-02-22 12:43:31.685 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-22 12:43:31.750 +05:45 [INF] Request finished in 65.6074ms 200 text/html;charset=utf-8
+2022-02-22 12:43:31.772 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-22 12:43:31.776 +05:45 [INF] Request finished in 3.5551ms 200 text/html;charset=utf-8
+2022-02-22 12:43:31.837 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/profiler/includes.min.js?v=4.0.138+gcc91adf599  
+2022-02-22 12:43:31.837 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui-bundle.js  
+2022-02-22 12:43:31.845 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui.css  
+2022-02-22 12:43:31.869 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui-standalone-preset.js  
+2022-02-22 12:43:31.880 +05:45 [INF] Request finished in 42.4861ms 200 application/javascript
+2022-02-22 12:43:31.940 +05:45 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-02-22 12:43:31.942 +05:45 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-02-22 12:43:31.947 +05:45 [INF] Request finished in 78.1357ms 200 application/javascript
+2022-02-22 12:43:31.947 +05:45 [INF] Request finished in 102.7752ms 200 text/css
+2022-02-22 12:43:31.952 +05:45 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-02-22 12:43:31.953 +05:45 [INF] Request finished in 115.4717ms 200 application/javascript
+2022-02-22 12:43:32.305 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-22 12:43:32.365 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/profiler/includes.min.css?v=4.0.138+gcc91adf599  
+2022-02-22 12:43:32.366 +05:45 [INF] Request finished in 1.3399ms 200 text/css
+2022-02-22 12:43:33.880 +05:45 [INF] Request finished in 1574.4974ms 200 application/json;charset=utf-8
+2022-02-22 12:43:33.886 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-22 12:43:33.887 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:33.887 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:33.911 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:33.928 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:33.932 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:33.989 +05:45 [INF] Request finished in 57.3573ms 200 application/json
+2022-02-22 12:43:33.989 +05:45 [INF] Request finished in 102.5966ms 200 application/json
+2022-02-22 12:43:33.989 +05:45 [INF] Request finished in 60.9672ms 200 application/json
+2022-02-22 12:43:33.990 +05:45 [INF] Request finished in 102.9868ms 200 application/json
+2022-02-22 12:43:33.990 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:33.990 +05:45 [INF] Request finished in 79.5238ms 200 application/json
+2022-02-22 12:43:33.990 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:33.991 +05:45 [INF] Request finished in 0.8593ms 200 application/json
+2022-02-22 12:43:33.991 +05:45 [INF] Request finished in 1.1186ms 200 application/json
+2022-02-22 12:43:35.193 +05:45 [INF] Request finished in 1306.2193ms 200 application/json;charset=utf-8
+2022-02-22 12:43:35.243 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:35.245 +05:45 [INF] Request finished in 1.8377ms 200 application/json
+2022-02-22 12:43:35.247 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:35.247 +05:45 [INF] Request finished in 0.4972ms 200 application/json
+2022-02-22 12:43:35.250 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:35.250 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:35.251 +05:45 [INF] Request finished in 0.4493ms 200 application/json
+2022-02-22 12:43:35.251 +05:45 [INF] Request finished in 0.3645ms 200 application/json
+2022-02-22 12:43:35.255 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:35.255 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:35.255 +05:45 [INF] Request finished in 0.4232ms 200 application/json
+2022-02-22 12:43:35.255 +05:45 [INF] Request finished in 0.4231ms 200 application/json
+2022-02-22 12:43:35.260 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:35.260 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:43:35.260 +05:45 [INF] Request finished in 0.4526ms 200 application/json
+2022-02-22 12:43:35.260 +05:45 [INF] Request finished in 0.4526ms 200 application/json
+2022-02-22 12:44:14.641 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/PageContents/Customer/Group/Sections  
+2022-02-22 12:44:15.307 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.PageContentsController.GetAllGroupSectionsForCustomer (PreSchool)'
+2022-02-22 12:44:15.356 +05:45 [INF] Route matched with {action = "GetAllGroupSectionsForCustomer", controller = "PageContents"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.PageContents.Models.Dtos.SectionGroupListDto]] GetAllGroupSectionsForCustomer(PreSchool.Application.Services.PageContents.Models.Queries.GroupSectionFilter) on controller PreSchool.Controllers.PageContentsController (PreSchool).
+2022-02-22 12:44:15.525 +05:45 [INF] Executing action method PreSchool.Controllers.PageContentsController.GetAllGroupSectionsForCustomer (PreSchool) - Validation state: "Valid"
+2022-02-22 12:44:15.549 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 12:44:16.023 +05:45 [INF] Executed DbCommand (323ms) [Parameters=[@___dateTime_Now_0='2022-02-22T12:44:15' (Nullable = true), @__ToString_1='Tuesday' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [SectionGroups] AS [s]
+WHERE (([s].[IsDeleted] <> CAST(1 AS bit)) AND ((([s].[IsActive] = CAST(1 AS bit)) AND ([s].[ShowOnHomepage] = CAST(1 AS bit))) AND ([s].[IsDeleted] <> CAST(1 AS bit)))) AND ((((([s].[EnableLifeTime] = CAST(1 AS bit)) AND ([s].[FromDate] <= @___dateTime_Now_0)) AND ([s].[ToDate] >= @___dateTime_Now_0)) OR (([s].[IsRecuring] = CAST(1 AS bit)) AND ((@__ToString_1 = N'') OR (CHARINDEX(@__ToString_1, [s].[RecuringDays]) > 0)))) OR (([s].[IsRecuring] = CAST(0 AS bit)) AND ([s].[EnableLifeTime] = CAST(0 AS bit))))
+2022-02-22 12:44:16.486 +05:45 [INF] Executed DbCommand (293ms) [Parameters=[@___dateTime_Now_0='2022-02-22T12:44:16' (Nullable = true), @__ToString_1='Tuesday' (Size = 4000), @__p_3='0', @__p_4='8', @___dateTime_Now_2='2022-02-22T12:44:16' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DisplayName], [t].[DisplayOrder], [t].[Name], [t].[EnableLifeTime], [t].[FromDate], [t].[ToDate], [t].[SectionDisplayTypeId], [t].[IsActive], [t].[IsRecuring], [t].[RecuringDays], [t].[ShowOnHomepage], [t3].[Id], [t3].[SectionGroupId], [t3].[DisplayOrder], [t3].[DisplayName], [t3].[EnableLifeTime], [t3].[FromDate], [t3].[ToDate], [t3].[IsActive], [t3].[IsRecuring], [t3].[RecuringDays], [t3].[Name], [t3].[NoOfSubSection], [t3].[ShowOnHomepage], [t3].[Id0], [t3].[SectionId], [t3].[Image], [t3].[ShowOnHomepage0], [t3].[DiversionLink], [t3].[IsActive0], [t3].[DisplayOrder0], [t3].[ColSpan], [t3].[RowSpan], [t3].[EnableLifeTime0], [t3].[FromDate0], [t3].[ToDate0], [t3].[IsRecuring0], [t3].[ProductId], [t3].[c], [t3].[CategoryId], [t3].[Name0], [t3].[Code], [t3].[Id00], [t3].[Name00], [t3].[OldPrice], [t3].[Price], [t3].[ShortDescription], [t3].[Slug], [t3].[RecuringDays0], [t3].[Path], [t3].[DisplayOrder00], [t3].[Id1], [t3].[ProductId0], [t3].[Title], [t3].[Id000], [t3].[Id2], [t3].[DiscountPercentage], [t3].[DiscountAmount], [t3].[UsePercentage], [t3].[MaximumDiscountAmount], [t3].[Id01]
+FROM (
+    SELECT [s].[Id], [s].[DisplayName], [s].[DisplayOrder], [s].[Name], [s].[EnableLifeTime], [s].[FromDate], [s].[ToDate], [s].[SectionDisplayTypeId], [s].[IsActive], [s].[IsRecuring], [s].[RecuringDays], [s].[ShowOnHomepage]
+    FROM [SectionGroups] AS [s]
+    WHERE (([s].[IsDeleted] <> CAST(1 AS bit)) AND ((([s].[IsActive] = CAST(1 AS bit)) AND ([s].[ShowOnHomepage] = CAST(1 AS bit))) AND ([s].[IsDeleted] <> CAST(1 AS bit)))) AND ((((([s].[EnableLifeTime] = CAST(1 AS bit)) AND ([s].[FromDate] <= @___dateTime_Now_0)) AND ([s].[ToDate] >= @___dateTime_Now_0)) OR (([s].[IsRecuring] = CAST(1 AS bit)) AND ((@__ToString_1 = N'') OR (CHARINDEX(@__ToString_1, [s].[RecuringDays]) > 0)))) OR (([s].[IsRecuring] = CAST(0 AS bit)) AND ([s].[EnableLifeTime] = CAST(0 AS bit))))
+    ORDER BY [s].[DisplayOrder]
+    OFFSET @__p_3 ROWS FETCH NEXT @__p_4 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [s0].[Id], [s0].[SectionGroupId], [s0].[DisplayOrder], [s0].[DisplayName], [s0].[EnableLifeTime], [s0].[FromDate], [s0].[ToDate], [s0].[IsActive], [s0].[IsRecuring], [s0].[RecuringDays], [s0].[Name], [s0].[NoOfSubSection], [s0].[ShowOnHomepage], [t2].[Id] AS [Id0], [t2].[SectionId], [t2].[Image], [t2].[ShowOnHomepa2022-02-22 12:46:19.929 +05:45 [INF] Web Application Starts...
+2022-02-22 12:46:31.888 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-22 12:46:32.123 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 12:46:34.458 +05:45 [INF] Executed DbCommand (299ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:46:34.766 +05:45 [INF] Executed DbCommand (293ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-22 12:46:35.042 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:46:35.315 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-22 12:46:35.604 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-22 12:46:35.634 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-22 12:46:35.913 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:46:36.190 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-22 12:46:36.782 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:37.079 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-22 12:46:37.377 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:37.660 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-22 12:46:38.021 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:38.297 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-22 12:46:38.591 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:38.869 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:39.190 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-22 12:46:39.620 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:39.904 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:40.268 +05:45 [INF] Executed DbCommand (293ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:40.577 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-22 12:46:40.860 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-22 12:46:41.147 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-22 12:46:41.431 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-22 12:46:41.708 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:41.993 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:42.281 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:42.558 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:46:42.839 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-22 12:46:43.115 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[Notificatio2022-02-22 12:48:08.717 +05:45 [INF] Web Application Starts...
+2022-02-22 12:48:13.363 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-22 12:48:13.472 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 12:48:15.574 +05:45 [INF] Executed DbCommand (297ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:48:15.906 +05:45 [INF] Executed DbCommand (317ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-22 12:48:16.198 +05:45 [INF] Executed DbCommand (287ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:48:16.473 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-22 12:48:16.789 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-22 12:48:16.821 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-22 12:48:17.167 +05:45 [INF] Executed DbCommand (339ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:48:18.036 +05:45 [INF] Executed DbCommand (861ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-22 12:48:18.585 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:19.438 +05:45 [INF] Executed DbCommand (831ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-22 12:48:19.875 +05:45 [INF] Executed DbCommand (411ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:20.161 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-22 12:48:20.494 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:20.782 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-22 12:48:21.132 +05:45 [INF] Executed DbCommand (317ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:21.421 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:21.755 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-22 12:48:22.185 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:22.473 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:22.840 +05:45 [INF] Executed DbCommand (291ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:23.161 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-22 12:48:23.577 +05:45 [INF] Executed DbCommand (401ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-22 12:48:23.928 +05:45 [INF] Executed DbCommand (335ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-22 12:48:24.216 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-22 12:48:24.495 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:24.773 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:25.055 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:25.337 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:25.616 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-22 12:48:25.892 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:26.171 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-22 12:48:26.460 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:26.735 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:48:27.286 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-22 12:48:27.400 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-22 12:48:27.400 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-22 12:48:27.640 +05:45 [INF] Server desktop-03qevr8:13872:c2862769 successfully announced in 199.6661 ms
+2022-02-22 12:48:27.660 +05:45 [INF] Server desktop-03qevr8:13872:c2862769 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-22 12:48:27.923 +05:45 [INF] Server desktop-03qevr8:13872:c2862769 all the dispatchers started
+2022-02-22 12:48:27.943 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-22 12:48:27.943 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-22 12:48:27.971 +05:45 [INF] Request finished in 30.4656ms 200 
+2022-02-22 12:48:28.083 +05:45 [INF] Request finished in 144.0159ms 200 text/html;charset=utf-8
+2022-02-22 12:48:28.274 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-22 12:48:29.630 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:48:29.630 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:48:29.631 +05:45 [INF] Request finished in 1357.2431ms 200 application/json;charset=utf-8
+2022-02-22 12:48:29.714 +05:45 [INF] Request finished in 84.0115ms 200 application/json
+2022-02-22 12:48:29.714 +05:45 [INF] Request finished in 84.1351ms 200 application/json
+2022-02-22 12:49:19.362 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/PageContents/Customer/Group/Sections  
+2022-02-22 12:49:19.963 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.PageContentsController.GetAllGroupSectionsForCustomer (PreSchool)'
+2022-02-22 12:49:20.022 +05:45 [INF] Route matched with {action = "GetAllGroupSectionsForCustomer", controller = "PageContents"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.PageContents.Models.Dtos.SectionGroupListDto]] GetAllGroupSectionsForCustomer(PreSchool.Application.Services.PageContents.Models.Queries.GroupSectionFilter) on controller PreSchool.Controllers.PageContentsController (PreSchool).
+2022-02-22 12:49:20.221 +05:45 [INF] Executing action method PreSchool.Controllers.PageContentsController.GetAllGroupSectionsForCustomer (PreSchool) - Validation state: "Valid"
+2022-02-22 12:49:26.973 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 12:49:50.905 +05:45 [INF] Executed DbCommand (772ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedBy], [s].[CreatedOn], [s].[DisplayName], [s].[DisplayOrder], [s].[EnableLifeTime], [s].[FromDate], [s].[IsActive], [s].[IsDeleted], [s].[IsRecuring], [s].[ModifiedBy], [s].[ModifiedOn], [s].[Name], [s].[RecuringDays], [s].[SectionDisplayTypeId], [s].[ShowOnHomepage], [s].[ToDate], [t1].[Id], [t1].[CreatedBy], [t1].[CreatedOn], [t1].[DisplayName], [t1].[DisplayOrder], [t1].[EnableLifeTime], [t1].[FromDate], [t1].[IsActive], [t1].[IsDeleted], [t1].[IsRecuring], [t1].[ModifiedBy], [t1].[ModifiedOn], [t1].[Name], [t1].[NoOfSubSection], [t1].[RecuringDays], [t1].[SectionGroupId], [t1].[ShowOnHomepage], [t1].[ToDate], [t1].[Id0], [t1].[ColSpan], [t1].[CreatedBy0], [t1].[CreatedOn0], [t1].[DisplayOrder0], [t1].[DiversionLink], [t1].[EnableLifeTime0], [t1].[FromDate0], [t1].[Image], [t1].[IsActive0], [t1].[IsDeleted0], [t1].[IsRecuring0], [t1].[ModifiedBy0], [t1].[ModifiedOn0], [t1].[ProductId], [t1].[RecuringDays0], [t1].[RowSpan], [t1].[SectionId], [t1].[ShowOnHomepage0], [t1].[ToDate0], [t1].[Id00], [t1].[AdditionalShippingCharge], [t1].[AdminComment], [t1].[AllowBackInStockSubscriptions], [t1].[AllowCustomerReviews], [t1].[AllowedQuantities], [t1].[AutomaticallyAddRequiredProducts], [t1].[AvailableEndDateTime], [t1].[AvailableForPreOrder], [t1].[AvailableStartDateTime], [t1].[Brand], [t1].[BundleId], [t1].[CallForPrice], [t1].[CategoryId], [t1].[Code], [t1].[CreatedBy00], [t1].[CreatedOn00], [t1].[DeliveryDateRangeId], [t1].[DisLikedCount], [t1].[DisableBuyButton], [t1].[DisableWishlistButton], [t1].[DisplayOrder00], [t1].[DisplayStockAvailability], [t1].[DisplayStockQuantity], [t1].[DownloadExpirationDays], [t1].[DownloadId], [t1].[FullDescription], [t1].[GiftCardType], [t1].[GiftCardTypeId], [t1].[HasDiscountsApplied], [t1].[HasSampleDownload], [t1].[HasTierPrices], [t1].[HasUserAgreement], [t1].[Height], [t1].[IsAlwaysAvailable], [t1].[IsBundleProduct], [t1].[IsDangerousGoods], [t1].[IsDeleted00], [t1].[IsDownload], [t1].[IsFreeShipping], [t1].[IsGiftCard], [t1].[IsRecurring], [t1].[IsRental], [t1].[IsShipEnabled], [t1].[IsTaxExempt], [t1].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [t1].[IsVatableProduct], [t1].[IsVendorProduct], [t1].[Length], [t1].[LikedCount], [t1].[LimitedToStores], [t1].[LowStockActivity], [t1].[LowStockActivityId], [t1].[ManageInventoryMethod], [t1].[ManageInventoryMethodId], [t1].[ManufacturerId], [t1].[ManufacturerPartNumber], [t1].[MarkAsNew], [t1].[MarkAsNewEndDateTime], [t1].[MarkAsNewStartDateTime], [t1].[MaxNumberOfDownloads], [t1].[MetaDescription], [t1].[MetaKeywords], [t1].[MetaTitle], [t1].[MinStockQuantity], [t1].[ModifiedBy00], [t1].[ModifiedOn00], [t1].[Name0], [t1].[NotReturnable], [t1].[NotifyAdminForQuantityBelow], [t1].[OldPrice], [t1].[OrderMaximumQuantity], [t1].[OrderMinimumQuantity], [t1].[OverriddenGiftCardAmount], [t1].[PreOrderAvailabilityStartDateTime], [t1].[Price], [t1].[ProductApprovalStatus], [t1].[ProductApprovalStatusId], [t1].[ProductAvailabilityRangeId], [t1].[ProductCondition], [t1].[ProductConditionId], [t1].[ProductCost], [t1].[ProductHighlights], [t1].[ProductId0], [t1].[Published], [t1].[RecurringCycleLength], [t1].[RecurringCyclePeriod], [t1].[RecurringCyclePeriodId], [t1].[RecurringTotalCycles], [t1].[RentalPriceLength], [t1].[RentalPricePeriod], [t1].[RentalPricePeriodId], [t1].[RequireOtherProducts], [t1].[RequiredProductIds], [t1].[ReturnTypeId], [t1].[Review], [t1].[ReviewCount], [t1].[SampleDownloadId], [t1].[SellerDeliveryDateRangeId], [t1].[SellerPID], [t1].[ShipSeparately], [t1].[ShortDescription], [t1].[ShowOnHomepage00], [t1].[Slug], [t1].[StockQuantity], [t1].[TaxCategoryId], [t1].[UnlimitedDownloads], [t1].[UseMultipleWarehouses], [t1].[UserAgreementText], [t1].[VendorId], [t1].[ViewCount], [t1].[VisibleIndividually], [t1].[WarrantyTypeId], [t1].[Weight], [t1].[Width], [t1].[Id1], [t1].[Code0], [t1].[CreatedBy1], [t1].[CreatedOn1], [t1].[Description], [t1].[DisplayOrder1], [t1].[IncludeInTopMenu], [t1].[IsDeleted1], [t1].[IsPromotional], [t1].[LimitedToStores0], [t1].[MetaDescription0], [t1].[MetaKeywords0], [t1].[MetaTitle0], [t1].[ModifiedBy1], [t1].[ModifiedOn1], [t1].[Name00], [t1].[ParentCategoryId], [t1].[Published0], [t1].[ShowOnHomepage1], [t1].[Slug0], [t1].[Tags], [t1].[ThumbnailImageId], [t1].[Id2], [t1].[CreatedBy2], [t1].[CreatedOn2], [t1].[DisplayOrder2], [t1].[ImageId], [t1].[IsDeleted2], [t1].[ModifiedBy2], [t1].[ModifiedOn2], [t1].[ProductId1], [t1].[ThumbnailPath], [t1].[Title], [t1].[Id000], [t1].[CreatedBy000], [t1].[CreatedOn000], [t1].[CurrentFileName], [t1].[EntityName], [t1].[FileContentType], [t1].[FileExtension], [t1].[IsDeleted000], [t1].[IsImage], [t1].[ModifiedBy000], [t1].[ModifiedOn000], [t1].[OrginalFileName], [t1].[Path]
+FROM [SectionGroups] AS [s]
+LEFT JOIN (
+    SELECT [s0].[Id], [s0].[CreatedBy], [s0].[CreatedOn], [s0].[DisplayName], [s0].[DisplayOrder], [s0].[EnableLifeTime], [s0].[FromDate], [s0].[IsActive], [s0].[IsDeleted], [s0].[IsRecuring], [s0].[ModifiedBy], [s0].[ModifiedOn], [s0].[Name], [s0].[NoOfSubSection], [s0].[RecuringDays], [s0].[SectionGroupId], [s0].[ShowOnHomepage], [s0].[ToDate], [t0].[Id] AS [Id0], [t0].[ColSpan], [t0].[CreatedBy] AS [CreatedBy0], [t0].[CreatedOn] AS [CreatedOn0], [t0].[DisplayOrder] AS [DisplayOrder0], [t0].[DiversionLink], [t0].[EnableLifeTime] AS [EnableLifeTime0], [t0].[FromDate] AS [FromDate0], [t0].[Image], [t0].[IsActive] AS [IsActive0], [t0].[IsDeleted] AS [IsDeleted0], [t0].[IsRecuring] AS [IsRecuring0], [t0].[ModifiedBy] AS [ModifiedBy0], [t0].[ModifiedOn] AS [ModifiedOn0], [t0].[ProductId], [t0].[RecuringDays] AS [RecuringDays0], [t0].[RowSpan], [t0].[SectionId], [t0].[ShowOnHomepage] AS [ShowOnHomepage0], [t0].[ToDate] AS [ToDate0], [t0].[Id0] AS [Id00], [t0].[AdditionalShippingCharge], [t0].[AdminComment], [t0].[AllowBackInStockSubscriptions], [t0].[AllowCustomerReviews], [t0].[AllowedQuantities], [t0].[AutomaticallyAddRequiredProducts], [t0].[AvailableEndDateTime], [t0].[AvailableForPreOrder], [t0].[AvailableStartDateTime], [t0].[Brand], [t0].[BundleId], [t0].[CallForPrice], [t0].[CategoryId], [t0].[Code], [t0].[CreatedBy0] AS [CreatedBy00], [t0].[CreatedOn0] AS [CreatedOn00], [t0].[DeliveryDateRangeId], [t0].[DisLikedCount], [t0].[DisableBuyButton], [t0].[DisableWishlistButton], [t0].[DisplayOrder0] AS [DisplayOrder00], [t0].[DisplayStockAvailability], [t0].[DisplayStockQuantity], [t0].[DownloadExpirationDays], [t0].[DownloadId], [t0].[FullDescription], [t0].[GiftCardType], [t0].[GiftCardTypeId], [t0].[HasDiscountsApplied], [t0].[HasSampleDownload], [t0].[HasTierPrices], [t0].[HasUserAgreement], [t0].[Height], [t0].[IsAlwaysAvailable], [t0].[IsBundleProduct], [t0].[IsDangerousGoods], [t0].[IsDeleted0] AS [IsDeleted00], [t0].[IsDownload], [t0].[IsFreeShipping], [t0].[IsGiftCard], [t0].[IsRecurring], [t0].[IsRental], [t0].[IsShipEnabled], [t0].[IsTaxExempt], [t0].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [t0].[IsVatableProduct], [t0].[IsVendorProduct], [t0].[Length], [t0].[LikedCount], [t0].[LimitedToStores], [t0].[LowStockActivity], [t0].[LowStockActivityId], [t0].[ManageInventoryMethod], [t0].[ManageInventoryMethodId], [t0].[ManufacturerId], [t0].[ManufacturerPartNumber], [t0].[MarkAsNew], [t0].[MarkAsNewEndDateTime], [t0].[MarkAsNewStartDateTime], [t0].[MaxNumberOfDownloads], [t0].[MetaDescription], [t0].[MetaKeywords], [t0].[MetaTitle], [t0].[MinStockQuantity], [t0].[ModifiedBy0] AS [ModifiedBy00], [t0].[ModifiedOn0] AS [ModifiedOn00], [t0].[Name] AS [Name0], [t0].[NotReturnable], [t0].[NotifyAdminForQuantityBelow], [t0].[OldPrice], [t0].[OrderMaximumQuantity], [t0].[OrderMinimumQuantity], [t0].[OverriddenGiftCardAmount], [t0].[PreOrderAvailabilityStartDateTime], [t0].[Price], [t0].[ProductApprovalStatus], [t0].[ProductApprovalStatusId], [t0].[ProductAvailabilityRangeId], [t0].[ProductCondition], [t0].[ProductConditionId], [t0].[ProductCost], [t0].[ProductHighlights], [t0].[ProductId0], [t0].[Published], [t0].[RecurringCycleLength], [t0].[RecurringCyclePeriod], [t0].[RecurringCyclePeriodId], [t0].[RecurringTotalCycles], [t0].[RentalPriceLength], [t0].[RentalPricePeriod], [t0].[RentalPricePeriodId], [t0].[RequireOtherProducts], [t0].[RequiredProductIds], [t0].[ReturnTypeId], [t0].[Review], [t0].[ReviewCount], [t0].[SampleDownloadId], [t0].[SellerDeliveryDateRangeId], [t0].[SellerPID], [t0].[ShipSeparately], [t0].[ShortDescription], [t0].[ShowOnHomepage0] AS [ShowOnHomepage00], [t0].[Slug], [t0].[StockQuantity], [t0].[TaxCategoryId], [t0].[UnlimitedDownloads], [t0].[UseMultipleWarehouses], [t0].[UserAgreementText], [t0].[VendorId], [t0].[ViewCount], [t0].[VisibleIndividually], [t0].[WarrantyTypeId], [t0].[Weight], [t0].[Width], [t0].[Id1], [t0].[Code0], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Description], [t0].[DisplayOrder1], [t0].[IncludeInTopMenu], [t0].[IsDeleted1], [t0].[IsPromotional], [t0].[LimitedToStores0], [t0].[MetaDescription0], [t0].[MetaKeywords0], [t0].[MetaTitle0], [t0].[ModifiedBy1], [t0].[ModifiedOn1], [t0].[Name0] AS [Name00], [t0].[ParentCategoryId], [t0].[Published0], [t0].[ShowOnHomepage1], [t0].[Slug0], [t0].[Tags], [t0].[ThumbnailImageId], [t0].[Id2], [t0].[CreatedBy2], [t0].[CreatedOn2], [t0].[DisplayOrder2], [t0].[ImageId], [t0].[IsDeleted2], [t0].[ModifiedBy2], [t0].[ModifiedOn2], [t0].[ProductId1], [t0].[ThumbnailPath], [t0].[Title], [t0].[Id00] AS [Id000], [t0].[CreatedBy00] AS [CreatedBy000], [t0].[CreatedOn00] AS [CreatedOn000], [t0].[CurrentFileName], [t0].[EntityName], [t0].[FileContentType], [t0].[FileExtension], [t0].[IsDeleted00] AS [IsDeleted000], [t0].[IsImage], [t0].[ModifiedBy00] AS [ModifiedBy000], [t0].[ModifiedOn00] AS [ModifiedOn000], [t0].[OrginalFileName], [t0].[Path]
+    FROM [Content].[Section] AS [s0]
+    LEFT JOIN (
+        SELECT [s1].[Id], [s1].[ColSpan], [s1].[CreatedBy], [s1].[CreatedOn], [s1].[DisplayOrder], [s1].[DiversionLink], [s1].[EnableLifeTime], [s1].[FromDate], [s1].[Image], [s1].[IsActive], [s1].[IsDeleted], [s1].[IsRecuring], [s1].[ModifiedBy], [s1].[ModifiedOn], [s1].[ProductId], [s1].[RecuringDays], [s1].[RowSpan], [s1].[SectionId], [s1].[ShowOnHomepage], [s1].[ToDate], [p].[Id] AS [Id0], [p].[AdditionalShippingCharge], [p].[AdminComment], [p].[AllowBackInStockSubscriptions], [p].[AllowCustomerReviews], [p].[AllowedQuantities], [p].[AutomaticallyAddRequiredProducts], [p].[AvailableEndDateTime], [p].[AvailableForPreOrder], [p].[AvailableStartDateTime], [p].[Brand], [p].[BundleId], [p].[CallForPrice], [p].[CategoryId], [p].[Code], [p].[CreatedBy] AS [CreatedBy0], [p].[CreatedOn] AS [CreatedOn0], [p].[DeliveryDateRangeId], [p].[DisLikedCount], [p].[DisableBuyButton], [p].[DisableWishlistButton], [p].[DisplayOrder] AS [DisplayOrder0], [p].[DisplayStockAvailability], [p].[DisplayStockQuantity], [p].[DownloadExpirationDays], [p].[DownloadId], [p].[FullDescription], [p].[GiftCardType], [p].[GiftCardTypeId], [p].[HasDiscountsApplied], [p].[HasSampleDownload], [p].[HasTierPrices], [p].[HasUserAgreement], [p].[Height], [p].[IsAlwaysAvailable], [p].[IsBundleProduct], [p].[IsDangerousGoods], [p].[IsDeleted] AS [IsDeleted0], [p].[IsDownload], [p].[IsFreeShipping], [p].[IsGiftCard], [p].[IsRecurring], [p].[IsRental], [p].[IsShipEnabled], [p].[IsTaxExempt], [p].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [p].[IsVatableProduct], [p].[IsVendorProduct], [p].[Length], [p].[LikedCount], [p].[LimitedToStores], [p].[LowStockActivity], [p].[LowStockActivityId], [p].[ManageInventoryMethod], [p].[ManageInventoryMethodId], [p].[ManufacturerId], [p].[ManufacturerPartNumber], [p].[MarkAsNew], [p].[MarkAsNewEndDateTime], [p].[MarkAsNewStartDateTime], [p].[MaxNumberOfDownloads], [p].[MetaDescription], [p].[MetaKeywords], [p].[MetaTitle], [p].[MinStockQuantity], [p].[ModifiedBy] AS [ModifiedBy0], [p].[ModifiedOn] AS [ModifiedOn0], [p].[Name], [p].[NotReturnable], [p].[NotifyAdminForQuantityBelow], [p].[OldPrice], [p].[OrderMaximumQuantity], [p].[OrderMinimumQuantity], [p].[OverriddenGiftCardAmount], [p].[PreOrderAvailabilityStartDateTime], [p].[Price], [p].[ProductApprovalStatus], [p].[ProductApprovalStatusId], [p].[ProductAvailabilityRangeId], [p].[ProductCondition], [p].[ProductConditionId], [p].[ProductCost], [p].[ProductHighlights], [p].[ProductId] AS [ProductId0], [p].[Published], [p].[RecurringCycleLength], [p].[RecurringCyclePeriod], [p].[RecurringCyclePeriodId], [p].[RecurringTotalCycles], [p].[RentalPriceLength], [p].[RentalPricePeriod], [p].[RentalPricePeriodId], [p].[RequireOtherProducts], [p].[RequiredProductIds], [p].[ReturnTypeId], [p].[Review], [p].[ReviewCount], [p].[SampleDownloadId], [p].[SellerDeliveryDateRangeId], [p].[SellerPID], [p].[ShipSeparately], [p].[ShortDescription], [p].[ShowOnHomepage] AS [ShowOnHomepage0], [p].[Slug], [p].[StockQuantity], [p].[TaxCategoryId], [p].[UnlimitedDownloads], [p].[UseMultipleWarehouses], [p].[UserAgreementText], [p].[VendorId], [p].[ViewCount], [p].[VisibleIndividually], [p].[WarrantyTypeId], [p].[Weight], [p].[Width], [c].[Id] AS [Id1], [c].[Code] AS [Code0], [c].[CreatedBy] AS [CreatedBy1], [c].[CreatedOn] AS [CreatedOn1], [c].[Description], [c].[DisplayOrder] AS [DisplayOrder1], [c].[IncludeInTopMenu], [c].[IsDeleted] AS [IsDeleted1], [c].[IsPromotional], [c].[LimitedToStores] AS [LimitedToStores0], [c].[MetaDescription] AS [MetaDescription0], [c].[MetaKeywords] AS [MetaKeywords0], [c].[MetaTitle] AS [MetaTitle0], [c].[ModifiedBy] AS [ModifiedBy1], [c].[ModifiedOn] AS [ModifiedOn1], [c].[Name] AS [Name0], [c].[ParentCategoryId], [c].[Published] AS [Published0], [c].[ShowOnHomepage] AS [ShowOnHomepage1], [c].[Slug] AS [Slug0], [c].[Tags], [c].[ThumbnailImageId], [t].[Id] AS [Id2], [t].[CreatedBy] AS [CreatedBy2], [t].[CreatedOn] AS [CreatedOn2], [t].[DisplayOrder] AS [DisplayOrder2], [t].[ImageId], [t].[IsDeleted] AS [IsDeleted2], [t].[ModifiedBy] AS [ModifiedBy2], [t].[ModifiedOn] AS [ModifiedOn2], [t].[ProductId] AS [ProductId1], [t].[ThumbnailPath], [t].[Title], [t].[Id0] AS [Id00], [t].[CreatedBy0] AS [CreatedBy00], [t].[CreatedOn0] AS [CreatedOn00], [t].[CurrentFileName], [t].[EntityName], [t].[FileContentType], [t].[FileExtension], [t].[IsDeleted0] AS [IsDeleted00], [t].[IsImage], [t].[ModifiedBy0] AS [ModifiedBy00], [t].[ModifiedOn0] AS [ModifiedOn00], [t].[OrginalFileName], [t].[Path]
+        FROM [Content].[SubSection] AS [s1]
+        LEFT JOIN [Catalog].[Product] AS [p] ON [s1].[ProductId] = [p].[Id]
+        LEFT JOIN [Catalog].[Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+        LEFT JOIN (
+            SELECT [p0].[Id], [p0].[CreatedBy], [p0].[CreatedOn], [p0].[DisplayOrder], [p0].[ImageId], [p0].[IsDeleted], [p0].[ModifiedBy], [p0].[ModifiedOn], [p0].[ProductId], [p0].[ThumbnailPath], [p0].[Title], [f].[Id] AS [Id0], [f].[CreatedBy] AS [CreatedBy0], [f].[CreatedOn] AS [CreatedOn0], [f].[CurrentFileName], [f].[EntityName], [f].[FileContentType], [f].[FileExtension], [f].[IsDeleted] AS [IsDeleted0], [f].[IsImage], [f].[ModifiedBy] AS [ModifiedBy0], [f].[ModifiedOn] AS [ModifiedOn0], [f].[OrginalFileName], [f].[Path]
+            FROM [Catalog].[ProductImage] AS [p0]
+            INNER JOIN [File].[File] AS [f] ON [p0].[ImageId] = [f].[Id]
+        ) AS [t] ON [p].[Id] = [t].[ProductId]
+    ) AS [t0] ON [s0].[Id] = [t0].[SectionId]
+) AS [t1] ON [s].[Id] = [t1].[SectionGroupId]
+WHERE ([s].[IsDeleted] <> CAST(1 AS bit)) AND ((([s].[IsActive] = CAST(1 AS bit)) AND ([s].[ShowOnHomepage] = CAST(1 AS bit))) AND ([s].[IsDeleted] <> CAST(1 AS bit)))
+ORDER BY [s].[DisplayOrder], [s].[Id], [t1].[Id], [t1].[Id0], [t1].[Id2], [t1].[Id000]
+2022-02-22 12:50:03.237 +05:45 [INF] Executed DbCommand (1,735ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedBy], [s].[CreatedOn], [s].[DisplayName], [s].[DisplayOrder], [s].[EnableLifeTime], [s].[FromDate], [s].[IsActive], [s].[IsDeleted], [s].[IsRecuring], [s].[ModifiedBy], [s].[ModifiedOn], [s].[Name], [s].[RecuringDays], [s].[SectionDisplayTypeId], [s].[ShowOnHomepage], [s].[ToDate], [t1].[Id], [t1].[CreatedBy], [t1].[CreatedOn], [t1].[DisplayName], [t1].[DisplayOrder], [t1].[EnableLifeTime], [t1].[FromDate], [t1].[IsActive], [t1].[IsDeleted], [t1].[IsRecuring], [t1].[ModifiedBy], [t1].[ModifiedOn], [t1].[Name], [t1].[NoOfSubSection], [t1].[RecuringDays], [t1].[SectionGroupId], [t1].[ShowOnHomepage], [t1].[ToDate], [t1].[Id0], [t1].[ColSpan], [t1].[CreatedBy0], [t1].[CreatedOn0], [t1].[DisplayOrder0], [t1].[DiversionLink], [t1].[EnableLifeTime0], [t1].[FromDate0], [t1].[Image], [t1].[IsActive0], [t1].[IsDeleted0], [t1].[IsRecuring0], [t1].[ModifiedBy0], [t1].[ModifiedOn0], [t1].[ProductId], [t1].[RecuringDays0], [t1].[RowSpan], [t1].[SectionId], [t1].[ShowOnHomepage0], [t1].[ToDate0], [t1].[Id00], [t1].[AdditionalShippingCharge], [t1].[AdminComment], [t1].[AllowBackInStockSubscriptions], [t1].[AllowCustomerReviews], [t1].[AllowedQuantities], [t1].[AutomaticallyAddRequiredProducts], [t1].[AvailableEndDateTime], [t1].[AvailableForPreOrder], [t1].[AvailableStartDateTime], [t1].[Brand], [t1].[BundleId], [t1].[CallForPrice], [t1].[CategoryId], [t1].[Code], [t1].[CreatedBy00], [t1].[CreatedOn00], [t1].[DeliveryDateRangeId], [t1].[DisLikedCount], [t1].[DisableBuyButton], [t1].[DisableWishlistButton], [t1].[DisplayOrder00], [t1].[DisplayStockAvailability], [t1].[DisplayStockQuantity], [t1].[DownloadExpirationDays], [t1].[DownloadId], [t1].[FullDescription], [t1].[GiftCardType], [t1].[GiftCardTypeId], [t1].[HasDiscountsApplied], [t1].[HasSampleDownload], [t1].[HasTierPrices], [t1].[HasUserAgreement], [t1].[Height], [t1].[IsAlwaysAvailable], [t1].[IsBundleProduct], [t1].[IsDangerousGoods], [t1].[IsDeleted00], [t1].[IsDownload], [t1].[IsFreeShipping], [t1].[IsGiftCard], [t1].[IsRecurring], [t1].[IsRental], [t1].[IsShipEnabled], [t1].[IsTaxExempt], [t1].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [t1].[IsVatableProduct], [t1].[IsVendorProduct], [t1].[Length], [t1].[LikedCount], [t1].[LimitedToStores], [t1].[LowStockActivity], [t1].[LowStockActivityId], [t1].[ManageInventoryMethod], [t1].[ManageInventoryMethodId], [t1].[ManufacturerId], [t1].[ManufacturerPartNumber], [t1].[MarkAsNew], [t1].[MarkAsNewEndDateTime], [t1].[MarkAsNewStartDateTime], [t1].[MaxNumberOfDownloads], [t1].[MetaDescription], [t1].[MetaKeywords], [t1].[MetaTitle], [t1].[MinStockQuantity], [t1].[ModifiedBy00], [t1].[ModifiedOn00], [t1].[Name0], [t1].[NotReturnable], [t1].[NotifyAdminForQuantityBelow], [t1].[OldPrice], [t1].[OrderMaximumQuantity], [t1].[OrderMinimumQuantity], [t1].[OverriddenGiftCardAmount], [t1].[PreOrderAvailabilityStartDateTime], [t1].[Price], [t1].[ProductApprovalStatus], [t1].[ProductApprovalStatusId], [t1].[ProductAvailabilityRangeId], [t1].[ProductCondition], [t1].[ProductConditionId], [t1].[ProductCost], [t1].[ProductHighlights], [t1].[ProductId0], [t1].[Published], [t1].[RecurringCycleLength], [t1].[RecurringCyclePeriod], [t1].[RecurringCyclePeriodId], [t1].[RecurringTotalCycles], [t1].[RentalPriceLength], [t1].[RentalPricePeriod], [t1].[RentalPricePeriodId], [t1].[RequireOtherProducts], [t1].[RequiredProductIds], [t1].[ReturnTypeId], [t1].[Review], [t1].[ReviewCount], [t1].[SampleDownloadId], [t1].[SellerDeliveryDateRangeId], [t1].[SellerPID], [t1].[ShipSeparately], [t1].[ShortDescription], [t1].[ShowOnHomepage00], [t1].[Slug], [t1].[StockQuantity], [t1].[TaxCategoryId], [t1].[UnlimitedDownloads], [t1].[UseMultipleWarehouses], [t1].[UserAgreementText], [t1].[VendorId], [t1].[ViewCount], [t1].[VisibleIndividually], [t1].[WarrantyTypeId], [t1].[Weight], [t1].[Width], [t1].[Id1], [t1].[Code0], [t1].[CreatedBy1], [t1].[CreatedOn1], [t1].[Description], [t1].[DisplayOrder1], [t1].[IncludeInTopMenu], [t1].[IsDeleted1], [t1].[IsPromotional], [t1].[LimitedToStores0], [t1].[MetaDescription0], [t1].[MetaKeywords0], [t1].[MetaTitle0], [t1].[ModifiedBy1], [t1].[ModifiedOn1], [t1].[Name00], [t1].[ParentCategoryId], [t1].[Published0], [t1].[ShowOnHomepage1], [t1].[Slug0], [t1].[Tags], [t1].[ThumbnailImageId], [t1].[Id2], [t1].[CreatedBy2], [t1].[CreatedOn2], [t1].[DisplayOrder2], [t1].[ImageId], [t1].[IsDeleted2], [t1].[ModifiedBy2], [t1].[ModifiedOn2], [t1].[ProductId1], [t1].[ThumbnailPath], [t1].[Title], [t1].[Id000], [t1].[CreatedBy000], [t1].[CreatedOn000], [t1].[CurrentFileName], [t1].[EntityName], [t1].[FileContentType], [t1].[FileExtension], [t1].[IsDeleted000], [t1].[IsImage], [t1].[ModifiedBy000], [t1].[ModifiedOn000], [t1].[OrginalFileName], [t1].[Path]
+FROM [SectionGroups] AS [s]
+LEFT JOIN (
+    SELECT [s0].[Id], [s0].[CreatedBy], [s0].[CreatedOn], [s0].[DisplayName], [s0].[DisplayOrder], [s0].[EnableLifeTime], [s0].[FromDate], [s0].[IsActive], [s0].[IsDeleted], [s0].[IsRecuring], [s0].[ModifiedBy], [s0].[ModifiedOn], [s0].[Name], [s0].[NoOfSubSection], [s0].[RecuringDays], [s0].[SectionGroupId], [s0].[ShowOnHomepage], [s0].[ToDate], [t0].[Id] AS [Id0], [t0].[ColSpan], [t0].[CreatedBy] AS [CreatedBy0], [t0].[CreatedOn] AS [CreatedOn0], [t0].[DisplayOrder] AS [DisplayOrder0], [t0].[DiversionLink], [t0].[EnableLifeTime] AS [EnableLifeTime0], [t0].[FromDate] AS [FromDate0], [t0].[Image], [t0].[IsActive] AS [IsActive0], [t0].[IsDeleted] AS [IsDeleted0], [t0].[IsRecuring] AS [IsRecuring0], [t0].[ModifiedBy] AS [ModifiedBy0], [t0].[ModifiedOn] AS [ModifiedOn0], [t0].[ProductId], [t0].[RecuringDays] AS [RecuringDays0], [t0].[RowSpan], [t0].[SectionId], [t0].[ShowOnHomepage] AS [ShowOnHomepage0], [t0].[ToDate] AS [ToDate0], [t0].[Id0] AS [Id00], [t0].[AdditionalShippingCharge], [t0].[AdminComment], [t0].[AllowBackInStockSubscriptions], [t0].[AllowCustomerReviews], [t0].[AllowedQuantities], [t0].[AutomaticallyAddRequiredProducts], [t0].[AvailableEndDateTime], [t0].[AvailableForPreOrder], [t0].[AvailableStartDateTime], [t0].[Brand], [t0].[BundleId], [t0].[CallForPrice], [t0].[CategoryId], [t0].[Code], [t0].[CreatedBy0] AS [CreatedBy00], [t0].[CreatedOn0] AS [CreatedOn00], [t0].[DeliveryDateRangeId], [t0].[DisLikedCount], [t0].[DisableBuyButton], [t0].[DisableWishlistButton], [t0].[DisplayOrder0] AS [DisplayOrder00], [t0].[DisplayStockAvailability], [t0].[DisplayStockQuantity], [t0].[DownloadExpirationDays], [t0].[DownloadId], [t0].[FullDescription], [t0].[GiftCardType], [t0].[GiftCardTypeId], [t0].[HasDiscountsApplied], [t0].[HasSampleDownload], [t0].[HasTierPrices], [t0].[HasUserAgreement], [t0].[Height], [t0].[IsAlwaysAvailable], [t0].[IsBundleProduct], [t0].[IsDangerousGoods], [t0].[IsDeleted0] AS [IsDeleted00], [t0].[IsDownload], [t0].[IsFreeShipping], [t0].[IsGiftCard], [t0].[IsRecurring], [t0].[IsRental], [t0].[IsShipEnabled], [t0].[IsTaxExempt], [t0].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [t0].[IsVatableProduct], [t0].[IsVendorProduct], [t0].[Length], [t0].[LikedCount], [t0].[LimitedToStores], [t0].[LowStockActivity], [t0].[LowStockActivityId], [t0].[ManageInventoryMethod], [t0].[ManageInventoryMethodId], [t0].[ManufacturerId], [t0].[ManufacturerPartNumber], [t0].[MarkAsNew], [t0].[MarkAsNewEndDateTime], [t0].[MarkAsNewStartDateTime], [t0].[MaxNumberOfDownloads], [t0].[MetaDescription], [t0].[MetaKeywords], [t0].[MetaTitle], [t0].[MinStockQuantity], [t0].[ModifiedBy0] AS [ModifiedBy00], [t0].[ModifiedOn0] AS [ModifiedOn00], [t0].[Name] AS [Name0], [t0].[NotReturnable], [t0].[NotifyAdminForQuantityBelow], [t0].[OldPrice], [t0].[OrderMaximumQuantity], [t0].[OrderMinimumQuantity], [t0].[OverriddenGiftCardAmount], [t0].[PreOrderAvailabilityStartDateTime], [t0].[Price], [t0].[ProductApprovalStatus], [t0].[ProductApprovalStatusId], [t0].[ProductAvailabilityRangeId], [t0].[ProductCondition], [t0].[ProductConditionId], [t0].[ProductCost], [t0].[ProductHighlights], [t0].[ProductId0], [t0].[Published], [t0].[RecurringCycleLength], [t0].[RecurringCyclePeriod], [t0].[RecurringCyclePeriodId], [t0].[RecurringTotalCycles], [t0].[RentalPriceLength], [t0].[RentalPricePeriod], [t0].[RentalPricePeriodId], [t0].[RequireOtherProducts], [t0].[RequiredProductIds], [t0].[ReturnTypeId], [t0].[Review], [t0].[ReviewCount], [t0].[SampleDownloadId], [t0].[SellerDeliveryDateRangeId], [t0].[SellerPID], [t0].[ShipSeparately], [t0].[ShortDescription], [t0].[ShowOnHomepage0] AS [ShowOnHomepage00], [t0].[Slug], [t0].[StockQuantity], [t0].[TaxCategoryId], [t0].[UnlimitedDownloads], [t0].[UseMultipleWarehouses], [t0].[UserAgreementText], [t0].[VendorId], [t0].[ViewCount], [t0].[VisibleIndividually], [t0].[WarrantyTypeId], [t0].[Weight], [t0].[Width], [t0].[Id1], [t0].[Code0], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Description], [t0].[DisplayOrder1], [t0].[IncludeInTopMenu], [t0].[IsDeleted1], [t0].[IsPromotional], [t0].[LimitedToStores0], [t0].[MetaDescription0], [t0].[MetaKeywords0], [t0].[MetaTitle0], [t0].[ModifiedBy1], [t0].[ModifiedOn1], [t0].[Name0] AS [Name00], [t0].[ParentCategoryId], [t0].[Published0], [t0].[ShowOnHomepage1], [t0].[Slug0], [t0].[Tags], [t0].[ThumbnailImageId], [t0].[Id2], [t0].[CreatedBy2], [t0].[CreatedOn2], [t0].[DisplayOrder2], [t0].[ImageId], [t0].[IsDeleted2], [t0].[ModifiedBy2], [t0].[ModifiedOn2], [t0].[ProductId1], [t0].[ThumbnailPath], [t0].[Title], [t0].[Id00] AS [Id000], [t0].[CreatedBy00] AS [CreatedBy000], [t0].[CreatedOn00] AS [CreatedOn000], [t0].[CurrentFileName], [t0].[EntityName], [t0].[FileContentType], [t0].[FileExtension], [t0].[IsDeleted00] AS [IsDeleted000], [t0].[IsImage], [t0].[ModifiedBy00] AS [ModifiedBy000], [t0].[ModifiedOn00] AS [ModifiedOn000], [t0].[OrginalFileName], [t0].[Path]
+    FROM [Content].[Section] AS [s0]
+    LEFT JOIN (
+        SELECT [s1].[Id], [s1].[ColSpan], [s1].[CreatedBy], [s1].[CreatedOn], [s1].[DisplayOrder], [s1].[DiversionLink], [s1].[EnableLifeTime], [s1].[FromDate], [s1].[Image], [s1].[IsActive], [s1].[IsDeleted], [s1].[IsRecuring], [s1].[ModifiedBy], [s1].[ModifiedOn], [s1].[ProductId], [s1].[RecuringDays], [s1].[RowSpan], [s1].[SectionId], [s1].[ShowOnHomepage], [s1].[ToDate], [p].[Id] AS [Id0], [p].[AdditionalShippingCharge], [p].[AdminComment], [p].[AllowBackInStockSubscriptions], [p].[AllowCustomerReviews], [p].[AllowedQuantities], [p].[AutomaticallyAddRequiredProducts], [p].[AvailableEndDateTime], [p].[AvailableForPreOrder], [p].[AvailableStartDateTime], [p].[Brand], [p].[BundleId], [p].[CallForPrice], [p].[CategoryId], [p].[Code], [p].[CreatedBy] AS [CreatedBy0], [p].[CreatedOn] AS [CreatedOn0], [p].[DeliveryDateRangeId], [p].[DisLikedCount], [p].[DisableBuyButton], [p].[DisableWishlistButton], [p].[DisplayOrder] AS [DisplayOrder0], [p].[DisplayStockAvailability], [p].[DisplayStockQuantity], [p].[DownloadExpirationDays], [p].[DownloadId], [p].[FullDescription], [p].[GiftCardType], [p].[GiftCardTypeId], [p].[HasDiscountsApplied], [p].[HasSampleDownload], [p].[HasTierPrices], [p].[HasUserAgreement], [p].[Height], [p].[IsAlwaysAvailable], [p].[IsBundleProduct], [p].[IsDangerousGoods], [p].[IsDeleted] AS [IsDeleted0], [p].[IsDownload], [p].[IsFreeShipping], [p].[IsGiftCard], [p].[IsRecurring], [p].[IsRental], [p].[IsShipEnabled], [p].[IsTaxExempt], [p].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [p].[IsVatableProduct], [p].[IsVendorProduct], [p].[Length], [p].[LikedCount], [p].[LimitedToStores], [p].[LowStockActivity], [p].[LowStockActivityId], [p].[ManageInventoryMethod], [p].[ManageInventoryMethodId], [p].[ManufacturerId], [p].[ManufacturerPartNumber], [p].[MarkAsNew], [p].[MarkAsNewEndDateTime], [p].[MarkAsNewStartDateTime], [p].[MaxNumberOfDownloads], [p].[MetaDescription], [p].[MetaKeywords], [p].[MetaTitle], [p].[MinStockQuantity], [p].[ModifiedBy] AS [ModifiedBy0], [p].[ModifiedOn] AS [ModifiedOn0], [p].[Name], [p].[NotReturnable], [p].[NotifyAdminForQuantityBelow], [p].[OldPrice], [p].[OrderMaximumQuantity], [p].[OrderMinimumQuantity], [p].[OverriddenGiftCardAmount], [p].[PreOrderAvailabilityStartDateTime], [p].[Price], [p].[ProductApprovalStatus], [p].[ProductApprovalStatusId], [p].[ProductAvailabilityRangeId], [p].[ProductCondition], [p].[ProductConditionId], [p].[ProductCost], [p].[ProductHighlights], [p].[ProductId] AS [ProductId0], [p].[Published], [p].[RecurringCycleLength], [p].[RecurringCyclePeriod], [p].[RecurringCyclePeriodId], [p].[RecurringTotalCycles], [p].[RentalPriceLength], [p].[RentalPricePeriod], [p].[RentalPricePeriodId], [p].[RequireOtherProducts], [p].[RequiredProductIds], [p].[ReturnTypeId], [p].[Review], [p].[ReviewCount], [p].[SampleDownloadId], [p].[SellerDeliveryDateRangeId], [p].[SellerPID], [p].[ShipSeparately], [p].[ShortDescription], [p].[ShowOnHomepage] AS [ShowOnHomepage0], [p].[Slug], [p].[StockQuantity], [p].[TaxCategoryId], [p].[UnlimitedDownloads], [p].[UseMultipleWarehouses], [p].[UserAgreementText], [p].[VendorId], [p].[ViewCount], [p].[VisibleIndividually], [p].[WarrantyTypeId], [p].[Weight], [p].[Width], [c].[Id] AS [Id1], [c].[Code] AS [Code0], [c].[CreatedBy] AS [CreatedBy1], [c].[CreatedOn] AS [CreatedOn1], [c].[Description], [c].[DisplayOrder] AS [DisplayOrder1], [c].[IncludeInTopMenu], [c].[IsDeleted] AS [IsDeleted1], [c].[IsPromotional], [c].[LimitedToStores] AS [LimitedToStores0], [c].[MetaDescription] AS [MetaDescription0], [c].[MetaKeywords] AS [MetaKeywords0], [c].[MetaTitle] AS [MetaTitle0], [c].[ModifiedBy] AS [ModifiedBy1], [c].[ModifiedOn] AS [ModifiedOn1], [c].[Name] AS [Name0], [c].[ParentCategoryId], [c].[Published] AS [Published0], [c].[ShowOnHomepage] AS [ShowOnHomepage1], [c].[Slug] AS [Slug0], [c].[Tags], [c].[ThumbnailImageId], [t].[Id] AS [Id2], [t].[CreatedBy] AS [CreatedBy2], [t].[CreatedOn] AS [CreatedOn2], [t].[DisplayOrder] AS [DisplayOrder2], [t].[ImageId], [t].[IsDeleted] AS [IsDeleted2], [t].[ModifiedBy] AS [ModifiedBy2], [t].[ModifiedOn] AS [ModifiedOn2], [t].[ProductId] AS [ProductId1], [t].[ThumbnailPath], [t].[Title], [t].[Id0] AS [Id00], [t].[CreatedBy0] AS [CreatedBy00], [t].[CreatedOn0] AS [CreatedOn00], [t].[CurrentFileName], [t].[EntityName], [t].[FileContentType], [t].[FileExtension], [t].[IsDeleted0] AS [IsDeleted00], [t].[IsImage], [t].[ModifiedBy0] AS [ModifiedBy00], [t].[ModifiedOn0] AS [ModifiedOn00], [t].[OrginalFileName], [t].[Path]
+        FROM [Content].[SubSection] AS [s1]
+        LEFT JOIN [Catalog].[Product] AS [p] ON [s1].[ProductId] = [p].[Id]
+        LEFT JOIN [Catalog].[Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+        LEFT JOIN (
+            SELECT [p0].[Id], [p0].[CreatedBy], [p0].[CreatedOn], [p0].[DisplayOrder], [p0].[ImageId], [p0].[IsDeleted], [p0].[ModifiedBy], [p0].[ModifiedOn], [p0].[ProductId], [p0].[ThumbnailPath], [p0].[Title], [f].[Id] AS [Id0], [f].[CreatedBy] AS [CreatedBy0], [f].[CreatedOn] AS [CreatedOn0], [f].[CurrentFileName], [f].[EntityName], [f].[FileContentType], [f].[FileExtension], [f].[IsDeleted] AS [IsDeleted0], [f].[IsImage], [f].[ModifiedBy] AS [ModifiedBy0], [f].[ModifiedOn] AS [ModifiedOn0], [f].[OrginalFileName], [f].[Path]
+            FROM [Catalog].[ProductImage] AS [p0]
+            INNER JOIN [File].[File] AS [f] ON [p0].[ImageId] = [f].[Id]
+        ) AS [t] ON [p].[Id] = [t].[ProductId]
+    ) AS [t0] ON [s0].[Id] = [t0].[SectionId]
+) AS [t1] ON [s].[Id] = [t1].[SectionGroupId]
+WHERE ([s].[IsDeleted] <> CAST(1 AS bit)) AND ((([s].[IsActive] = CAST(1 AS bit)) AND ([s].[ShowOnHomepage] = CAST(1 AS bit))) AND ([s].[IsDeleted] <> CAST(1 AS bit)))
+ORDER BY [s].[DisplayOrder], [s].[Id], [t1].[Id], [t1].[Id0], [t1].[Id2], [t1].[Id000]
+2022-02-22 12:51:11.923 +05:45 [INF] Executed DbCommand (938ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedBy], [s].[CreatedOn], [s].[DisplayName], [s].[DisplayOrder], [s].[EnableLifeTime], [s].[FromDate], [s].[IsActive], [s].[IsDeleted], [s].[IsRecuring], [s].[ModifiedBy], [s].[ModifiedOn], [s].[Name], [s].[RecuringDays], [s].[SectionDisplayTypeId], [s].[ShowOnHomepage], [s].[ToDate], [t1].[Id], [t1].[CreatedBy], [t1].[CreatedOn], [t1].[DisplayName], [t1].[DisplayOrder], [t1].[EnableLifeTime], [t1].[FromDate], [t1].[IsActive], [t1].[IsDeleted], [t1].[IsRecuring], [t1].[ModifiedBy], [t1].[ModifiedOn], [t1].[Name], [t1].[NoOfSubSection], [t1].[RecuringDays], [t1].[SectionGroupId], [t1].[ShowOnHomepage], [t1].[ToDate], [t1].[Id0], [t1].[ColSpan], [t1].[CreatedBy0], [t1].[CreatedOn0], [t1].[DisplayOrder0], [t1].[DiversionLink], [t1].[EnableLifeTime0], [t1].[FromDate0], [t1].[Image], [t1].[IsActive0], [t1].[IsDeleted0], [t1].[IsRecuring0], [t1].[ModifiedBy0], [t1].[ModifiedOn0], [t1].[ProductId], [t1].[RecuringDays0], [t1].[RowSpan], [t1].[SectionId], [t1].[ShowOnHomepage0], [t1].[ToDate0], [t1].[Id00], [t1].[AdditionalShippingCharge], [t1].[AdminComment], [t1].[AllowBackInStockSubscriptions], [t1].[AllowCustomerReviews], [t1].[AllowedQuantities], [t1].[AutomaticallyAddRequiredProducts], [t1].[AvailableEndDateTime], [t1].[AvailableForPreOrder], [t1].[AvailableStartDateTime], [t1].[Brand], [t1].[BundleId], [t1].[CallForPrice], [t1].[CategoryId], [t1].[Code], [t1].[CreatedBy00], [t1].[CreatedOn00], [t1].[DeliveryDateRangeId], [t1].[DisLikedCount], [t1].[DisableBuyButton], [t1].[DisableWishlistButton], [t1].[DisplayOrder00], [t1].[DisplayStockAvailability], [t1].[DisplayStockQuantity], [t1].[DownloadExpirationDays], [t1].[DownloadId], [t1].[FullDescription], [t1].[GiftCardType], [t1].[GiftCardTypeId], [t1].[HasDiscountsApplied], [t1].[HasSampleDownload], [t1].[HasTierPrices], [t1].[HasUserAgreement], [t1].[Height], [t1].[IsAlwaysAvailable], [t1].[IsBundleProduct], [t1].[IsDangerousGoods], [t1].[IsDeleted00], [t1].[IsDownload], [t1].[IsFreeShipping], [t1].[IsGiftCard], [t1].[IsRecurring], [t1].[IsRental], [t1].[IsShipEnabled], [t1].[IsTaxExempt], [t1].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [t1].[IsVatableProduct], [t1].[IsVendorProduct], [t1].[Length], [t1].[LikedCount], [t1].[LimitedToStores], [t1].[LowStockActivity], [t1].[LowStockActivityId], [t1].[ManageInventoryMethod], [t1].[ManageInventoryMethodId], [t1].[ManufacturerId], [t1].[ManufacturerPartNumber], [t1].[MarkAsNew], [t1].[MarkAsNewEndDateTime], [t1].[MarkAsNewStartDateTime], [t1].[MaxNumberOfDownloads], [t1].[MetaDescription], [t1].[MetaKeywords], [t1].[MetaTitle], [t1].[MinStockQuantity], [t1].[ModifiedBy00], [t1].[ModifiedOn00], [t1].[Name0], [t1].[NotReturnable], [t1].[NotifyAdminForQuantityBelow], [t1].[OldPrice], [t1].[OrderMaximumQuantity], [t1].[OrderMinimumQuantity], [t1].[OverriddenGiftCardAmount], [t1].[PreOrderAvailabilityStartDateTime], [t1].[Price], [t1].[ProductApprovalStatus], [t1].[ProductApprovalStatusId], [t1].[ProductAvailabilityRangeId], [t1].[ProductCondition], [t1].[ProductConditionId], [t1].[ProductCost], [t1].[ProductHighlights], [t1].[ProductId0], [t1].[Published], [t1].[RecurringCycleLength], [t1].[RecurringCyclePeriod], [t1].[RecurringCyclePeriodId], [t1].[RecurringTotalCycles], [t1].[RentalPriceLength], [t1].[RentalPricePeriod], [t1].[RentalPricePeriodId], [t1].[RequireOtherProducts], [t1].[RequiredProductIds], [t1].[ReturnTypeId], [t1].[Review], [t1].[ReviewCount], [t1].[SampleDownloadId], [t1].[SellerDeliveryDateRangeId], [t1].[SellerPID], [t1].[ShipSeparately], [t1].[ShortDescription], [t1].[ShowOnHomepage00], [t1].[Slug], [t1].[StockQuantity], [t1].[TaxCategoryId], [t1].[UnlimitedDownloads], [t1].[UseMultipleWarehouses], [t1].[UserAgreementText], [t1].[VendorId], [t1].[ViewCount], [t1].[VisibleIndividually], [t1].[WarrantyTypeId], [t1].[Weight], [t1].[Width], [t1].[Id1], [t1].[Code0], [t1].[CreatedBy1], [t1].[CreatedOn1], [t1].[Description], [t1].[DisplayOrder1], [t1].[IncludeInTopMenu], [t1].[IsDeleted1], [t1].[IsPromotional], [t1].[LimitedToStores0], [t1].[MetaDescription0], [t1].[MetaKeywords0], [t1].[MetaTitle0], [t1].[ModifiedBy1], [t1].[ModifiedOn1], [t1].[Name00], [t1].[ParentCategoryId], [t1].[Published0], [t1].[ShowOnHomepage1], [t1].[Slug0], [t1].[Tags], [t1].[ThumbnailImageId], [t1].[Id2], [t1].[CreatedBy2], [t1].[CreatedOn2], [t1].[DisplayOrder2], [t1].[ImageId], [t1].[IsDeleted2], [t1].[ModifiedBy2], [t1].[ModifiedOn2], [t1].[ProductId1], [t1].[ThumbnailPath], [t1].[Title], [t1].[Id000], [t1].[CreatedBy000], [t1].[CreatedOn000], [t1].[CurrentFileName], [t1].[EntityName], [t1].[FileContentType], [t1].[FileExtension], [t1].[IsDeleted000], [t1].[IsImage], [t1].[ModifiedBy000], [t1].[ModifiedOn000], [t1].[OrginalFileName], [t1].[Path]
+FROM [SectionGroups] AS [s]
+LEFT JOIN (
+    SELECT [s0].[Id], [s0].[CreatedBy], [s0].[CreatedOn], [s0].[DisplayName], [s0].[DisplayOrder], [s0].[EnableLifeTime], [s0].[FromDate], [s0].[IsActive], [s0].[IsDeleted], [s0].[IsRecuring], [s0].[ModifiedBy], [s0].[ModifiedOn], [s0].[Name], [s0].[NoOfSubSection], [s0].[RecuringDays], [s0].[SectionGroupId], [s0].[ShowOnHomepage], [s0].[ToDate], [t0].[Id] AS [Id0], [t0].[ColSpan], [t0].[CreatedBy] AS [CreatedBy0], [t0].[CreatedOn] AS [CreatedOn0], [t0].[DisplayOrder] AS [DisplayOrder0], [t0].[DiversionLink], [t0].[EnableLifeTime] AS [EnableLifeTime0], [t0].[FromDate] AS [FromDate0], [t0].[Image], [t0].[IsActive] AS [IsActive0], [t0].[IsDeleted] AS [IsDeleted0], [t0].[IsRecuring] AS [IsRecuring0], [t0].[ModifiedBy] AS [ModifiedBy0], [t0].[ModifiedOn] AS [ModifiedOn0], [t0].[ProductId], [t0].[RecuringDays] AS [RecuringDays0], [t0].[RowSpan], [t0].[SectionId], [t0].[ShowOnHomepage] AS [ShowOnHomepage0], [t0].[ToDate] AS [ToDate0], [t0].[Id0] AS [Id00], [t0].[AdditionalShippingCharge], [t0].[AdminComment], [t0].[AllowBackInStockSubscriptions], [t0].[AllowCustomerReviews], [t0].[AllowedQuantities], [t0].[AutomaticallyAddRequiredProducts], [t0].[AvailableEndDateTime], [t0].[AvailableForPreOrder], [t0].[AvailableStartDateTime], [t0].[Brand], [t0].[BundleId], [t0].[CallForPrice], [t0].[CategoryId], [t0].[Code], [t0].[CreatedBy0] AS [CreatedBy00], [t0].[CreatedOn0] AS [CreatedOn00], [t0].[DeliveryDateRangeId], [t0].[DisLikedCount], [t0].[DisableBuyButton], [t0].[DisableWishlistButton], [t0].[DisplayOrder0] AS [DisplayOrder00], [t0].[DisplayStockAvailability], [t0].[DisplayStockQuantity], [t0].[DownloadExpirationDays], [t0].[DownloadId], [t0].[FullDescription], [t0].[GiftCardType], [t0].[GiftCardTypeId], [t0].[HasDiscountsApplied], [t0].[HasSampleDownload], [t0].[HasTierPrices], [t0].[HasUserAgreement], [t0].[Height], [t0].[IsAlwaysAvailable], [t0].[IsBundleProduct], [t0].[IsDangerousGoods], [t0].[IsDeleted0] AS [IsDeleted00], [t0].[IsDownload], [t0].[IsFreeShipping], [t0].[IsGiftCard], [t0].[IsRecurring], [t0].[IsRental], [t0].[IsShipEnabled], [t0].[IsTaxExempt], [t0].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [t0].[IsVatableProduct], [t0].[IsVendorProduct], [t0].[Length], [t0].[LikedCount], [t0].[LimitedToStores], [t0].[LowStockActivity], [t0].[LowStockActivityId], [t0].[ManageInventoryMethod], [t0].[ManageInventoryMethodId], [t0].[ManufacturerId], [t0].[ManufacturerPartNumber], [t0].[MarkAsNew], [t0].[MarkAsNewEndDateTime], [t0].[MarkAsNewStartDateTime], [t0].[MaxNumberOfDownloads], [t0].[MetaDescription], [t0].[MetaKeywords], [t0].[MetaTitle], [t0].[MinStockQuantity], [t0].[ModifiedBy0] AS [ModifiedBy00], [t0].[ModifiedOn0] AS [ModifiedOn00], [t0].[Name] AS [Name0], [t0].[NotReturnable], [t0].[NotifyAdminForQuantityBelow], [t0].[OldPrice], [t0].[OrderMaximumQuantity], [t0].[OrderMinimumQuantity], [t0].[OverriddenGiftCardAmount], [t0].[PreOrderAvailabilityStartDateTime], [t0].[Price], [t0].[ProductApprovalStatus], [t0].[ProductApprovalStatusId], [t0].[ProductAvailabilityRangeId], [t0].[ProductCondition], [t0].[ProductConditionId], [t0].[ProductCost], [t0].[ProductHighlights], [t0].[ProductId0], [t0].[Published], [t0].[RecurringCycleLength], [t0].[RecurringCyclePeriod], [t0].[RecurringCyclePeriodId], [t0].[RecurringTotalCycles], [t0].[RentalPriceLength], [t0].[RentalPricePeriod], [t0].[RentalPricePeriodId], [t0].[RequireOtherProducts], [t0].[RequiredProductIds], [t0].[ReturnTypeId], [t0].[Review], [t0].[ReviewCount], [t0].[SampleDownloadId], [t0].[SellerDeliveryDateRangeId], [t0].[SellerPID], [t0].[ShipSeparately], [t0].[ShortDescription], [t0].[ShowOnHomepage0] AS [ShowOnHomepage00], [t0].[Slug], [t0].[StockQuantity], [t0].[TaxCategoryId], [t0].[UnlimitedDownloads], [t0].[UseMultipleWarehouses], [t0].[UserAgreementText], [t0].[VendorId], [t0].[ViewCount], [t0].[VisibleIndividually], [t0].[WarrantyTypeId], [t0].[Weight], [t0].[Width], [t0].[Id1], [t0].[Code0], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Description], [t0].[DisplayOrder1], [t0].[IncludeInTopMenu], [t0].[IsDeleted1], [t0].[IsPromotional], [t0].[LimitedToStores0], [t0].[MetaDescription0], [t0].[MetaKeywords0], [t0].[MetaTitle0], [t0].[ModifiedBy1], [t0].[ModifiedOn1], [t0].[Name0] AS [Name00], [t0].[ParentCategoryId], [t0].[Published0], [t0].[ShowOnHomepage1], [t0].[Slug0], [t0].[Tags], [t0].[ThumbnailImageId], [t0].[Id2], [t0].[CreatedBy2], [t0].[CreatedOn2], [t0].[DisplayOrder2], [t0].[ImageId], [t0].[IsDeleted2], [t0].[ModifiedBy2], [t0].[ModifiedOn2], [t0].[ProductId1], [t0].[ThumbnailPath], [t0].[Title], [t0].[Id00] AS [Id000], [t0].[CreatedBy00] AS [CreatedBy000], [t0].[CreatedOn00] AS [CreatedOn000], [t0].[CurrentFileName], [t0].[EntityName], [t0].[FileContentType], [t0].[FileExtension], [t0].[IsDeleted00] AS [IsDeleted000], [t0].[IsImage], [t0].[ModifiedBy00] AS [ModifiedBy000], [t0].[ModifiedOn00] AS [ModifiedOn000], [t0].[OrginalFileName], [t0].[Path]
+    FROM [Content].[Section] AS [s0]
+    LEFT JOIN (
+        SELECT [s1].[Id], [s1].[ColSpan], [s1].[CreatedBy], [s1].[CreatedOn], [s1].[DisplayOrder], [s1].[DiversionLink], [s1].[EnableLifeTime], [s1].[FromDate], [s1].[Image], [s1].[IsActive], [s1].[IsDeleted], [s1].[IsRecuring], [s1].[ModifiedBy], [s1].[ModifiedOn], [s1].[ProductId], [s1].[RecuringDays], [s1].[RowSpan], [s1].[SectionId], [s1].[ShowOnHomepage], [s1].[ToDate], [p].[Id] AS [Id0], [p].[AdditionalShippingCharge], [p].[AdminComment], [p].[AllowBackInStockSubscriptions], [p].[AllowCustomerReviews], [p].[AllowedQuantities], [p].[AutomaticallyAddRequiredProducts], [p].[AvailableEndDateTime], [p].[AvailableForPreOrder], [p].[AvailableStartDateTime], [p].[Brand], [p].[BundleId], [p].[CallForPrice], [p].[CategoryId], [p].[Code], [p].[CreatedBy] AS [CreatedBy0], [p].[CreatedOn] AS [CreatedOn0], [p].[DeliveryDateRangeId], [p].[DisLikedCount], [p].[DisableBuyButton], [p].[DisableWishlistButton], [p].[DisplayOrder] AS [DisplayOrder0], [p].[DisplayStockAvailability], [p].[DisplayStockQuantity], [p].[DownloadExpirationDays], [p].[DownloadId], [p].[FullDescription], [p].[GiftCardType], [p].[GiftCardTypeId], [p].[HasDiscountsApplied], [p].[HasSampleDownload], [p].[HasTierPrices], [p].[HasUserAgreement], [p].[Height], [p].[IsAlwaysAvailable], [p].[IsBundleProduct], [p].[IsDangerousGoods], [p].[IsDeleted] AS [IsDeleted0], [p].[IsDownload], [p].[IsFreeShipping], [p].[IsGiftCard], [p].[IsRecurring], [p].[IsRental], [p].[IsShipEnabled], [p].[IsTaxExempt], [p].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [p].[IsVatableProduct], [p].[IsVendorProduct], [p].[Length], [p].[LikedCount], [p].[LimitedToStores], [p].[LowStockActivity], [p].[LowStockActivityId], [p].[ManageInventoryMethod], [p].[ManageInventoryMethodId], [p].[ManufacturerId], [p].[ManufacturerPartNumber], [p].[MarkAsNew], [p].[MarkAsNewEndDateTime], [p].[MarkAsNewStartDateTime], [p].[MaxNumberOfDownloads], [p].[MetaDescription], [p].[MetaKeywords], [p].[MetaTitle], [p].[MinStockQuantity], [p].[ModifiedBy] AS [ModifiedBy0], [p].[ModifiedOn] AS [ModifiedOn0], [p].[Name], [p].[NotReturnable], [p].[NotifyAdminForQuantityBelow], [p].[OldPrice], [p].[OrderMaximumQuantity], [p].[OrderMinimumQuantity], [p].[OverriddenGiftCardAmount], [p].[PreOrderAvailabilityStartDateTime], [p].[Price], [p].[ProductApprovalStatus], [p].[ProductApprovalStatusId], [p].[ProductAvailabilityRangeId], [p].[ProductCondition], [p].[ProductConditionId], [p].[ProductCost], [p].[ProductHighlights], [p].[ProductId] AS [ProductId0], [p].[Published], [p].[RecurringCycleLength], [p].[RecurringCyclePeriod], [p].[RecurringCyclePeriodId], [p].[RecurringTotalCycles], [p].[RentalPriceLength], [p].[RentalPricePeriod], [p].[RentalPricePeriodId], [p].[RequireOtherProducts], [p].[RequiredProductIds], [p].[ReturnTypeId], [p].[Review], [p].[ReviewCount], [p].[SampleDownloadId], [p].[SellerDeliveryDateRangeId], [p].[SellerPID], [p].[ShipSeparately], [p].[ShortDescription], [p].[ShowOnHomepage] AS [ShowOnHomepage0], [p].[Slug], [p].[StockQuantity], [p].[TaxCategoryId], [p].[UnlimitedDownloads], [p].[UseMultipleWarehouses], [p].[UserAgreementText], [p].[VendorId], [p].[ViewCount], [p].[VisibleIndividually], [p].[WarrantyTypeId], [p].[Weight], [p].[Width], [c].[Id] AS [Id1], [c].[Code] AS [Code0], [c].[CreatedBy] AS [CreatedBy1], [c].[CreatedOn] AS [CreatedOn1], [c].[Description], [c].[DisplayOrder] AS [DisplayOrder1], [c].[IncludeInTopMenu], [c].[IsDeleted] AS [IsDeleted1], [c].[IsPromotional], [c].[LimitedToStores] AS [LimitedToStores0], [c].[MetaDescription] AS [MetaDescription0], [c].[MetaKeywords] AS [MetaKeywords0], [c].[MetaTitle] AS [MetaTitle0], [c].[ModifiedBy] AS [ModifiedBy1], [c].[ModifiedOn] AS [ModifiedOn1], [c].[Name] AS [Name0], [c].[ParentCategoryId], [c].[Published] AS [Published0], [c].[ShowOnHomepage] AS [ShowOnHomepage1], [c].[Slug] AS [Slug0], [c].[Tags], [c].[ThumbnailImageId], [t].[Id] AS [Id2], [t].[CreatedBy] AS [CreatedBy2], [t].[CreatedOn] AS [CreatedOn2], [t].[DisplayOrder] AS [DisplayOrder2], [t].[ImageId], [t].[IsDeleted] AS [IsDeleted2], [t].[ModifiedBy] AS [ModifiedBy2], [t].[ModifiedOn] AS [ModifiedOn2], [t].[ProductId] AS [ProductId1], [t].[ThumbnailPath], [t].[Title], [t].[Id0] AS [Id00], [t].[CreatedBy0] AS [CreatedBy00], [t].[CreatedOn0] AS [CreatedOn00], [t].[CurrentFileName], [t].[EntityName], [t].[FileContentType], [t].[FileExtension], [t].[IsDeleted0] AS [IsDeleted00], [t].[IsImage], [t].[ModifiedBy0] AS [ModifiedBy00], [t].[ModifiedOn0] AS [ModifiedOn00], [t].[OrginalFileName], [t].[Path]
+        FROM [Content].[SubSection] AS [s1]
+        LEFT JOIN [Catalog].[Product] AS [p] ON [s1].[ProductId] = [p].[Id]
+        LEFT JOIN [Catalog].[Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+        LEFT JOIN (
+            SELECT [p0].[Id], [p0].[CreatedBy], [p0].[CreatedOn], [p0].[DisplayOrder], [p0].[ImageId], [p0].[IsDeleted], [p0].[ModifiedBy], [p0].[ModifiedOn], [p0].[ProductId], [p0].[ThumbnailPath], [p0].[Title], [f].[Id] AS [Id0], [f].[CreatedBy] AS [CreatedBy0], [f].[CreatedOn] AS [CreatedOn0], [f].[CurrentFileName], [f].[EntityName], [f].[FileContentType], [f].[FileExtension], [f].[IsDeleted] AS [IsDeleted0], [f].[IsImage], [f].[ModifiedBy] AS [ModifiedBy0], [f].[ModifiedOn] AS [ModifiedOn0], [f].[OrginalFileName], [f].[Path]
+            FROM [Catalog].[ProductImage] AS [p0]
+            INNER JOIN [File].[File] AS [f] ON [p0].[ImageId] = [f].[Id]
+        ) AS [t] ON [p].[Id] = [t].[ProductId]
+    ) AS [t0] ON [s0].[Id] = [t0].[SectionId]
+) AS [t1] ON [s].[Id] = [t1].[SectionGroupId]
+WHERE ([s].[IsDeleted] <> CAST(1 AS bit)) AND ((([s].[IsActive] = CAST(1 AS bit)) AND ([s].[ShowOnHomepage] = CAST(1 AS bit))) AND ([s].[IsDeleted] <> CAST(1 AS bit)))
+ORDER BY [s].[DisplayOrder], [s].[Id], [t1].[Id], [t1].[Id0], [t1].[Id2], [t1].[Id000]
+2022-02-22 12:51:37.522 +05:45 [INF] Executed DbCommand (1,032ms) [Parameters=[@___dateTime_Now_0='2022-02-22T12:51:36' (Nullable = true), @__ToString_1='Tuesday' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedBy], [s].[CreatedOn], [s].[DisplayName], [s].[DisplayOrder], [s].[EnableLifeTime], [s].[FromDate], [s].[IsActive], [s].[IsDeleted], [s].[IsRecuring], [s].[ModifiedBy], [s].[ModifiedOn], [s].[Name], [s].[RecuringDays], [s].[SectionDisplayTypeId], [s].[ShowOnHomepage], [s].[ToDate], [t1].[Id], [t1].[CreatedBy], [t1].[CreatedOn], [t1].[DisplayName], [t1].[DisplayOrder], [t1].[EnableLifeTime], [t1].[FromDate], [t1].[IsActive], [t1].[IsDeleted], [t1].[IsRecuring], [t1].[ModifiedBy], [t1].[ModifiedOn], [t1].[Name], [t1].[NoOfSubSection], [t1].[RecuringDays], [t1].[SectionGroupId], [t1].[ShowOnHomepage], [t1].[ToDate], [t1].[Id0], [t1].[ColSpan], [t1].[CreatedBy0], [t1].[CreatedOn0], [t1].[DisplayOrder0], [t1].[DiversionLink], [t1].[EnableLifeTime0], [t1].[FromDate0], [t1].[Image], [t1].[IsActive0], [t1].[IsDeleted0], [t1].[IsRecuring0], [t1].[ModifiedBy0], [t1].[ModifiedOn0], [t1].[ProductId], [t1].[RecuringDays0], [t1].[RowSpan], [t1].[SectionId], [t1].[ShowOnHomepage0], [t1].[ToDate0], [t1].[Id00], [t1].[AdditionalShippingCharge], [t1].[AdminComment], [t1].[AllowBackInStockSubscriptions], [t1].[AllowCustomerReviews], [t1].[AllowedQuantities], [t1].[AutomaticallyAddRequiredProducts], [t1].[AvailableEndDateTime], [t1].[AvailableForPreOrder], [t1].[AvailableStartDateTime], [t1].[Brand], [t1].[BundleId], [t1].[CallForPrice], [t1].[CategoryId], [t1].[Code], [t1].[CreatedBy00], [t1].[CreatedOn00], [t1].[DeliveryDateRangeId], [t1].[DisLikedCount], [t1].[DisableBuyButton], [t1].[DisableWishlistButton], [t1].[DisplayOrder00], [t1].[DisplayStockAvailability], [t1].[DisplayStockQuantity], [t1].[DownloadExpirationDays], [t1].[DownloadId], [t1].[FullDescription], [t1].[GiftCardType], [t1].[GiftCardTypeId], [t1].[HasDiscountsApplied], [t1].[HasSampleDownload], [t1].[HasTierPrices], [t1].[HasUserAgreement], [t1].[Height], [t1].[IsAlwaysAvailable], [t1].[IsBundleProduct], [t1].[IsDangerousGoods], [t1].[IsDeleted00], [t1].[IsDownload], [t1].[IsFreeShipping], [t1].[IsGiftCard], [t1].[IsRecurring], [t1].[IsRental], [t1].[IsShipEnabled], [t1].[IsTaxExempt], [t1].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [t1].[IsVatableProduct], [t1].[IsVendorProduct], [t1].[Length], [t1].[LikedCount], [t1].[LimitedToStores], [t1].[LowStockActivity], [t1].[LowStockActivityId], [t1].[ManageInventoryMethod], [t1].[ManageInventoryMethodId], [t1].[ManufacturerId], [t1].[ManufacturerPartNumber], [t1].[MarkAsNew], [t1].[MarkAsNewEndDateTime], [t1].[MarkAsNewStartDateTime], [t1].[MaxNumberOfDownloads], [t1].[MetaDescription], [t1].[MetaKeywords], [t1].[MetaTitle], [t1].[MinStockQuantity], [t1].[ModifiedBy00], [t1].[ModifiedOn00], [t1].[Name0], [t1].[NotReturnable], [t1].[NotifyAdminForQuantityBelow], [t1].[OldPrice], [t1].[OrderMaximumQuantity], [t1].[OrderMinimumQuantity], [t1].[OverriddenGiftCardAmount], [t1].[PreOrderAvailabilityStartDateTime], [t1].[Price], [t1].[ProductApprovalStatus], [t1].[ProductApprovalStatusId], [t1].[ProductAvailabilityRangeId], [t1].[ProductCondition], [t1].[ProductConditionId], [t1].[ProductCost], [t1].[ProductHighlights], [t1].[ProductId0], [t1].[Published], [t1].[RecurringCycleLength], [t1].[RecurringCyclePeriod], [t1].[RecurringCyclePeriodId], [t1].[RecurringTotalCycles], [t1].[RentalPriceLength], [t1].[RentalPricePeriod], [t1].[RentalPricePeriodId], [t1].[RequireOtherProducts], [t1].[RequiredProductIds], [t1].[ReturnTypeId], [t1].[Review], [t1].[ReviewCount], [t1].[SampleDownloadId], [t1].[SellerDeliveryDateRangeId], [t1].[SellerPID], [t1].[ShipSeparately], [t1].[ShortDescription], [t1].[ShowOnHomepage00], [t1].[Slug], [t1].[StockQuantity], [t1].[TaxCategoryId], [t1].[UnlimitedDownloads], [t1].[UseMultipleWarehouses], [t1].[UserAgreementText], [t1].[VendorId], [t1].[ViewCount], [t1].[VisibleIndividually], [t1].[WarrantyTypeId], [t1].[Weight], [t1].[Width], [t1].[Id1], [t1].[Code0], [t1].[CreatedBy1], [t1].[CreatedOn1], [t1].[Description], [t1].[DisplayOrder1], [t1].[IncludeInTopMenu], [t1].[IsDeleted1], [t1].[IsPromotional], [t1].[LimitedToStores0], [t1].[MetaDescription0], [t1].[MetaKeywords0], [t1].[MetaTitle0], [t1].[ModifiedBy1], [t1].[ModifiedOn1], [t1].[Name00], [t1].[ParentCategoryId], [t1].[Published0], [t1].[ShowOnHomepage1], [t1].[Slug0], [t1].[Tags], [t1].[ThumbnailImageId], [t1].[Id2], [t1].[CreatedBy2], [t1].[CreatedOn2], [t1].[DisplayOrder2], [t1].[ImageId], [t1].[IsDeleted2], [t1].[ModifiedBy2], [t1].[ModifiedOn2], [t1].[ProductId1], [t1].[ThumbnailPath], [t1].[Title], [t1].[Id000], [t1].[CreatedBy000], [t1].[CreatedOn000], [t1].[CurrentFileName], [t1].[EntityName], [t1].[FileContentType], [t1].[FileExtension], [t1].[IsDeleted000], [t1].[IsImage], [t1].[ModifiedBy000], [t1].[ModifiedOn000], [t1].[OrginalFileName], [t1].[Path]
+FROM [SectionGroups] AS [s]
+LEFT JOIN (
+    SELECT [s0].[Id], [s0].[CreatedBy], [s0].[CreatedOn], [s0].[DisplayName], [s0].[DisplayOrder], [s0].[EnableLifeTime], [s0].[FromDate], [s0].[IsActive], [s0].[IsDeleted], [s0].[IsRecuring], [s0].[ModifiedBy], [s0].[ModifiedOn], [s0].[Name], [s0].[NoOfSubSection], [s0].[RecuringDays], [s0].[SectionGroupId], [s0].[ShowOnHomepage], [s0].[ToDate], [t0].[Id] AS [Id0], [t0].[ColSpan], [t0].[CreatedBy] AS [CreatedBy0], [t0].[CreatedOn] AS [CreatedOn0], [t0].[DisplayOrder] AS [DisplayOrder0], [t0].[DiversionLink], [t0].[EnableLifeTime] AS [EnableLifeTime0], [t0].[FromDate] AS [FromDate0], [t0].[Image], [t0].[IsActive] AS [IsActive0], [t0].[IsDeleted] AS [IsDeleted0], [t0].[IsRecuring] AS [IsRecuring0], [t0].[ModifiedBy] AS [ModifiedBy0], [t0].[ModifiedOn] AS [ModifiedOn0], [t0].[ProductId], [t0].[RecuringDays] AS [RecuringDays0], [t0].[RowSpan], [t0].[SectionId], [t0].[ShowOnHomepage] AS [ShowOnHomepage0], [t0].[ToDate] AS [ToDate0], [t0].[Id0] AS [Id00], [t0].[AdditionalShippingCharge], [t0].[AdminComment], [t0].[AllowBackInStockSubscriptions], [t0].[AllowCustomerReviews], [t0].[AllowedQuantities], [t0].[AutomaticallyAddRequiredProducts], [t0].[AvailableEndDateTime], [t0].[AvailableForPreOrder], [t0].[AvailableStartDateTime], [t0].[Brand], [t0].[BundleId], [t0].[CallForPrice], [t0].[CategoryId], [t0].[Code], [t0].[CreatedBy0] AS [CreatedBy00], [t0].[CreatedOn0] AS [CreatedOn00], [t0].[DeliveryDateRangeId], [t0].[DisLikedCount], [t0].[DisableBuyButton], [t0].[DisableWishlistButton], [t0].[DisplayOrder0] AS [DisplayOrder00], [t0].[DisplayStockAvailability], [t0].[DisplayStockQuantity], [t0].[DownloadExpirationDays], [t0].[DownloadId], [t0].[FullDescription], [t0].[GiftCardType], [t0].[GiftCardTypeId], [t0].[HasDiscountsApplied], [t0].[HasSampleDownload], [t0].[HasTierPrices], [t0].[HasUserAgreement], [t0].[Height], [t0].[IsAlwaysAvailable], [t0].[IsBundleProduct], [t0].[IsDangerousGoods], [t0].[IsDeleted0] AS [IsDeleted00], [t0].[IsDownload], [t0].[IsFreeShipping], [t0].[IsGiftCard], [t0].[IsRecurring], [t0].[IsRental], [t0].[IsShipEnabled], [t0].[IsTaxExempt], [t0].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [t0].[IsVatableProduct], [t0].[IsVendorProduct], [t0].[Length], [t0].[LikedCount], [t0].[LimitedToStores], [t0].[LowStockActivity], [t0].[LowStockActivityId], [t0].[ManageInventoryMethod], [t0].[ManageInventoryMethodId], [t0].[ManufacturerId], [t0].[ManufacturerPartNumber], [t0].[MarkAsNew], [t0].[MarkAsNewEndDateTime], [t0].[MarkAsNewStartDateTime], [t0].[MaxNumberOfDownloads], [t0].[MetaDescription], [t0].[MetaKeywords], [t0].[MetaTitle], [t0].[MinStockQuantity], [t0].[ModifiedBy0] AS [ModifiedBy00], [t0].[ModifiedOn0] AS [ModifiedOn00], [t0].[Name] AS [Name0], [t0].[NotReturnable], [t0].[NotifyAdminForQuantityBelow], [t0].[OldPrice], [t0].[OrderMaximumQuantity], [t0].[OrderMinimumQuantity], [t0].[OverriddenGiftCardAmount], [t0].[PreOrderAvailabilityStartDateTime], [t0].[Price], [t0].[ProductApprovalStatus], [t0].[ProductApprovalStatusId], [t0].[ProductAvailabilityRangeId], [t0].[ProductCondition], [t0].[ProductConditionId], [t0].[ProductCost], [t0].[ProductHighlights], [t0].[ProductId0], [t0].[Published], [t0].[RecurringCycleLength], [t0].[RecurringCyclePeriod], [t0].[RecurringCyclePeriodId], [t0].[RecurringTotalCycles], [t0].[RentalPriceLength], [t0].[RentalPricePeriod], [t0].[RentalPricePeriodId], [t0].[RequireOtherProducts], [t0].[RequiredProductIds], [t0].[ReturnTypeId], [t0].[Review], [t0].[ReviewCount], [t0].[SampleDownloadId], [t0].[SellerDeliveryDateRangeId], [t0].[SellerPID], [t0].[ShipSeparately], [t0].[ShortDescription], [t0].[ShowOnHomepage0] AS [ShowOnHomepage00], [t0].[Slug], [t0].[StockQuantity], [t0].[TaxCategoryId], [t0].[UnlimitedDownloads], [t0].[UseMultipleWarehouses], [t0].[UserAgreementText], [t0].[VendorId], [t0].[ViewCount], [t0].[VisibleIndividually], [t0].[WarrantyTypeId], [t0].[Weight], [t0].[Width], [t0].[Id1], [t0].[Code0], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Description], [t0].[DisplayOrder1], [t0].[IncludeInTopMenu], [t0].[IsDeleted1], [t0].[IsPromotional], [t0].[LimitedToStores0], [t0].[MetaDescription0], [t0].[MetaKeywords0], [t0].[MetaTitle0], [t0].[ModifiedBy1], [t0].[ModifiedOn1], [t0].[Name0] AS [Name00], [t0].[ParentCategoryId], [t0].[Published0], [t0].[ShowOnHomepage1], [t0].[Slug0], [t0].[Tags], [t0].[ThumbnailImageId], [t0].[Id2], [t0].[CreatedBy2], [t0].[CreatedOn2], [t0].[DisplayOrder2], [t0].[ImageId], [t0].[IsDeleted2], [t0].[ModifiedBy2], [t0].[ModifiedOn2], [t0].[ProductId1], [t0].[ThumbnailPath], [t0].[Title], [t0].[Id00] AS [Id000], [t0].[CreatedBy00] AS [CreatedBy000], [t0].[CreatedOn00] AS [CreatedOn000], [t0].[CurrentFileName], [t0].[EntityName], [t0].[FileContentType], [t0].[FileExtension], [t0].[IsDeleted00] AS [IsDeleted000], [t0].[IsImage], [t0].[ModifiedBy00] AS [ModifiedBy000], [t0].[ModifiedOn00] AS [ModifiedOn000], [t0].[OrginalFileName], [t0].[Path]
+    FROM [Content].[Section] AS [s0]
+    LEFT JOIN (
+        SELECT [s1].[Id], [s1].[ColSpan], [s1].[CreatedBy], [s1].[CreatedOn], [s1].[DisplayOrder], [s1].[DiversionLink], [s1].[EnableLifeTime], [s1].[FromDate], [s1].[Image], [s1].[IsActive], [s1].[IsDeleted], [s1].[IsRecuring], [s1].[ModifiedBy], [s1].[ModifiedOn], [s1].[ProductId], [s1].[RecuringDays], [s1].[RowSpan], [s1].[SectionId], [s1].[ShowOnHomepage], [s1].[ToDate], [p].[Id] AS [Id0], [p].[AdditionalShippingCharge], [p].[AdminComment], [p].[AllowBackInStockSubscriptions], [p].[AllowCustomerReviews], [p].[AllowedQuantities], [p].[AutomaticallyAddRequiredProducts], [p].[AvailableEndDateTime], [p].[AvailableForPreOrder], [p].[AvailableStartDateTime], [p].[Brand], [p].[BundleId], [p].[CallForPrice], [p].[CategoryId], [p].[Code], [p].[CreatedBy] AS [CreatedBy0], [p].[CreatedOn] AS [CreatedOn0], [p].[DeliveryDateRangeId], [p].[DisLikedCount], [p].[DisableBuyButton], [p].[DisableWishlistButton], [p].[DisplayOrder] AS [DisplayOrder0], [p].[DisplayStockAvailability], [p].[DisplayStockQuantity], [p].[DownloadExpirationDays], [p].[DownloadId], [p].[FullDescription], [p].[GiftCardType], [p].[GiftCardTypeId], [p].[HasDiscountsApplied], [p].[HasSampleDownload], [p].[HasTierPrices], [p].[HasUserAgreement], [p].[Height], [p].[IsAlwaysAvailable], [p].[IsBundleProduct], [p].[IsDangerousGoods], [p].[IsDeleted] AS [IsDeleted0], [p].[IsDownload], [p].[IsFreeShipping], [p].[IsGiftCard], [p].[IsRecurring], [p].[IsRental], [p].[IsShipEnabled], [p].[IsTaxExempt], [p].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [p].[IsVatableProduct], [p].[IsVendorProduct], [p].[Length], [p].[LikedCount], [p].[LimitedToStores], [p].[LowStockActivity], [p].[LowStockActivityId], [p].[ManageInventoryMethod], [p].[ManageInventoryMethodId], [p].[ManufacturerId], [p].[ManufacturerPartNumber], [p].[MarkAsNew], [p].[MarkAsNewEndDateTime], [p].[MarkAsNewStartDateTime], [p].[MaxNumberOfDownloads], [p].[MetaDescription], [p].[MetaKeywords], [p].[MetaTitle], [p].[MinStockQuantity], [p].[ModifiedBy] AS [ModifiedBy0], [p].[ModifiedOn] AS [ModifiedOn0], [p].[Name], [p].[NotReturnable], [p].[NotifyAdminForQuantityBelow], [p].[OldPrice], [p].[OrderMaximumQuantity], [p].[OrderMinimumQuantity], [p].[OverriddenGiftCardAmount], [p].[PreOrderAvailabilityStartDateTime], [p].[Price], [p].[ProductApprovalStatus], [p].[ProductApprovalStatusId], [p].[ProductAvailabilityRangeId], [p].[ProductCondition], [p].[ProductConditionId], [p].[ProductCost], [p].[ProductHighlights], [p].[ProductId] AS [ProductId0], [p].[Published], [p].[RecurringCycleLength], [p].[RecurringCyclePeriod], [p].[RecurringCyclePeriodId], [p].[RecurringTotalCycles], [p].[RentalPriceLength], [p].[RentalPricePeriod], [p].[RentalPricePeriodId], [p].[RequireOtherProducts], [p].[RequiredProductIds], [p].[ReturnTypeId], [p].[Review], [p].[ReviewCount], [p].[SampleDownloadId], [p].[SellerDeliveryDateRangeId], [p].[SellerPID], [p].[ShipSeparately], [p].[ShortDescription], [p].[ShowOnHomepage] AS [ShowOnHomepage0], [p].[Slug], [p].[StockQuantity], [p].[TaxCategoryId], [p].[UnlimitedDownloads], [p].[UseMultipleWarehouses], [p].[UserAgreementText], [p].[VendorId], [p].[ViewCount], [p].[VisibleIndividually], [p].[WarrantyTypeId], [p].[Weight], [p].[Width], [c].[Id] AS [Id1], [c].[Code] AS [Code0], [c].[CreatedBy] AS [CreatedBy1], [c].[CreatedOn] AS [CreatedOn1], [c].[Description], [c].[DisplayOrder] AS [DisplayOrder1], [c].[IncludeInTopMenu], [c].[IsDeleted] AS [IsDeleted1], [c].[IsPromotional], [c].[LimitedToStores] AS [LimitedToStores0], [c].[MetaDescription] AS [MetaDescription0], [c].[MetaKeywords] AS [MetaKeywords0], [c].[MetaTitle] AS [MetaTitle0], [c].[ModifiedBy] AS [ModifiedBy1], [c].[ModifiedOn] AS [ModifiedOn1], [c].[Name] AS [Name0], [c].[ParentCategoryId], [c].[Published] AS [Published0], [c].[ShowOnHomepage] AS [ShowOnHomepage1], [c].[Slug] AS [Slug0], [c].[Tags], [c].[ThumbnailImageId], [t].[Id] AS [Id2], [t].[CreatedBy] AS [CreatedBy2], [t].[CreatedOn] AS [CreatedOn2], [t].[DisplayOrder] AS [DisplayOrder2], [t].[ImageId], [t].[IsDeleted] AS [IsDeleted2], [t].[ModifiedBy] AS [ModifiedBy2], [t].[ModifiedOn] AS [ModifiedOn2], [t].[ProductId] AS [ProductId1], [t].[ThumbnailPath], [t].[Title], [t].[Id0] AS [Id00], [t].[CreatedBy0] AS [CreatedBy00], [t].[CreatedOn0] AS [CreatedOn00], [t].[CurrentFileName], [t].[EntityName], [t].[FileContentType], [t].[FileExtension], [t].[IsDeleted0] AS [IsDeleted00], [t].[IsImage], [t].[ModifiedBy0] AS [ModifiedBy00], [t].[ModifiedOn0] AS [ModifiedOn00], [t].[OrginalFileName], [t].[Path]
+        FROM [Content].[SubSection] AS [s1]
+        LEFT JOIN [Catalog].[Product] AS [p] ON [s1].[ProductId] = [p].[Id]
+        LEFT JOIN [Catalog].[Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+        LEFT JOIN (
+            SELECT [p0].[Id], [p0].[CreatedBy], [p0].[CreatedOn], [p0].[DisplayOrder], [p0].[ImageId], [p0].[IsDeleted], [p0].[ModifiedBy], [p0].[ModifiedOn], [p0].[ProductId], [p0].[ThumbnailPath], [p0].[Title], [f].[Id] AS [Id0], [f].[CreatedBy] AS [CreatedBy0], [f].[CreatedOn] AS [CreatedOn0], [f].[CurrentFileName], [f].[EntityName], [f].[FileContentType], [f].[FileExtension], [f].[IsDeleted] AS [IsDeleted0], [f].[IsImage], [f].[ModifiedBy] AS [ModifiedBy0], [f].[ModifiedOn] AS [ModifiedOn0], [f].[OrginalFileName], [f].[Path]
+            FROM [Catalog].[ProductImage] AS [p0]
+            INNER JOIN [File].[File] AS [f] ON [p0].[ImageId] = [f].[Id]
+        ) AS [t] ON [p].[Id] = [t].[ProductId]
+    ) AS [t0] ON [s0].[Id] = [t0].[SectionId]
+) AS [t1] ON [s].[Id] = [t1].[SectionGroupId]
+WHERE (([s].[IsDeleted] <> CAST(1 AS bit)) AND ((([s].[IsActive] = CAST(1 AS bit)) AND ([s].[ShowOnHomepage] = CAST(1 AS bit))) AND ([s].[IsDeleted] <> CAST(1 AS bit)))) AND ((((([s].[EnableLifeTime] = CAST(1 AS bit)) AND ([s].[FromDate] <= @___dateTime_Now_0)) AND ([s].[ToDate] >= @___dateTime_Now_0)) OR (([s].[IsRecuring] = CAST(1 AS bit)) AND ((@__ToString_1 = N'') OR (CHARINDEX(@__ToString_1, [s].[RecuringDays]) > 0)))) OR (([s].[IsRecuring] = CAST(0 AS bit)) AND ([s].[EnableLifeTime] = CAST(0 AS bit))))
+ORDER BY [s].[DisplayOrder], [s].[Id], [t1].[Id], [t1].[Id0], [t1].[Id2], [t1].[Id000]
+2022-02-22 12:51:52.883 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[@___dateTime_Now_0='2022-02-22T12:51:52' (Nullable = true), @__ToString_1='Tuesday' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [SectionGroups] AS [s]
+WHERE (([s].[IsDeleted] <> CAST(1 AS bit)) AND ((([s].[IsActive] = CAST(1 AS bit)) AND ([s].[ShowOnHomepage] = CAST(1 AS bit))) AND ([s].[IsDeleted] <> CAST(1 AS bit)))) AND ((((([s].[EnableLifeTime] = CAST(1 AS bit)) AND ([s].[FromDate] <= @___dateTime_Now_0)) AND ([s].[ToDate] >= @___dateTime_Now_0)) OR (([s].[IsRecuring] = CAST(1 AS bit)) AND ((@__ToString_1 = N'') OR (CHARINDEX(@__ToString_1, [s].[RecuringDays]) > 0)))) OR (([s].[IsRecuring] = CAST(0 AS bit)) AND ([s].[EnableLifeTime] = CAST(0 AS bit))))
+2022-02-22 12:51:53.322 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[@___dateTime_Now_0='2022-02-22T12:51:52' (Nullable = true), @__ToString_1='Tuesday' (Size = 4000), @__p_3='0', @__p_4='8', @___dateTime_Now_2='2022-02-22T12:51:52' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DisplayName], [t].[DisplayOrder], [t].[Name], [t].[EnableLifeTime], [t].[FromDate], [t].[ToDate], [t].[SectionDisplayTypeId], [t].[IsActive], [t].[IsRecuring], [t].[RecuringDays], [t].[ShowOnHomepage], [t3].[Id], [t3].[SectionGroupId], [t3].[DisplayOrder], [t3].[DisplayName], [t3].[EnableLifeTime], [t3].[FromDate], [t3].[ToDate], [t3].[IsActive], [t3].[IsRecuring], [t3].[RecuringDays], [t3].[Name], [t3].[NoOfSubSection], [t3].[ShowOnHomepage], [t3].[Id0], [t3].[SectionId], [t3].[Image], [t3].[ShowOnHomepage0], [t3].[DiversionLink], [t3].[IsActive0], [t3].[DisplayOrder0], [t3].[ColSpan], [t3].[RowSpan], [t3].[EnableLifeTime0], [t3].[FromDate0], [t3].[ToDate0], [t3].[IsRecuring0], [t3].[ProductId], [t3].[c], [t3].[CategoryId], [t3].[Name0], [t3].[Code], [t3].[Id00], [t3].[Name00], [t3].[OldPrice], [t3].[Price], [t3].[ShortDescription], [t3].[Slug], [t3].[RecuringDays0], [t3].[Path], [t3].[DisplayOrder00], [t3].[Id1], [t3].[ProductId0], [t3].[Title], [t3].[Id000], [t3].[Id2], [t3].[DiscountPercentage], [t3].[DiscountAmount], [t3].[UsePercentage], [t3].[MaximumDiscountAmount], [t3].[Id01]
+FROM (
+    SELECT [s].[Id], [s].[DisplayName], [s].[DisplayOrder], [s].[Name], [s].[EnableLifeTime], [s].[FromDate], [s].[ToDate], [s].[SectionDisplayTypeId], [s].[IsActive], [s].[IsRecuring], [s].[RecuringDays], [s].[ShowOnHomepage]
+    FROM [SectionGroups] AS [s]
+    WHERE (([s].[IsDeleted] <> CAST(1 AS bit)) AND ((([s].[IsActive] = CAST(1 AS bit)) AND ([s].[ShowOnHomepage] = CAST(1 AS bit))) AND ([s].[IsDeleted] <> CAST(1 AS bit)))) AND ((((([s].[EnableLifeTime] = CAST(1 AS bit)) AND ([s].[FromDate] <= @___dateTime_Now_0)) AND ([s].[ToDate] >= @___dateTime_Now_0)) OR (([s].[IsRecuring] = CAST(1 AS bit)) AND ((@__ToString_1 = N'') OR (CHARINDEX(@__ToString_1, [s].[RecuringDays]) > 0)))) OR (([s].[IsRecuring] = CAST(0 AS bit)) AND ([s].[EnableLifeTime] = CAST(0 AS bit))))
+    ORDER BY [s].[DisplayOrder]
+    OFFSET @__p_3 ROWS FETCH NEXT @__p_4 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [s0].[Id], [s0].[SectionGroupId], [s0].[DisplayOrder], [s0].[DisplayName], [s0].[EnableLifeTime], [s0].[FromDate], [s0].[ToDate], [s0].[IsActive], [s0].[IsRecuring], [s0].[RecuringDays], [s0].[Name], [s0].[NoOfSubSection], [s0].[ShowOnHomepage], [t2].[Id] AS [Id0], [t2].[SectionId], [t2].[Image], [t2].[ShowOnHomepage] AS [ShowOnHomepage0], [t2].[DiversionLink], [t2].[IsActive] AS [IsActive0], [t2].[DisplayOrder] AS [DisplayOrder0], [t2].[ColSpan], [t2].[RowSpan], [t2].[EnableLifeTime] AS [EnableLifeTime0], [t2].[FromDate] AS [FromDate0], [t2].[ToDate] AS [ToDate0], [t2].[IsRecuring] AS [IsRecuring0], [t2].[ProductId], [t2].[c], [t2].[CategoryId], [t2].[Name] AS [Name0], [t2].[Code], [t2].[Id0] AS [Id00], [t2].[Name0] AS [Name00], [t2].[OldPrice], [t2].[Price], [t2].[ShortDescription], [t2].[Slug], [t2].[RecuringDays] AS [RecuringDays0], [t2].[Path], [t2].[DisplayOrder0] AS [DisplayOrder00], [t2].[Id1], [t2].[ProductId0], [t2].[Title], [t2].[Id00] AS [Id000], [t2].[Id2], [t2].[DiscountPercentage], [t2].[DiscountAmount], [t2].[UsePercentage], [t2].[MaximumDiscountAmount], [t2].[Id01]
+    FROM [Content].[Section] AS [s0]
+    LEFT JOIN (
+        SELECT [s1].[Id], [s1].[SectionId], [s1].[Image], [s1].[ShowOnHomepage], [s1].[DiversionLink], [s1].[IsActive], [s1].[DisplayOrder], [s1].[ColSpan], [s1].[RowSpan], [s1].[EnableLifeTime], [s1].[FromDate], [s1].[ToDate], [s1].[IsRecuring], [s1].[ProductId], CASE
+            WHEN [p].[Id] IS NOT NULL THEN CAST(1 AS bit)
+            ELSE CAST(0 AS bit)
+        END AS [c], [p].[CategoryId], [c].[Name], [p].[Code], [p].[Id] AS [Id0], [p].[Name] AS [Name0], [p].[OldPrice], [p].[Price], [p].[ShortDescription], [p].[Slug], [s1].[RecuringDays], [t0].[Path], [t0].[DisplayOrder] AS [DisplayOrder0], [t0].[Id] AS [Id1], [t0].[ProductId] AS [ProductId0], [t0].[Title], [t0].[Id0] AS [Id00], [t1].[Id] AS [Id2], [t1].[DiscountPercentage], [t1].[DiscountAmount], [t1].[UsePercentage], [t1].[MaximumDiscountAmount], [t1].[Id0] AS [Id01]
+        FROM [Content].[SubSection] AS [s1]
+        LEFT JOIN [Catalog].[Product] AS [p] ON [s1].[ProductId] = [p].[Id]
+        LEFT JOIN [Catalog].[Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+        LEFT JOIN (
+            SELECT [f].[Path], [p0].[DisplayOrder], [p0].[Id], [p0].[ProductId], [p0].[Title], [f].[Id] AS [Id0]
+            FROM [Catalog].[ProductImage] AS [p0]
+            INNER JOIN [File].[File] AS [f] ON [p0].[ImageId] = [f].[Id]
+        ) AS [t0] ON [p].[Id] = [t0].[ProductId]
+        LEFT JOIN (
+            SELECT [d].[Id], [d].[DiscountPercentage], [d].[DiscountAmount], [d].[UsePercentage], [d].[MaximumDiscountAmount], [p1].[Id] AS [Id0], [p1].[ProductId]
+            FROM [Discount].[ProductMapping] AS [p1]
+            INNER JOIN [Discount].[Discount] AS [d] ON [p1].[DiscountId] = [d].[Id]
+            WHERE (([d].[StartDate] IS NOT NULL AND (@___dateTime_Now_2 >= [d].[StartDate])) OR [d].[StartDate] IS NULL) AND (([d].[EndDate] IS NOT NULL AND ([d].[EndDate] >= @___dateTime_Now_2)) OR [d].[EndDate] IS NULL)
+        ) AS [t1] ON [p].[Id] = [t1].[ProductId]
+    ) AS [t2] ON [s0].[Id] = [t2].[SectionId]
+) AS [t3] ON [t].[Id] = [t3].[SectionGroupId]
+ORDER BY [t].[DisplayOrder], [t].[Id], [t3].[Id], [t3].[Id0], [t3].[Id1], [t3].[Id000], [t32022-02-22 12:57:45.052 +05:45 [INF] Web Application Starts...
+2022-02-22 12:57:50.843 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-22 12:57:50.943 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 12:57:52.857 +05:45 [INF] Executed DbCommand (299ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:57:53.165 +05:45 [INF] Executed DbCommand (296ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-22 12:57:53.447 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:57:53.726 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-22 12:57:54.038 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-22 12:57:54.059 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-22 12:57:54.339 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 12:57:54.622 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-22 12:57:55.152 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:57:55.479 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-22 12:57:55.768 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:57:56.058 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-22 12:57:56.426 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:57:56.712 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-22 12:57:57.021 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:57:57.314 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:57:57.678 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-22 12:57:58.114 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:57:58.396 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:57:58.741 +05:45 [INF] Executed DbCommand (288ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:57:59.045 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-22 12:57:59.330 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-22 12:57:59.614 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-22 12:57:59.897 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-22 12:58:00.179 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:58:00.469 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:58:00.761 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:58:01.043 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:58:01.335 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-22 12:58:01.619 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:58:01.914 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-22 12:58:02.203 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:58:02.490 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 12:58:03.036 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-22 12:58:03.181 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-22 12:58:03.181 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-22 12:58:03.388 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-22 12:58:03.388 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-22 12:58:03.398 +05:45 [INF] Server desktop-03qevr8:13552:5c403031 successfully announced in 180.929 ms
+2022-02-22 12:58:03.421 +05:45 [INF] Server desktop-03qevr8:13552:5c403031 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-22 12:58:03.436 +05:45 [INF] Request finished in 40.5887ms 200 
+2022-02-22 12:58:03.760 +05:45 [INF] Server desktop-03qevr8:13552:5c403031 all the dispatchers started
+2022-02-22 12:58:03.847 +05:45 [INF] Request finished in 462.671ms 200 text/html;charset=utf-8
+2022-02-22 12:58:04.016 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-22 12:58:05.458 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:58:05.468 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 12:58:05.494 +05:45 [INF] Request finished in 1478.6734ms 200 application/json;charset=utf-8
+2022-02-22 12:58:05.602 +05:45 [INF] Request finished in 144.2404ms 200 application/json
+2022-02-22 12:58:05.604 +05:45 [INF] Request finished in 145.9952ms 200 application/json
+2022-02-22 12:58:23.803 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/PageContents/Customer/Group/Sections  
+2022-02-22 12:58:24.035 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.PageContentsController.GetAllGroupSectionsForCustomer (PreSchool)'
+2022-02-22 12:58:24.078 +05:45 [INF] Route matched with {action = "GetAllGroupSectionsForCustomer", controller = "PageContents"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.PageContents.Models.Dtos.SectionGroupListDto]] GetAllGroupSectionsForCustomer(PreSchool.Application.Services.PageContents.Models.Queries.GroupSectionFilter) on controller PreSchool.Controllers.PageContentsController (PreSchool).
+2022-02-22 12:58:24.236 +05:45 [INF] Executing action method PreSchool.Controllers.PageContentsController.GetAllGroupSectionsForCustomer (PreSchool) - Validation state: "Valid"
+2022-02-22 12:58:26.780 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 12:58:27.266 +05:45 [INF] Executed DbCommand (363ms) [Parameters=[@___dateTime_Now_0='2022-02-22T12:58:26' (Nullable = true), @__ToString_1='Tuesday' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [SectionGroups] AS [s]
+WHERE (([s].[IsDeleted] <> CAST(1 AS bit)) AND ((([s].[IsActive] = CAST(1 AS bit)) AND ([s].[ShowOnHomepage] = CAST(1 AS bit))) AND ([s].[IsDeleted] <> CAST(1 AS bit)))) AND ((((([s].[EnableLifeTime] = CAST(1 AS bit)) AND ([s].[FromDate] <= @___dateTime_Now_0)) AND ([s].[ToDate] >= @___dateTime_Now_0)) OR (([s].[IsRecuring] = CAST(1 AS bit)) AND ((@__ToString_1 = N'') OR (CHARINDEX(@__ToString_1, [s].[RecuringDays]) > 0)))) OR (([s].[IsRecuring] = CAST(0 AS bit)) AND ([s].[EnableLifeTime] = CAST(0 AS bit))))
+2022-02-22 12:58:27.851 +05:45 [INF] Executed DbCommand (376ms) [Parameters=[@___dateTime_Now_0='2022-02-22T12:58:27' (Nullable = true), @__ToString_1='Tuesday' (Size = 4000), @__p_3='0', @__p_4='8', @___dateTime_Now_2='2022-02-22T12:58:27' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DisplayName], [t].[DisplayOrder], [t].[Name], [t].[EnableLifeTime], [t].[FromDate], [t].[ToDate], [t].[SectionDisplayTypeId], [t].[IsActive], [t].[IsRecuring], [t].[RecuringDays], [t].[ShowOnHomepage], [t3].[Id], [t3].[SectionGroupId], [t3].[DisplayOrder], [t3].[DisplayName], [t3].[EnableLifeTime], [t3].[FromDate], [t3].[ToDate], [t3].[IsActive], [t3].[IsRecuring], [t3].[RecuringDays], [t3].[Name], [t3].[NoOfSubSection], [t3].[ShowOnHomepage], [t3].[Id0], [t3].[SectionId], [t3].[Image], [t3].[ShowOnHomepage0], [t3].[DiversionLink], [t3].[IsActive0], [t3].[DisplayOrder0], [t3].[ColSpan], [t3].[RowSpan], [t3].[EnableLifeTime0], [t3].[FromDate0], [t3].[ToDate0], [t3].[IsRecuring0], [t3].[ProductId], [t3].[c], [t3].[CategoryId], [t3].[Name0], [t3].[Code], [t3].[Id00], [t3].[Name00], [t3].[OldPrice], [t3].[Price], [t3].[ShortDescription], [t3].[Slug], [t3].[RecuringDays0], [t3].[Path], [t3].[DisplayOrder00], [t3].[Id1], [t3].[ProductId0], [t3].[Title], [t3].[Id000], [t3].[Id2], [t3].[DiscountPercentage], [t3].[DiscountAmount], [t3].[UsePercentage], [t3].[MaximumDiscountAmount], [t3].[Id01]
+FROM (
+    SELECT [s].[Id], [s].[DisplayName], [s].[DisplayOrder], [s].[Name], [s].[EnableLifeTime], [s].[FromDate], [s].[ToDate], [s].[SectionDisplayTypeId], [s].[IsActive], [s].[IsRecuring], [s].[RecuringDays], [s].[ShowOnHomepage]
+    FROM [SectionGroups] AS [s]
+    WHERE (([s].[IsDeleted] <> CAST(1 AS bit)) AND ((([s].[IsActive] = CAST(1 AS bit)) AND ([s].[ShowOnHomepage] = CAST(1 AS bit))) AND ([s].[IsDeleted] <> CAST(1 AS bit)))) AND ((((([s].[EnableLifeTime] = CAST(1 AS bit)) AND ([s].[FromDate] <= @___dateTime_Now_0)) AND ([s].[ToDate] >= @___dateTime_Now_0)) OR (([s].[IsRecuring] = CAST(1 AS bit)) AND ((@__ToString_1 = N'') OR (CHARINDEX(@__ToString_1, [s].[RecuringDays]) > 0)))) OR (([s].[IsRecuring] = CAST(0 AS bit)) AND ([s].[EnableLifeTime] = CAST(0 AS bit))))
+    ORDER BY [s].[DisplayOrder]
+    OFFSET @__p_3 ROWS FETCH NEXT @__p_4 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [s0].[Id], [s0].[SectionGroupId], [s0].[DisplayOrder], [s0].[DisplayName], [s0].[EnableLifeTime], [s0].[FromDate], [s0].[ToDate], [s0].[IsActive], [s0].[IsRecuring], [s0].[RecuringDays], [s0].[Name], [s0].[NoOfSubSection], [s0].[ShowOnHomepage], [t2].[Id] AS [Id0], [t2].[SectionId], [t2].[Image], [t2].[ShowOnHomepage] AS [ShowOnHomepage0], [t2].[DiversionLink], [t2].[IsActive] AS [IsActive0], [t2].[DisplayOrder] AS [DisplayOrder0], [t2].[ColSpan], [t2].[RowSpan], [t2].[EnableLifeTime] AS [EnableLifeTime0], [t2].[FromDate] AS [FromDate0], [t2].[ToDate] AS [ToDate0], [t2].[IsRecuring] AS [IsRecuring0], [t2].[ProductId], [t2].[c], [t2].[CategoryId], [t2].[Name] AS [Name0], [t2].[Code], [t2].[Id0] AS [Id00], [t2].[Name0] AS [Name00], [t2].[OldPrice], [t2].[Price], [t2].[ShortDescription], [t2].[Slug], [t2].[RecuringDays] AS [RecuringDays0], [t2].[Path], [t2].[DisplayOrder0] AS [DisplayOrder00], [t2].[Id1], [t2].[ProductId0], [t2].[Title], [t2].[Id00] AS [Id000], [t2].[Id2], [t2].[DiscountPercentage], [t2].[DiscountAmount], [t2].[UsePercent2022-02-22 19:44:30.832 +05:45 [INF] Web Application Starts...
+2022-02-22 19:44:39.700 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-22 19:44:39.841 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 19:44:41.948 +05:45 [INF] Executed DbCommand (312ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 19:44:42.255 +05:45 [INF] Executed DbCommand (288ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-22 19:44:42.529 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 19:44:42.801 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-22 19:44:43.094 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-22 19:44:43.124 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-22 19:44:43.401 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-22 19:44:43.686 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-22 19:44:44.312 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:44.622 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-22 19:44:44.907 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:45.193 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-22 19:44:45.516 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:45.797 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-22 19:44:46.085 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:46.365 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:46.723 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-22 19:44:47.182 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:47.471 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:47.846 +05:45 [INF] Executed DbCommand (296ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:48.147 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-22 19:44:48.437 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-22 19:44:48.718 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-22 19:44:49.002 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-22 19:44:49.288 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:49.569 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:49.856 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:50.184 +05:45 [INF] Executed DbCommand (317ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:50.467 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-22 19:44:50.748 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:51.031 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-22 19:44:51.311 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:51.590 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-22 19:44:52.783 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-22 19:44:53.079 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-22 19:44:53.081 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-22 19:44:53.354 +05:45 [INF] Server desktop-03qevr8:6736:7dfd4181 successfully announced in 216.725 ms
+2022-02-22 19:44:53.369 +05:45 [INF] Server desktop-03qevr8:6736:7dfd4181 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-22 19:44:53.772 +05:45 [INF] Server desktop-03qevr8:6736:7dfd4181 all the dispatchers started
+2022-02-22 19:44:53.874 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/  
+2022-02-22 19:44:53.874 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-22 19:44:53.914 +05:45 [INF] Request finished in 41.0214ms 200 
+2022-02-22 19:44:54.040 +05:45 [INF] Request finished in 171.4262ms 301 
+2022-02-22 19:44:54.065 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-22 19:44:54.109 +05:45 [INF] Request finished in 44.0742ms 200 text/html;charset=utf-8
+2022-02-22 19:44:54.153 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/profiler/includes.min.js?v=4.0.138+gcc91adf599  
+2022-02-22 19:44:54.153 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui-bundle.js  
+2022-02-22 19:44:54.155 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui.css  
+2022-02-22 19:44:54.190 +05:45 [INF] Request finished in 37.3416ms 200 application/javascript
+2022-02-22 19:44:54.208 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui-standalone-preset.js  
+2022-02-22 19:44:54.265 +05:45 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-02-22 19:44:54.265 +05:45 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-02-22 19:44:54.269 +05:45 [INF] Request finished in 114.004ms 200 text/css
+2022-02-22 19:44:54.269 +05:45 [INF] Request finished in 61.4161ms 200 application/javascript
+2022-02-22 19:44:54.274 +05:45 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-02-22 19:44:54.274 +05:45 [INF] Request finished in 120.8211ms 200 application/javascript
+2022-02-22 19:44:54.615 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-22 19:44:54.697 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/profiler/includes.min.css?v=4.0.138+gcc91adf599  
+2022-02-22 19:44:54.698 +05:45 [INF] Request finished in 1.1678ms 200 text/css
+2022-02-22 19:44:56.461 +05:45 [INF] Request finished in 1846.6935ms 200 application/json;charset=utf-8
+2022-02-22 19:44:56.498 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:44:56.512 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:44:56.514 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:44:56.541 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:44:56.542 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:44:56.542 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:44:56.602 +05:45 [INF] Request finished in 87.6151ms 200 application/json
+2022-02-22 19:44:56.602 +05:45 [INF] Request finished in 103.778ms 200 application/json
+2022-02-22 19:44:56.602 +05:45 [INF] Request finished in 60.6233ms 200 application/json
+2022-02-22 19:44:56.602 +05:45 [INF] Request finished in 89.8773ms 200 application/json
+2022-02-22 19:44:56.602 +05:45 [INF] Request finished in 60.4422ms 200 application/json
+2022-02-22 19:44:56.603 +05:45 [INF] Request finished in 61.2876ms 200 application/json
+2022-02-22 19:49:18.346 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-22 19:49:18.366 +05:45 [INF] Request finished in 19.6554ms 200 text/html;charset=utf-8
+2022-02-22 19:49:18.753 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-22 19:49:19.742 +05:45 [INF] Request finished in 988.973ms 200 application/json;charset=utf-8
+2022-02-22 19:49:19.753 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:49:19.753 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:49:19.754 +05:45 [INF] Request finished in 1.7886ms 200 application/json
+2022-02-22 19:49:19.754 +05:45 [INF] Request finished in 1.7886ms 200 application/json
+2022-02-22 19:49:38.229 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/api/AppUsers/Login application/json-patch+json 61
+2022-02-22 19:49:38.247 +05:45 [INF] CORS policy execution failed.
+2022-02-22 19:49:38.247 +05:45 [INF] Request origin https://localhost:44375 does not have permission to access the resource.
+2022-02-22 19:49:38.899 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.AppUsersController.Login (PreSchool)'
+2022-02-22 19:49:38.954 +05:45 [INF] Route matched with {action = "Login", controller = "AppUsers"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.Services.AppUsers.Models.Dtos.ValidUserDto] Login(PreSchool.Application.Models.AppUsers.Queries.Login) on controller PreSchool.Controllers.AppUsersController (PreSchool).
+2022-02-22 19:49:39.255 +05:45 [INF] Executing action method PreSchool.Controllers.AppUsersController.Login (PreSchool) - Validation state: "Valid"
+2022-02-22 19:49:39.271 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 19:49:39.841 +05:45 [INF] Executed DbCommand (381ms) [Parameters=[@__loginCommand_UserName_0='superadmin' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Active], [t].[AddressId], [t].[AdminComment], [t].[AppUserTypeId], [t].[CannotLoginUntilDate], [t].[CreatedBy], [t].[CreatedOn], [t].[DepartmentId], [t].[Email], [t].[FacebookUserId], [t].[FailedLoginAttempts], [t].[FirstName], [t].[GoogleUserId], [t].[IsDeleted], [t].[IsEmailVerified], [t].[IsPhoneVerified], [t].[IsSystemAccount], [t].[JobTitle], [t].[LastName], [t].[LimitedToStores], [t].[MiddleName], [t].[ModifiedBy], [t].[ModifiedOn], [t].[PhoneNumber], [t].[RegisteredInStoreId], [t].[RequireReLogin], [t].[SystemName], [t].[Username], [p].[Id], [p].[AppUserId], [p].[CreatedOn], [p].[EnablePasswordLifetime], [p].[IsCurrent], [p].[PasswordExpiredOn], [p].[PasswordHash], [p].[PasswordSalt], [p].[RequiredPasswordChange], [l].[Id], [l].[AppUserId], [l].[IpAddress], [l].[LoginDateTime], [t0].[Id], [t0].[AppUserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[IsDeleted], [t0].[ModifiedBy], [t0].[ModifiedOn], [t0].[RoleId], [t1].[Id], [t1].[AppUserId], [t1].[CreatedBy], [t1].[CreatedOn], [t1].[IsDeleted], [t1].[ModifiedBy], [t1].[ModifiedOn], [t1].[StoreId], [t2].[Id], [t2].[AppUserId], [t2].[CreatedBy], [t2].[CreatedOn], [t2].[IsAssociateUser], [t2].[IsDeleted], [t2].[ModifiedBy], [t2].[ModifiedOn], [t2].[VendorId]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+    FROM [AppUser].[AppUser] AS [a]
+    WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND (([a].[Username] = @__loginCommand_UserName_0) AND ((([a].[AppUserTypeId] = 1) OR ([a].[AppUserTypeId] = 2)) OR ([a].[AppUserTypeId] = 3)))
+) AS [t]
+LEFT JOIN [AppUser].[Password] AS [p] ON [t].[Id] = [p].[AppUserId]
+LEFT JOIN [AppUser].[LoginHistory] AS [l] ON [t].[Id] = [l].[AppUserId]
+LEFT JOIN (
+    SELECT [a0].[Id], [a0].[AppUserId], [a0].[CreatedBy], [a0].[CreatedOn], [a0].[IsDeleted], [a0].[ModifiedBy], [a0].[ModifiedOn], [a0].[RoleId]
+    FROM [AppUser].[AppUserRole] AS [a0]
+    WHERE [a0].[IsDeleted] <> CAST(1 AS bit)
+) AS [t0] ON [t].[Id] = [t0].[AppUserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[AppUserId], [u].[CreatedBy], [u].[CreatedOn], [u].[IsDeleted], [u].[ModifiedBy], [u].[ModifiedOn], [u].[StoreId]
+    FROM [Store].[User] AS [u]
+    WHERE [u].[IsDeleted] <> CAST(1 AS bit)
+) AS [t1] ON [t].[Id] = [t1].[AppUserId]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[AppUserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[IsAssociateUser], [u0].[IsDeleted], [u0].[ModifiedBy], [u0].[ModifiedOn], [u0].[VendorId]
+    FROM [Vendor].[User] AS [u0]
+    WHERE [u0].[IsDeleted] <> CAST(1 AS bit)
+) AS [t2] ON [t].[Id] = [t2].[AppUserId]
+ORDER BY [t].[Id], [p].[Id], [l].[Id], [t0].[Id], [t1].[Id], [t2].[Id]
+2022-02-22 19:49:43.355 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[@p0='4', @p1='::1' (Size = 4000), @p2='2022-02-22T19:49:42'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AppUser].[LoginHistory] ([AppUserId], [IpAddress], [LoginDateTime])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AppUser].[LoginHistory]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-02-22 19:49:44.071 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [r].[PermissionId]
+FROM [AppUser].[RolePermission] AS [r]
+WHERE ([r].[IsDeleted] <> CAST(1 AS bit)) AND [r].[RoleId] IN (1)
+2022-02-22 19:49:44.354 +05:45 [INF] Executed action method PreSchool.Controllers.AppUsersController.Login (PreSchool), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 5093.8864ms.
+2022-02-22 19:49:44.364 +05:45 [INF] Executing ObjectResult, writing value of type 'PreSchool.Application.Services.AppUsers.Models.Dtos.ValidUserDto'.
+2022-02-22 19:49:44.391 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:49:44.408 +05:45 [INF] Request finished in 16.6702ms 404 text/plain
+2022-02-22 19:49:44.408 +05:45 [INF] Executed action PreSchool.Controllers.AppUsersController.Login (PreSchool) in 5433.7402ms
+2022-02-22 19:49:44.409 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.AppUsersController.Login (PreSchool)'
+2022-02-22 19:49:44.413 +05:45 [INF] HTTP POST /api/AppUsers/Login responded 200 in 5514.4710 ms
+2022-02-22 19:49:44.420 +05:45 [INF] Request finished in 6190.889ms 200 application/json; charset=utf-8
+2022-02-22 19:50:24.309 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Orders/Count  
+2022-02-22 19:50:24.397 +05:45 [INF] Successfully validated the token.
+2022-02-22 19:50:24.399 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.OrdersController.CustomerOrderCount (PreSchool)'
+2022-02-22 19:50:24.403 +05:45 [INF] Route matched with {action = "CustomerOrderCount", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.Services.Orders.Models.Dtos.CustomerOrderCount] CustomerOrderCount() on controller PreSchool.Controllers.OrdersController (PreSchool).
+2022-02-22 19:50:24.449 +05:45 [INF] Executing action method PreSchool.Controllers.OrdersController.CustomerOrderCount (PreSchool) - Validation state: "Valid"
+2022-02-22 19:50:24.490 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 19:50:24.799 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CAST([o].[OrderStatusId] AS int) AS [StatusId], COUNT(*) AS [Total]
+FROM [Order].[Order] AS [o]
+WHERE [o].[IsDeleted] <> CAST(1 AS bit)
+GROUP BY [o].[OrderStatusId]
+2022-02-22 19:50:24.806 +05:45 [INF] Executed action method PreSchool.Controllers.OrdersController.CustomerOrderCount (PreSchool), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 356.9076ms.
+2022-02-22 19:50:24.807 +05:45 [INF] Executing ObjectResult, writing value of type 'PreSchool.Application.Services.Orders.Models.Dtos.CustomerOrderCount'.
+2022-02-22 19:50:24.813 +05:45 [INF] Executed action PreSchool.Controllers.OrdersController.CustomerOrderCount (PreSchool) in 410.0184ms
+2022-02-22 19:50:24.813 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.OrdersController.CustomerOrderCount (PreSchool)'
+2022-02-22 19:50:24.814 +05:45 [INF] HTTP GET /api/Orders/Count responded 200 in 415.2185 ms
+2022-02-22 19:50:24.814 +05:45 [INF] Request finished in 505.0764ms 200 application/json; charset=utf-8
+2022-02-22 19:50:24.819 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:50:24.830 +05:45 [INF] Request finished in 11.6957ms 200 application/json
+2022-02-22 19:51:32.379 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Orders?OrderStatusId=10  
+2022-02-22 19:51:32.456 +05:45 [INF] Successfully validated the token.
+2022-02-22 19:51:32.457 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.OrdersController.OrderList (PreSchool)'
+2022-02-22 19:51:32.469 +05:45 [INF] Route matched with {action = "OrderList", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.Orders.Models.Dtos.OrderListDto]] OrderList(PreSchool.Application.Services.Orders.Models.Queries.OrderFilter) on controller PreSchool.Controllers.OrdersController (PreSchool).
+2022-02-22 19:51:32.538 +05:45 [INF] Executing action method PreSchool.Controllers.OrdersController.OrderList (PreSchool) - Validation state: "Valid"
+2022-02-22 19:51:32.551 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 19:51:32.856 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[@__filter_IncompleteCheckout_0='False', @__filter_OrderStatusId_1='10' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Order].[Order] AS [o]
+WHERE (([o].[IsDeleted] <> CAST(1 AS bit)) AND ([o].[IsCheckoutCompleted] <> @__filter_IncompleteCheckout_0)) AND ([o].[OrderStatusId] = @__filter_OrderStatusId_1)
+2022-02-22 19:51:33.249 +05:45 [INF] Executed DbCommand (325ms) [Parameters=[@__filter_IncompleteCheckout_0='False', @__filter_OrderStatusId_1='10' (Nullable = true), @__p_2='0', @__p_3='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [c].[CompanyName], [c].[DateOfBirth], [c].[Email], [c].[FirstName], [c].[GenderId], [c].[Id], [c].[IsIndividual], [c].[LastName], [c].[MiddleName], [c].[PanNumber], [c].[PhoneNumber], CASE
+    WHEN [c].[GenderId] IS NULL THEN NULL
+    ELSE [g].[DisplayName]
+END, [o].[CustomerIp], [o].[DiscountId], [o].[IsCheckoutCompleted], [o].[NumberOfShipping], [o].[OrderDiscount], [o].[CreatedOn], [o].[OrderNumber], [o].[OrderShipping], [o].[OrderStatusId], [o].[OrderSubtotal], [o].[OrderTax], [o].[OrderTotal], [o].[PaidDate], [o].[PaymentModeId], [o].[PaymentStatusId], [o].[PickupInStore], [o].[RefundedAmount], [o].[ShippingAddressId], [o].[ShippingStatusId], [o].[OrderStatusForCustomer], DATEADD(day, CAST(CAST((
+    SELECT MAX([d].[MaximumNoOfDays] + [d0].[MaximumNoOfDays])
+    FROM [Order].[Item] AS [i]
+    INNER JOIN [Catalog].[Product] AS [p] ON [i].[ProductId] = [p].[Id]
+    LEFT JOIN [Shipping].[DeliveryDateRange] AS [d] ON [p].[DeliveryDateRangeId] = [d].[Id]
+    LEFT JOIN [Shipping].[DeliveryDateRange] AS [d0] ON [p].[SellerDeliveryDateRangeId] = [d0].[Id]
+    WHERE [o].[Id] = [i].[OrderId]) AS float) AS int), [o].[CreatedOn])
+FROM [Order].[Order] AS [o]
+INNER JOIN [Customer].[Customer] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN [Customer].[Gender] AS [g] ON [c].[GenderId] = [g].[Id]
+WHERE (([o].[IsDeleted] <> CAST(1 AS bit)) AND ([o].[IsCheckoutCompleted] <> @__filter_IncompleteCheckout_0)) AND ([o].[OrderStatusId] = @__filter_OrderStatusId_1)
+ORDER BY (SELECT 1)
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2022-02-22 19:51:33.270 +05:45 [INF] Executed action method PreSchool.Controllers.OrdersController.OrderList (PreSchool), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 732.6183ms.
+2022-02-22 19:51:33.272 +05:45 [INF] Executing ObjectResult, writing value of type 'PreSchool.Application.PagedResult`1[[PreSchool.Application.Services.Orders.Models.Dtos.OrderListDto, PreSchool.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-02-22 19:51:33.308 +05:45 [INF] Executed action PreSchool.Controllers.OrdersController.OrderList (PreSchool) in 838.0525ms
+2022-02-22 19:51:33.308 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.OrdersController.OrderList (PreSchool)'
+2022-02-22 19:51:33.308 +05:45 [INF] HTTP GET /api/Orders?OrderStatusId=10 responded 200 in 851.0314 ms
+2022-02-22 19:51:33.308 +05:45 [INF] Request finished in 929.3792ms 200 application/json; charset=utf-8
+2022-02-22 19:51:33.313 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 19:51:33.315 +05:45 [INF] Request finished in 1.5589ms 200 application/json
+2022-02-22 20:02:21.088 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Orders?OrderStatusId=10  
+2022-02-22 20:02:21.101 +05:45 [INF] Successfully validated the token.
+2022-02-22 20:02:21.102 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.OrdersController.OrderList (PreSchool)'
+2022-02-22 20:02:21.104 +05:45 [INF] Route matched with {action = "OrderList", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.Orders.Models.Dtos.OrderListDto]] OrderList(PreSchool.Application.Services.Orders.Models.Queries.OrderFilter) on controller PreSchool.Controllers.OrdersController (PreSchool).
+2022-02-22 20:02:21.179 +05:45 [INF] Executing action method PreSchool.Controllers.OrdersController.OrderList (PreSchool) - Validation state: "Valid"
+2022-02-22 20:02:26.970 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 20:02:35.653 +05:45 [INF] Executed DbCommand (885ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[AllowStoringCreditCardNumber], [o].[AuthorizationTransactionCode], [o].[AuthorizationTransactionId], [o].[AuthorizationTransactionResult], [o].[BillingAddressId], [o].[CaptureTransactionId], [o].[CaptureTransactionResult], [o].[CardCvv2], [o].[CardExpirationMonth], [o].[CardExpirationYear], [o].[CardName], [o].[CardNumber], [o].[CardType], [o].[CheckoutAttributeTotal], [o].[CheckoutAttributesJson], [o].[CreatedBy], [o].[CreatedOn], [o].[CurrencyRate], [o].[CustomerCurrencyCode], [o].[CustomerId], [o].[CustomerIp], [o].[DiscountId], [o].[IsCheckoutCompleted], [o].[IsDeleted], [o].[IsShippingAddressNotUsable], [o].[MaskedCreditCardNumber], [o].[ModifiedBy], [o].[ModifiedOn], [o].[NumberOfShipping], [o].[OrderDiscount], [o].[OrderNumber], [o].[OrderShipping], [o].[OrderStatusForCustomer], [o].[OrderStatusId], [o].[OrderSubtotal], [o].[OrderTax], [o].[OrderTotal], [o].[PaidDate], [o].[PaymentModeId], [o].[PaymentStatusId], [o].[PickupInStore], [o].[RedeemedRewardPointsEntryId], [o].[RefundedAmount], [o].[Remark], [o].[RewardPointsHistoryEntryId], [o].[ShippingAddressId], [o].[ShippingStatusId], [o].[SubscriptionTransactionId], [c].[Id], [c].[CompanyName], [c].[CreatedBy], [c].[CreatedOn], [c].[DateOfBirth], [c].[Email], [c].[FirstName], [c].[GenderId], [c].[IsDeleted], [c].[IsIndividual], [c].[LastName], [c].[MiddleName], [c].[ModifiedBy], [c].[ModifiedOn], [c].[PanNumber], [c].[PhoneNumber], [g].[Id], [g].[Description], [g].[DisplayName], [g].[DisplayOrder], [g].[Name], [t].[Id], [t].[AttributesJson], [t].[CartId], [t].[CreatedBy], [t].[CreatedOn], [t].[DeliveryDate], [t].[DiscountAmount], [t].[DiscountId], [t].[DiscountPerUnitPrice], [t].[DisplayToVendor], [t].[DownloadCount], [t].[IsDeleted], [t].[IsDownloadActivated], [t].[ItemPrice], [t].[ItemSubTotal], [t].[ItemTotal], [t].[ItemWeight], [t].[LicenseDownloadId], [t].[ModifiedBy], [t].[ModifiedOn], [t].[OrderId], [t].[OrderItemNumber], [t].[OrderItemStatusId], [t].[ProductId], [t].[Quantity], [t].[Remark], [t].[RentalEndDateUtc], [t].[RentalStartDateUtc], [t].[ShipSeparately], [t].[ShippingStatusId], [t].[StoreId], [t].[TaxAmount], [t].[UnitPrice], [t].[VatAmount], [t].[VendorOrderStatusId], [t].[Id0], [t].[AdditionalShippingCharge], [t].[AdminComment], [t].[AllowBackInStockSubscriptions], [t].[AllowCustomerReviews], [t].[AllowedQuantities], [t].[AutomaticallyAddRequiredProducts], [t].[AvailableEndDateTime], [t].[AvailableForPreOrder], [t].[AvailableStartDateTime], [t].[Brand], [t].[BundleId], [t].[CallForPrice], [t].[CategoryId], [t].[Code], [t].[CreatedBy0], [t].[CreatedOn0], [t].[DeliveryDateRangeId], [t].[DisLikedCount], [t].[DisableBuyButton], [t].[DisableWishlistButton], [t].[DisplayOrder], [t].[DisplayStockAvailability], [t].[DisplayStockQuantity], [t].[DownloadExpirationDays], [t].[DownloadId], [t].[FullDescription], [t].[GiftCardType], [t].[GiftCardTypeId], [t].[HasDiscountsApplied], [t].[HasSampleDownload], [t].[HasTierPrices], [t].[HasUserAgreement], [t].[Height], [t].[IsAlwaysAvailable], [t].[IsBundleProduct], [t].[IsDangerousGoods], [t].[IsDeleted0], [t].[IsDownload], [t].[IsFreeShipping], [t].[IsGiftCard], [t].[IsRecurring], [t].[IsRental], [t].[IsShipEnabled], [t].[IsTaxExempt], [t].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [t].[IsVatableProduct], [t].[IsVendorProduct], [t].[Length], [t].[LikedCount], [t].[LimitedToStores], [t].[LowStockActivity], [t].[LowStockActivityId], [t].[ManageInventoryMethod], [t].[ManageInventoryMethodId], [t].[ManufacturerId], [t].[ManufacturerPartNumber], [t].[MarkAsNew], [t].[MarkAsNewEndDateTime], [t].[MarkAsNewStartDateTime], [t].[MaxNumberOfDownloads], [t].[MetaDescription], [t].[MetaKeywords], [t].[MetaTitle], [t].[MinStockQuantity], [t].[ModifiedBy0], [t].[ModifiedOn0], [t].[Name], [t].[NotReturnable], [t].[NotifyAdminForQuantityBelow], [t].[OldPrice], [t].[OrderMaximumQuantity], [t].[OrderMinimumQuantity], [t].[OverriddenGiftCardAmount], [t].[PreOrderAvailabilityStartDateTime], [t].[Price], [t].[ProductApprovalStatus], [t].[ProductApprovalStatusId], [t].[ProductAvailabilityRangeId], [t].[ProductCondition], [t].[ProductConditionId], [t].[ProductCost], [t].[ProductHighlights], [t].[ProductId0], [t].[Published], [t].[RecurringCycleLength], [t].[RecurringCyclePeriod], [t].[RecurringCyclePeriodId], [t].[RecurringTotalCycles], [t].[RentalPriceLength], [t].[RentalPricePeriod], [t].[RentalPricePeriodId], [t].[RequireOtherProducts], [t].[RequiredProductIds], [t].[ReturnTypeId], [t].[Review], [t].[ReviewCount], [t].[SampleDownloadId], [t].[SellerDeliveryDateRangeId], [t].[SellerPID], [t].[ShipSeparately0], [t].[ShortDescription], [t].[ShowOnHomepage], [t].[Slug], [t].[StockQuantity], [t].[TaxCategoryId], [t].[UnlimitedDownloads], [t].[UseMultipleWarehouses], [t].[UserAgreementText], [t].[VendorId], [t].[ViewCount], [t].[VisibleIndividually], [t].[WarrantyTypeId], [t].[Weight], [t].[Width], [t].[Id1], [t].[CreatedBy1], [t].[CreatedOn1], [t].[DisplayOrder0], [t].[IsDeleted1], [t].[MaximumNoOfDays], [t].[ModifiedBy1], [t].[ModifiedOn1], [t].[Name0], [t].[Id2], [t].[CreatedBy2], [t].[CreatedOn2], [t].[DisplayOrder1], [t].[IsDeleted2], [t].[MaximumNoOfDays0], [t].[ModifiedBy2], [t].[ModifiedOn2], [t].[Name1]
+FROM [Order].[Order] AS [o]
+INNER JOIN [Customer].[Customer] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN [Customer].[Gender] AS [g] ON [c].[GenderId] = [g].[Id]
+LEFT JOIN (
+    SELECT [i].[Id], [i].[AttributesJson], [i].[CartId], [i].[CreatedBy], [i].[CreatedOn], [i].[DeliveryDate], [i].[DiscountAmount], [i].[DiscountId], [i].[DiscountPerUnitPrice], [i].[DisplayToVendor], [i].[DownloadCount], [i].[IsDeleted], [i].[IsDownloadActivated], [i].[ItemPrice], [i].[ItemSubTotal], [i].[ItemTotal], [i].[ItemWeight], [i].[LicenseDownloadId], [i].[ModifiedBy], [i].[ModifiedOn], [i].[OrderId], [i].[OrderItemNumber], [i].[OrderItemStatusId], [i].[ProductId], [i].[Quantity], [i].[Remark], [i].[RentalEndDateUtc], [i].[RentalStartDateUtc], [i].[ShipSeparately], [i].[ShippingStatusId], [i].[StoreId], [i].[TaxAmount], [i].[UnitPrice], [i].[VatAmount], [i].[VendorOrderStatusId], [p].[Id] AS [Id0], [p].[AdditionalShippingCharge], [p].[AdminComment], [p].[AllowBackInStockSubscriptions], [p].[AllowCustomerReviews], [p].[AllowedQuantities], [p].[AutomaticallyAddRequiredProducts], [p].[AvailableEndDateTime], [p].[AvailableForPreOrder], [p].[AvailableStartDateTime], [p].[Brand], [p].[BundleId], [p].[CallForPrice], [p].[CategoryId], [p].[Code], [p].[CreatedBy] AS [CreatedBy0], [p].[CreatedOn] AS [CreatedOn0], [p].[DeliveryDateRangeId], [p].[DisLikedCount], [p].[DisableBuyButton], [p].[DisableWishlistButton], [p].[DisplayOrder], [p].[DisplayStockAvailability], [p].[DisplayStockQuantity], [p].[DownloadExpirationDays], [p].[DownloadId], [p].[FullDescription], [p].[GiftCardType], [p].[GiftCardTypeId], [p].[HasDiscountsApplied], [p].[HasSampleDownload], [p].[HasTierPrices], [p].[HasUserAgreement], [p].[Height], [p].[IsAlwaysAvailable], [p].[IsBundleProduct], [p].[IsDangerousGoods], [p].[IsDeleted] AS [IsDeleted0], [p].[IsDownload], [p].[IsFreeShipping], [p].[IsGiftCard], [p].[IsRecurring], [p].[IsRental], [p].[IsShipEnabled], [p].[IsTaxExempt], [p].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [p].[IsVatableProduct], [p].[IsVendorProduct], [p].[Length], [p].[LikedCount], [p].[LimitedToStores], [p].[LowStockActivity], [p].[LowStockActivityId], [p].[ManageInventoryMethod], [p].[ManageInventoryMethodId], [p].[ManufacturerId], [p].[ManufacturerPartNumber], [p].[MarkAsNew], [p].[MarkAsNewEndDateTime], [p].[MarkAsNewStartDateTime], [p].[MaxNumberOfDownloads], [p].[MetaDescription], [p].[MetaKeywords], [p].[MetaTitle], [p].[MinStockQuantity], [p].[ModifiedBy] AS [ModifiedBy0], [p].[ModifiedOn] AS [ModifiedOn0], [p].[Name], [p].[NotReturnable], [p].[NotifyAdminForQuantityBelow], [p].[OldPrice], [p].[OrderMaximumQuantity], [p].[OrderMinimumQuantity], [p].[OverriddenGiftCardAmount], [p].[PreOrderAvailabilityStartDateTime], [p].[Price], [p].[ProductApprovalStatus], [p].[ProductApprovalStatusId], [p].[ProductAvailabilityRangeId], [p].[ProductCondition], [p].[ProductConditionId], [p].[ProductCost], [p].[ProductHighlights], [p].[ProductId] AS [ProductId0], [p].[Published], [p].[RecurringCycleLength], [p].[RecurringCyclePeriod], [p].[RecurringCyclePeriodId], [p].[RecurringTotalCycles], [p].[RentalPriceLength], [p].[RentalPricePeriod], [p].[RentalPricePeriodId], [p].[RequireOtherProducts], [p].[RequiredProductIds], [p].[ReturnTypeId], [p].[Review], [p].[ReviewCount], [p].[SampleDownloadId], [p].[SellerDeliveryDateRangeId], [p].[SellerPID], [p].[ShipSeparately] AS [ShipSeparately0], [p].[ShortDescription], [p].[ShowOnHomepage], [p].[Slug], [p].[StockQuantity], [p].[TaxCategoryId], [p].[UnlimitedDownloads], [p].[UseMultipleWarehouses], [p].[UserAgreementText], [p].[VendorId], [p].[ViewCount], [p].[VisibleIndividually], [p].[WarrantyTypeId], [p].[Weight], [p].[Width], [d].[Id] AS [Id1], [d].[CreatedBy] AS [CreatedBy1], [d].[CreatedOn] AS [CreatedOn1], [d].[DisplayOrder] AS [DisplayOrder0], [d].[IsDeleted] AS [IsDeleted1], [d].[MaximumNoOfDays], [d].[ModifiedBy] AS [ModifiedBy1], [d].[ModifiedOn] AS [ModifiedOn1], [d].[Name] AS [Name0], [d0].[Id] AS [Id2], [d0].[CreatedBy] AS [CreatedBy2], [d0].[CreatedOn] AS [CreatedOn2], [d0].[DisplayOrder] AS [DisplayOrder1], [d0].[IsDeleted] AS [IsDeleted2], [d0].[MaximumNoOfDays] AS [MaximumNoOfDays0], [d0].[ModifiedBy] AS [ModifiedBy2], [d0].[ModifiedOn] AS [ModifiedOn2], [d0].[Name] AS [Name1]
+    FROM [Order].[Item] AS [i]
+    INNER JOIN [Catalog].[Product] AS [p] ON [i].[ProductId] = [p].[Id]
+    LEFT JOIN [Shipping].[DeliveryDateRange] AS [d] ON [p].[DeliveryDateRangeId] = [d].[Id]
+    LEFT JOIN [Shipping].[DeliveryDateRange] AS [d0] ON [p].[SellerDeliveryDateRangeId] = [d0].[Id]
+) AS [t] ON [o].[Id] = [t].[OrderId]
+WHERE [o].[IsDeleted] <> CAST(1 AS bit)
+ORDER BY [o].[Id], [c].[Id], [t].[Id], [t].[Id0]
+2022-02-22 20:02:39.455 +05:45 [ERR] An exception occurred while iterating over the results of a query for context type 'PreSchool.Infrastructure.ApplicationDbContext'.
+System.Threading.ThreadAbortException: System error.
+   at Microsoft.Data.SqlClient.SNINativeMethodWrapper.SNIReadSyncOverAsync(SNIHandle pConn, IntPtr& ppNewPacket, Int32 timeout)
+   at Microsoft.Data.SqlClient.TdsParserStateObjectNative.ReadSyncOverAsync(Int32 timeoutRemaining, UInt32& error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadUInt32(UInt32& value)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadPlpLength(Boolean returnPlpNullIfNull, UInt64& lengthLeft)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadPlpUnicodeChars(Char[]& buff, Int32 offst, Int32 len, TdsParserStateObject stateObj, Int32& totalCharsRead)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadSqlStringValue(SqlBuffer value, Byte type, Int32 length, Encoding encoding, Boolean isPlp, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadSqlValue(SqlBuffer value, SqlMetaDataPriv md, Int32 length, TdsParserStateObject stateObj, SqlCommandColumnEncryptionSetting columnEncryptionOverride, String columnName)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadColumnInternal(Int32 i, Boolean readHeaderOnly)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.CustomShaperCompilingExpressionVisitor.PopulateIncludeCollection[TIncludingEntity,TIncludedEntity](Int32 collectionId, QueryContext queryContext, DbDataReader dbDataReader, ResultCoordinator resultCoordinator, Func`3 parentIdentifier, Func`3 outerIdentifier, Func`3 selfIdentifier, Func`5 innerShaper, INavigation inverseNavigation, Action`2 fixup, Boolean trackingQuery)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+System.Threading.ThreadAbortException: System error.
+   at Microsoft.Data.SqlClient.SNINativeMethodWrapper.SNIReadSyncOverAsync(SNIHandle pConn, IntPtr& ppNewPacket, Int32 timeout)
+   at Microsoft.Data.SqlClient.TdsParserStateObjectNative.ReadSyncOverAsync(Int32 timeoutRemaining, UInt32& error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadUInt32(UInt32& value)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadPlpLength(Boolean returnPlpNullIfNull, UInt64& lengthLeft)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadPlpUnicodeChars(Char[]& buff, Int32 offst, Int32 len, TdsParserStateObject stateObj, Int32& totalCharsRead)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadSqlStringValue(SqlBuffer value, Byte type, Int32 length, Encoding encoding, Boolean isPlp, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadSqlValue(SqlBuffer value, SqlMetaDataPriv md, Int32 length, TdsParserStateObject stateObj, SqlCommandColumnEncryptionSetting columnEncryptionOverride, String columnName)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadColumnInternal(Int32 i, Boolean readHeaderOnly)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.CustomShaperCompilingExpressionVisitor.PopulateIncludeCollection[TIncludingEntity,TIncludedEntity](Int32 collectionId, QueryContext queryContext, DbDataReader dbDataReader, ResultCoordinator resultCoordinator, Func`3 parentIdentifier, Func`3 outerIdentifier, Func`3 selfIdentifier, Func`5 innerShaper, INavigation inverseNavigation, Action`2 fixup, Boolean trackingQuery)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.LargeArrayBuilder`1.AddRange(IEnumerable`1 items)
+   at System.Collections.Generic.EnumerableHelpers.ToArray[T](IEnumerable`1 source)
+   at System.Linq.SystemCore_EnumerableDebugView`1.get_Items()
+2022-02-22 20:03:09.766 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[@__filter_IncompleteCheckout_0='False', @__filter_OrderStatusId_1='10' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Order].[Order] AS [o]
+WHERE (([o].[IsDeleted] <> CAST(1 AS bit)) AND ([o].[IsCheckoutCompleted] <> @__filter_IncompleteCheckout_0)) AND ([o].[OrderStatusId] = @__filter_OrderStatusId_1)
+2022-02-22 20:03:10.054 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[@__filter_IncompleteCheckout_0='False', @__filter_OrderStatusId_1='10' (Nullable = true), @__p_2='0', @__p_3='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CustomerId], [c].[CompanyName], [c].[DateOfBirth], [c].[Email], [c].[FirstName], [c].[GenderId], [c].[Id], [c].[IsIndividual], [c].[LastName], [c].[MiddleName], [c].[PanNumber], [c].[PhoneNumber], CASE
+    WHEN [c].[GenderId] IS NULL THEN NULL
+    ELSE [g].[DisplayName]
+END, [o].[CustomerIp], [o].[DiscountId], [o].[IsCheckoutCompleted], [o].[NumberOfShipping], [o].[OrderDiscount], [o].[CreatedOn], [o].[OrderNumber], [o].[OrderShipping], [o].[OrderStatusId], [o].[OrderSubtotal], [o].[OrderTax], [o].[OrderTotal], [o].[PaidDate], [o].[PaymentModeId], [o].[PaymentStatusId], [o].[PickupInStore], [o].[RefundedAmount], [o].[ShippingAddressId], [o].[ShippingStatusId], [o].[OrderStatusForCustomer], DATEADD(day, CAST(CAST((
+    SELECT MAX([d].[MaximumNoOfDays] + [d0].[MaximumNoOfDays])
+    FROM [Order].[Item] AS [i]
+    INNER JOIN [Catalog].[Product] AS [p] ON [i].[ProductId] = [p].[Id]
+    LEFT JOIN [Shipping].[DeliveryDateRange] AS [d] ON [p].[DeliveryDateRangeId] = [d].[Id]
+    LEFT JOIN [Shipping].[DeliveryDateRange] AS [d0] ON [p].[SellerDeliveryDateRangeId] = [d0].[Id]
+    WHERE [o].[Id] = [i].[OrderId]) AS float) AS int), [o].[CreatedOn])
+FROM [Order].[Order] AS [o]
+INNER JOIN [Customer].[Customer] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN [Customer].[Gender] AS [g] ON [c].[GenderId] = [g].[Id]
+WHERE (([o].[IsDeleted] <> CAST(1 AS bit)) AND ([o].[IsCheckoutCompleted] <> @__filter_IncompleteCheckout_0)) AND ([o].[OrderStatusId] = @__filter_OrderStatusId_1)
+ORDER BY (SELECT 1)
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2022-02-22 20:03:10.058 +05:45 [INF] Executed action method PreSchool.Controllers.OrdersController.OrderList (PreSchool), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 48878.4083ms.
+2022-02-22 20:03:10.060 +05:45 [INF] Executing ObjectResult, writing value of type 'PreSchool.Application.PagedResult`1[[PreSchool.Application.Services.Orders.Models.Dtos.OrderListDto, PreSchool.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-02-22 20:03:10.063 +05:45 [INF] Executed action PreSchool.Controllers.OrdersController.OrderList (PreSchool) in 48958.5486ms
+2022-02-22 20:03:10.063 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.OrdersController.OrderList (PreSchool)'
+2022-02-22 20:03:10.063 +05:45 [INF] HTTP GET /api/Orders?OrderStatusId=10 responded 200 in 48961.1843 ms
+2022-02-22 20:03:10.096 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-22 20:03:10.098 +05:45 [INF] Request finished in 1.4151ms 200 application/json
+2022-02-22 20:03:43.478 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Orders?OrderStatusId=10  
+2022-02-22 20:03:43.480 +05:45 [INF] Successfully validated the token.
+2022-02-22 20:03:43.481 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.OrdersController.OrderList (PreSchool)'
+2022-02-22 20:03:43.481 +05:45 [INF] Route matched with {action = "OrderList", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.Orders.Models.Dtos.OrderListDto]] OrderList(PreSchool.Application.Services.Orders.Models.Queries.OrderFilter) on controller PreSchool.Controllers.OrdersController (PreSchool).
+2022-02-22 20:03:43.520 +05:45 [INF] Executing action method PreSchool.Controllers.OrdersController.OrderList (PreSchool) - Validation state: "Valid"
+2022-02-22 20:03:47.948 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-22 20:04:19.042 +05:45 [INF] Executed DbCommand (897ms) [Parameters=[@__filter_IncompleteCheckout_0='False'], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[AllowStoringCreditCardNumber], [o].[AuthorizationTransactionCode], [o].[AuthorizationTransactionId], [o].[AuthorizationTransactionResult], [o].[BillingAddressId], [o].[CaptureTransactionId], [o].[CaptureTransactionResult], [o].[CardCvv2], [o].[CardExpirationMonth], [o].[CardExpirationYear], [o].[CardName], [o].[CardNumber], [o].[CardType], [o].[CheckoutAttributeTotal], [o].[CheckoutAttributesJson], [o].[CreatedBy], [o].[CreatedOn], [o].[CurrencyRate], [o].[CustomerCurrencyCode], [o].[CustomerId], [o].[CustomerIp], [o].[DiscountId], [o].[IsCheckoutCompleted], [o].[IsDeleted], [o].[IsShippingAddressNotUsable], [o].[MaskedCreditCardNumber], [o].[ModifiedBy], [o].[ModifiedOn], [o].[NumberOfShipping], [o].[OrderDiscount], [o].[OrderNumber], [o].[OrderShipping], [o].[OrderStatusForCustomer], [o].[OrderStatusId], [o].[OrderSubtotal], [o].[OrderTax], [o].[OrderTotal], [o].[PaidDate], [o].[PaymentModeId], [o].[PaymentStatusId], [o].[PickupInStore], [o].[RedeemedRewardPointsEntryId], [o].[RefundedAmount], [o].[Remark], [o].[RewardPointsHistoryEntryId], [o].[ShippingAddressId], [o].[ShippingStatusId], [o].[SubscriptionTransactionId], [c].[Id], [c].[CompanyName], [c].[CreatedBy], [c].[CreatedOn], [c].[DateOfBirth], [c].[Email], [c].[FirstName], [c].[GenderId], [c].[IsDeleted], [c].[IsIndividual], [c].[LastName], [c].[MiddleName], [c].[ModifiedBy], [c].[ModifiedOn], [c].[PanNumber], [c].[PhoneNumber], [g].[Id], [g].[Description], [g].[DisplayName], [g].[DisplayOrder], [g].[Name], [t].[Id], [t].[AttributesJson], [t].[CartId], [t].[CreatedBy], [t].[CreatedOn], [t].[DeliveryDate], [t].[DiscountAmount], [t].[DiscountId], [t].[DiscountPerUnitPrice], [t].[DisplayToVendor], [t].[DownloadCount], [t].[IsDeleted], [t].[IsDownloadActivated], [t].[ItemPrice], [t].[ItemSubTotal], [t].[ItemTotal], [t].[ItemWeight], [t].[LicenseDownloadId], [t].[ModifiedBy], [t].[ModifiedOn], [t].[OrderId], [t].[OrderItemNumber], [t].[OrderItemStatusId], [t].[ProductId], [t].[Quantity], [t].[Remark], [t].[RentalEndDateUtc], [t].[RentalStartDateUtc], [t].[ShipSeparately], [t].[ShippingStatusId], [t].[StoreId], [t].[TaxAmount], [t].[UnitPrice], [t].[VatAmount], [t].[VendorOrderStatusId], [t].[Id0], [t].[AdditionalShippingCharge], [t].[AdminComment], [t].[AllowBackInStockSubscriptions], [t].[AllowCustomerReviews], [t].[AllowedQuantities], [t].[AutomaticallyAddRequiredProducts], [t].[AvailableEndDateTime], [t].[AvailableForPreOrder], [t].[AvailableStartDateTime], [t].[Brand], [t].[BundleId], [t].[CallForPrice], [t].[CategoryId], [t].[Code], [t].[CreatedBy0], [t].[CreatedOn0], [t].[DeliveryDateRangeId], [t].[DisLikedCount], [t].[DisableBuyButton], [t].[DisableWishlistButton], [t].[DisplayOrder], [t].[DisplayStockAvailability], [t].[DisplayStockQuantity], [t].[DownloadExpirationDays], [t].[DownloadId], [t].[FullDescription], [t].[GiftCardType], [t].[GiftCardTypeId], [t].[HasDiscountsApplied], [t].[HasSampleDownload], [t].[HasTierPrices], [t].[HasUserAgreement], [t].[Height], [t].[IsAlwaysAvailable], [t].[IsBundleProduct], [t].[IsDangerousGoods], [t].[IsDeleted0], [t].[IsDownload], [t].[IsFreeShipping], [t].[IsGiftCard], [t].[IsRecurring], [t].[IsRental], [t].[IsShipEnabled], [t].[IsTaxExempt], [t].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [t].[IsVatableProduct], [t].[IsVendorProduct], [t].[Length], [t].[LikedCount], [t].[LimitedToStores], [t].[LowStockActivity], [t].[LowStockActivityId], [t].[ManageInventoryMethod], [t].[ManageInventoryMethodId], [t].[ManufacturerId], [t].[ManufacturerPartNumber], [t].[MarkAsNew], [t].[MarkAsNewEndDateTime], [t].[MarkAsNewStartDateTime], [t].[MaxNumberOfDownloads], [t].[MetaDescription], [t].[MetaKeywords], [t].[MetaTitle], [t].[MinStockQuantity], [t].[ModifiedBy0], [t].[ModifiedOn0], [t].[Name], [t].[NotReturnable], [t].[NotifyAdminForQuantityBelow], [t].[OldPrice], [t].[OrderMaximumQuantity], [t].[OrderMinimumQuantity], [t].[OverriddenGiftCardAmount], [t].[PreOrderAvailabilityStartDateTime], [t].[Price], [t].[ProductApprovalStatus], [t].[ProductApprovalStatusId], [t].[ProductAvailabilityRangeId], [t].[ProductCondition], [t].[ProductConditionId], [t].[ProductCost], [t].[ProductHighlights], [t].[ProductId0], [t].[Published], [t].[RecurringCycleLength], [t].[RecurringCyclePeriod], [t].[RecurringCyclePeriodId], [t].[RecurringTotalCycles], [t].[RentalPriceLength], [t].[RentalPricePeriod], [t].[RentalPricePeriodId], [t].[RequireOtherProducts], [t].[RequiredProductIds], [t].[ReturnTypeId], [t].[Review], [t].[ReviewCount], [t].[SampleDownloadId], [t].[SellerDeliveryDateRangeId], [t].[SellerPID], [t].[ShipSeparately0], [t].[ShortDescription], [t].[ShowOnHomepage], [t].[Slug], [t].[StockQuantity], [t].[TaxCategoryId], [t].[UnlimitedDownloads], [t].[UseMultipleWarehouses], [t].[UserAgreementText], [t].[VendorId], [t].[ViewCount], [t].[VisibleIndividually], [t].[WarrantyTypeId], [t].[Weight], [t].[Width], [t].[Id1], [t].[CreatedBy1], [t].[CreatedOn1], [t].[DisplayOrder0], [t].[IsDeleted1], [t].[MaximumNoOfDays], [t].[ModifiedBy1], [t].[ModifiedOn1], [t].[Name0], [t].[Id2], [t].[CreatedBy2], [t].[CreatedOn2], [t].[DisplayOrder1], [t].[IsDeleted2], [t].[MaximumNoOfDays0], [t].[ModifiedBy2], [t].[ModifiedOn2], [t].[Name1]
+FROM [Order].[Order] AS [o]
+INNER JOIN [Customer].[Customer] AS [c] ON [o].[CustomerId] = [c].[Id]
+LEFT JOIN [Customer].[Gender] AS [g] ON [c].[GenderId] = [g].[Id]
+LEFT JOIN (
+    SELECT [i].[Id], [i].[AttributesJson], [i].[CartId], [i].[CreatedBy], [i].[CreatedOn], [i].[DeliveryDate], [i].[DiscountAmount], [i].[DiscountId], [i].[DiscountPerUnitPrice], [i].[DisplayToVendor], [i].[DownloadCount], [i].[IsDeleted], [i].[IsDownloadActivated], [i].[ItemPrice], [i].[ItemSubTotal], [i].[ItemTotal], [i].[ItemWeight], [i].[LicenseDownloadId], [i].[ModifiedBy], [i].[ModifiedOn], [i].[OrderId], [i].[OrderItemNumber], [i].[OrderItemStatusId], [i].[ProductId], [i].[Quantity], [i].[Remark], [i].[RentalEndDateUtc], [i].[RentalStartDateUtc], [i].[ShipSeparately], [i].[ShippingStatusId], [i].[StoreId], [i].[TaxAmount], [i].[UnitPrice], [i].[VatAmount], [i].[VendorOrderStatusId], [p].[Id] AS [Id0], [p].[AdditionalShippingCharge], [p].[AdminComment], [p].[AllowBackInStockSubscriptions], [p].[AllowCustomerReviews], [p].[AllowedQuantities], [p].[AutomaticallyAddRequiredProducts], [p].[AvailableEndDateTime], [p].[AvailableForPreOrder], [p].[AvailableStartDateTime], [p].[Brand], [p].[BundleId], [p].[CallForPrice], [p].[CategoryId], [p].[Code], [p].[CreatedBy] AS [CreatedBy0], [p].[CreatedOn] AS [CreatedOn0], [p].[DeliveryDateRangeId], [p].[DisLikedCount], [p].[DisableBuyButton], [p].[DisableWishlistButton], [p].[DisplayOrder], [p].[DisplayStockAvailability], [p].[DisplayStockQuantity], [p].[DownloadExpirationDays], [p].[DownloadId], [p].[FullDescription], [p].[GiftCardType], [p].[GiftCardTypeId], [p].[HasDiscountsApplied], [p].[HasSampleDownload], [p].[HasTierPrices], [p].[HasUserAgreement], [p].[Height], [p].[IsAlwaysAvailable], [p].[IsBundleProduct], [p].[IsDangerousGoods], [p].[IsDeleted] AS [IsDeleted0], [p].[IsDownload], [p].[IsFreeShipping], [p].[IsGiftCard], [p].[IsRecurring], [p].[IsRental], [p].[IsShipEnabled], [p].[IsTaxExempt], [p].[IsTelecommunicationsOrBroadcastingOrElectronicServices], [p].[IsVatableProduct], [p].[IsVendorProduct], [p].[Length], [p].[LikedCount], [p].[LimitedToStores], [p].[LowStockActivity], [p].[LowStockActivityId], [p].[ManageInventoryMethod], [p].[ManageInventoryMethodId], [p].[ManufacturerId], [p].[ManufacturerPartNumber], [p].[MarkAsNew], [p].[MarkAsNewEndDateTime], [p].[MarkAsNewStartDateTime], [p].[MaxNumberOfDownloads], [p].[MetaDescription], [p].[MetaKeywords], [p].[MetaTitle], [p].[MinStockQuantity], [p].[ModifiedBy] AS [ModifiedBy0], [p].[ModifiedOn] AS [ModifiedOn0], [p].[Name], [p].[NotReturnable], [p].[NotifyAdminForQuantityBelow], [p].[OldPrice], [p].[OrderMaximumQuantity], [p].[OrderMinimumQuantity], [p].[OverriddenGiftCardAmount], [p].[PreOrderAvailabilityStartDateTime], [p].[Price], [p].[ProductApprovalStatus], [p].[ProductApprovalStatusId], [p].[ProductAvailabilityRangeId], [p].[ProductCondition], [p].[ProductConditionId], [p].[ProductCost], [p].[ProductHighlights], [p].[ProductId] AS [ProductId0], [p].[Published], [p].[RecurringCycleLength], [p].[RecurringCyclePeriod], [p].[RecurringCyclePeriodId], [p].[RecurringTotalCycles], [p].[RentalPriceLength], [p].[RentalPricePeriod], [p].[RentalPricePeriodId], [p].[RequireOtherProducts], [p].[RequiredProductIds], [p].[ReturnTypeId], [p].[Review], [p].[ReviewCount], [p].[SampleDownloadId], [p].[SellerDeliveryDateRangeId], [p].[SellerPID], [p].[ShipSeparately] AS [ShipSeparately0], [p].[ShortDescription], [p].[ShowOnHomepage], [p].[Slug], [p].[StockQuantity], [p].[TaxCategoryId], [p].[UnlimitedDownloads], [p].[UseMultipleWarehouses], [p].[UserAgreementText], [p].[VendorId], [p].[ViewCount], [p].[VisibleIndividually], [p].[WarrantyTypeId], [p].[Weight], [p].[Width], [d].[Id] AS [Id1], [d].[CreatedBy] AS [CreatedBy1], [d].[CreatedOn] AS [CreatedOn1], [d].[DisplayOrder] AS [DisplayOrder0], [d].[IsDeleted] AS [IsDeleted1], [d].[MaximumNoOfDays], [d].[ModifiedBy] AS [ModifiedBy1], [d].[ModifiedOn] AS [ModifiedOn1], [d].[Name] AS [Name0], [d0].[Id] AS [Id2], [d0].[CreatedBy] AS [CreatedBy2], [d0].[CreatedOn] AS [CreatedOn2], [d0].[DisplayOrder] AS [DisplayOrder1], [d0].[IsDeleted] AS [IsDeleted2], [d0].[MaximumNoOfDays] AS [MaximumNoOfDays0], [d0].[ModifiedBy] AS [ModifiedBy2], [d0].[ModifiedOn] AS [ModifiedOn2], [d0].[Name] AS [Name1]
+    FROM [Order].[Item] AS [i]
+    INNER JOIN [Catalog].[Product] AS [p] ON [i].[ProductId] = [p].[Id]
+    LEFT JOIN [Shipping].[DeliveryDateRange] AS [d] ON [p].[DeliveryDateRangeId] = [d].[Id]
+    LEFT JOIN [Shipping].[DeliveryDateRange] AS [d0] ON [p].[SellerDeliveryDateRangeId] = [d0].[Id]
+) AS [t] ON [o].[Id] = [t].[OrderId]
+WHERE ([o].[IsDeleted] <> CAST(1 AS bit)) AND ([o].[IsCheckoutCompleted] <> @__filter_IncompleteCheckout_0)
+ORDER BY [o].[Id], [c].[Id], [t].[Id], [t].[Id0]
+2022-02-22 20:04:22.702 +05:45 [ERR] An exception occurred while iterating over the results of a query for context type 'PreSchool.Infrastructure.ApplicationDbContext'.
+System.Threading.ThreadAbortException: System error.
+   at Microsoft.Data.SqlClient.SNINativeMethodWrapper.SNIReadSyncOverAsync(SNIHandle pConn, IntPtr& ppNewPacket, Int32 timeout)
+   at Microsoft.Data.SqlClient.TdsParserStateObjectNative.ReadSyncOverAsync(Int32 timeoutRemaining, UInt32& error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadUInt32(UInt32& value)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadPlpLength(Boolean returnPlpNullIfNull, UInt64& lengthLeft)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadPlpUnicodeChars(Char[]& buff, Int32 offst, Int32 len, TdsParserStateObject stateObj, Int32& totalCharsRead)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadSqlStringValue(SqlBuffer value, Byte type, Int32 length, Encoding encoding, Boolean isPlp, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadSqlValue(SqlBuffer value, SqlMetaDataPriv md, Int32 length, TdsParserStateObject stateObj, SqlCommandColumnEncryptionSetting columnEncryptionOverride, String columnName)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadColumnData()
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadColumnInternal(Int32 i, Boolean readHeaderOnly)
+   at Microsoft.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.CustomShaperCompilingExpressionVisitor.<PopulateIncludeCollection>g__ProcessCurrentElementRow|9_0[TIncludingEntity,TIncludedEntity](<>c__DisplayClass9_0`2& )
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.CustomShaperCompilingExpressionVisitor.PopulateIncludeCollection[TIncludingEntity,TIncludedEntity](Int32 collectionId, QueryContext queryContext, DbDataReader dbDataReader, ResultCoordinator resultCoordinator, Func`3 parentIdentifier, Func`3 outerIdentifier, Func`3 selfIdentifier, Func`5 innerShaper, INavigation inverseNavigation, Action`2 fixup, Boolean trackingQuery)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+System.Threading.ThreadAbortException: System error.
+   at Microsoft.Data.SqlClient.SNINativeMethodWrapper.SNIReadSyncOverAsync(SNIHandle pConn, IntPtr& ppNewPacket, Int32 timeout)
+   at Microsoft.Data.SqlClient.TdsParserStateObjectNative.ReadSyncOverAsync(Int32 timeoutRemaining, UInt32& error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadUInt32(UInt32& value)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadPlpLength(Boolean returnPlpNullIfNull, UInt64& lengthLeft)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadPlpUnicodeChars(Char[]& buff, Int32 offst, Int32 len, TdsParserStateObject stateObj, Int32& totalCharsRead)
+   at Microsoft.Data.SqlClient.TdsParser.TryReadSqlStringValue(SqlBuffer value, Byte type, Int32 le

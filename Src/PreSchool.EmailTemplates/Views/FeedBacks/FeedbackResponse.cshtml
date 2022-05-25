@@ -1,0 +1,20 @@
+﻿@model PreSchool.EmailTemplates.ViewModels.FeedbackResponseEmailViewModel
+
+@{
+    Layout = "_EmailLayoutHtml";
+}
+
+<p>
+    Dear <b> @Model.Username </b>,
+</p>
+
+
+<p>
+    Your query submitted on <b>@Model.FormatedDate</b> has been addressed with following remarks.
+</p>
+<p>
+    @Model.Remark
+</p>
+<p>
+    Thank you for contacting us. We would request you to contact support department at <a href="mailto: @Model.SupportLink"> @Model.SupportLink</a> for further assistance.
+</p>

@@ -1,0 +1,9 @@
+@using PreSchool.EmailTemplates.ViewModels
+@model EmailViewModel
+
+@{
+    Layout = "_EmailLayoutText";
+    ViewContext.ViewData["EmailTitle"] = Model.Title;
+}
+
+@Model.Body

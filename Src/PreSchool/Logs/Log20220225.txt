@@ -1,0 +1,211 @@
+2022-02-25 15:53:42.349 +05:45 [INF] Web Application Starts...
+2022-02-25 15:53:46.951 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-25 15:53:47.524 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-25 15:53:50.771 +05:45 [INF] Executed DbCommand (455ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-25 15:53:51.131 +05:45 [INF] Executed DbCommand (319ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-25 15:53:51.416 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-25 15:53:51.705 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-25 15:53:52.326 +05:45 [INF] Executed DbCommand (569ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-25 15:53:52.493 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-25 15:53:52.854 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-25 15:53:53.140 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-25 15:53:54.268 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:53:54.602 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-25 15:53:54.909 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:53:55.211 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-25 15:53:55.580 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:53:55.869 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-25 15:53:56.161 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:53:56.451 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:53:56.839 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-25 15:53:57.422 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:53:57.708 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:53:58.085 +05:45 [INF] Executed DbCommand (293ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:53:58.395 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-25 15:53:58.688 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-25 15:53:58.977 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-25 15:53:59.267 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-25 15:53:59.554 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:53:59.850 +05:45 [INF] Executed DbCommand (288ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:54:00.137 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:54:00.419 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:54:00.705 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-25 15:54:00.990 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:54:01.274 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-25 15:54:01.554 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:54:01.834 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-25 15:54:02.120 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Notification].[ActivityType] AS [a]
+2022-02-25 15:54:02.623 +05:45 [INF] User profile is available. Using 'C:\Users\Sanjeeb\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-25 15:54:02.820 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-25 15:54:02.820 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-25 15:54:02.974 +05:45 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:44375/notifications/negotiate  
+2022-02-25 15:54:02.985 +05:45 [INF] Server sanjeeb-pc:34108:2c656a33 successfully announced in 148.2357 ms
+2022-02-25 15:54:02.990 +05:45 [INF] Server sanjeeb-pc:34108:2c656a33 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-25 15:54:02.999 +05:45 [INF] Server sanjeeb-pc:34108:2c656a33 all the dispatchers started
+2022-02-25 15:54:03.016 +05:45 [INF] CORS policy execution successful.
+2022-02-25 15:54:03.034 +05:45 [INF] Request finished in 61.6997ms 204 
+2022-02-25 15:54:03.054 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/notifications/negotiate text/plain;charset=UTF-8 0
+2022-02-25 15:54:03.055 +05:45 [INF] CORS policy execution successful.
+2022-02-25 15:54:03.487 +05:45 [INF] Successfully validated the token.
+2022-02-25 15:54:03.493 +05:45 [INF] Executing endpoint '/notifications/negotiate'
+2022-02-25 15:54:03.502 +05:45 [INF] Executed endpoint '/notifications/negotiate'
+2022-02-25 15:54:03.504 +05:45 [INF] HTTP POST /notifications/negotiate responded 200 in 11.1803 ms
+2022-02-25 15:54:03.505 +05:45 [INF] Request finished in 450.6893ms 200 application/json
+2022-02-25 15:54:03.530 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/notifications?id=s4ZQN0ZB6iIMRsrEbgaSiw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBVc2VySWQiOiI0IiwiVXNlclBlcm1pc3NzaW9ucyI6IjEsMTIsMTYsMzEsMzIsMzMsMzQsMzUiLCJTdG9yZUlkIjoiIiwidW5pcXVlX25hbWUiOiJzdXBlcmFkbWluIiwiQXBwdXNlclR5cGUiOiIxIiwiVmVuZG9ySWQiOiIiLCJDdXN0b21lcklkIjoiIiwibmJmIjoxNjQ1NjkzMDA5LCJleHAiOjE2NDYyOTc4MDksImlhdCI6MTY0NTY5MzAwOX0.IkE3QJ3YK-1dSGKOfsyHEjcEI01NecsWdbTHmpELcMU  
+2022-02-25 15:54:03.531 +05:45 [INF] CORS policy execution successful.
+2022-02-25 15:54:03.534 +05:45 [INF] Successfully validated the token.
+2022-02-25 15:54:03.534 +05:45 [INF] Executing endpoint '/notifications'
+2022-02-25 15:55:50.899 +05:45 [INF] Executed endpoint '/notifications'
+2022-02-25 15:55:50.899 +05:45 [INF] HTTP GET /notifications?id=s4ZQN0ZB6iIMRsrEbgaSiw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBVc2VySWQiOiI0IiwiVXNlclBlcm1pc3NzaW9ucyI6IjEsMTIsMTYsMzEsMzIsMzMsMzQsMzUiLCJTdG9yZUlkIjoiIiwidW5pcXVlX25hbWUiOiJzdXBlcmFkbWluIiwiQXBwdXNlclR5cGUiOiIxIiwiVmVuZG9ySWQiOiIiLCJDdXN0b21lcklkIjoiIiwibmJmIjoxNjQ1NjkzMDA5LCJleHAiOjE2NDYyOTc4MDksImlhdCI6MTY0NTY5MzAwOX0.IkE3QJ3YK-1dSGKOfsyHEjcEI01NecsWdbTHmpELcMU responded 101 in 107365.1717 ms
+2022-02-25 15:55:50.905 +05:45 [INF] Request finished in 107374.7216ms 101 

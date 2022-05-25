@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PreSchool</name>
+    </assembly>
+    <members>
+        <member name="M:PreSchool.Controllers.AddressesController.GetAllCountries(PreSchool.Application.Services.Addresses.Models.Filters.AddressFilter)">
+            <summary>
+            Get all countries
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.AddressesController.ProvincesByCountryId(System.Int32)">
+            <summary>
+            Get provinces.    
+            </summary>
+            <param name="countryId">0 to get all provinces</param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.AddressesController.CitiesByProvinceId(System.Int32)">
+            <summary>
+            Get Cities.
+            </summary>
+            <param name="provinceId"> 0 to get all provinces </param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.AddressesController.RegionsByCityId(System.Int32)">
+            <summary>
+            Get regions
+            </summary>
+            <param name="cityId">0 to get all regions</param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.AppFeaturesController.GetAllAppFeatures">
+            <summary>
+            Get all the appFeatures of application
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.AppFeaturesController.GetAllAppFeaturesByGrouping">
+            <summary>
+            Get all the appFeatures of application by grouping
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.AppFeaturesController.GetAllAppFeaturesAsEnum">
+            <summary>
+            Get all the appFeatures of application as enum
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.AppFeaturesController.AddUpdateAppFeaturesForStore(System.Collections.Generic.List{PreSchool.Application.Services.AppUsers.Models.Commands.AddUpdateStoreFeature})">
+            <summary>
+            Add / Update appFeature of the store, Returns true or false
+            </summary>
+            <param name="storeAppFeatures"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.AppFeaturesController.GetAppFeaturesOfStore(System.Int32)">
+            <summary>
+            Get appFeatures of the store
+            </summary>
+            <param name="id">Id of store</param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.AppUsersController.Login(PreSchool.Application.Models.AppUsers.Queries.Login)">
+            <summary>
+            Login to get token
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PreSchool.Controllers.AppUsersController.InsertAppUser(PreSchool.Application.Services.AppUsers.Models.Commands.InsertAppUser)" -->
+        <member name="M:PreSchool.Controllers.AppUsersController.UpdateAppUser(PreSchool.Application.Services.AppUsers.Models.Commands.UpdateAppUser)">
+            <summary>
+            Update the existing appuser, can be used for any type of user
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.ContactsController.GetContactbyIssueType(System.Int32)">
+            <summary>
+            get contact list by issue type id.
+            </summary>
+            <param name="issueTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.NotificationsController.TestNotification(PreSchool.Application.Services.Notifications.Models.Commands.InsertNotificationCommand)">
+            <summary>
+            Send notification for testing
+            </summary>
+            <param name="notification"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.NotificationsController.AddNotificationGroupSubscribedActivity(System.Int32,PreSchool.Application.Services.Notifications.Models.Commands.InsertNotificationGroupSubscribedActivity)">
+            <summary>
+            Add update subscribed activity of the notification group
+            </summary>
+            <param name="groupId"></param>
+            <param name="subscribedActivity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.NotificationsController.RemoveNotificationGroupSubscribedActivity(System.Int32,PreSchool.Application.Services.Notifications.Models.Commands.InsertNotificationGroupSubscribedActivity)">
+            <summary>
+            Remove the subscribed activity from the notification group
+            </summary>
+            <param name="subscribedActivity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.NotificationsController.AddNotificationGroupSubscriber(System.Int32,System.Collections.Generic.List{PreSchool.Application.Services.Notifications.Models.Commands.AddNotificationGroupSubscriber})">
+            <summary>
+            Add subscriber (Appusers) to notification group
+            </summary>
+            <param name="groupId"></param>
+            <param name="subscribers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.NotificationsController.RemoveNotificationGroupSubscriber(System.Int32,PreSchool.Application.Services.Notifications.Models.Commands.RemoveNotificationGroupSubscriber)">
+            <summary>
+            Remove subscriber from notification group
+            </summary>
+            <param name="groupId"></param>
+            <param name="subscriber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.NotificationsController.SendNotificationForActivity(PreSchool.Application.Services.Notifications.SendNotificationForActivity)">
+            <summary>
+            Send notification to all subscribed users for particular activity
+            IspId is null if notification is sent to internal user
+            </summary>
+            <param name="notification"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.PaymentsController.PaymentStatuses">
+            <summary>
+            Get Payment statuses
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.PermissionsController.GetAllPermissions">
+            <summary>
+            Get all the permissions of application
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.PermissionsController.GetAllPermissionsByGrouping">
+            <summary>
+            Get all the permissions of application by grouping
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.PermissionsController.GetAllPermissionsAsEnum">
+            <summary>
+            Get all the permissions of application as enum
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.RolesController.GetAllRoles">
+            <summary>
+            Get all roles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.RolesController.InsertRole(PreSchool.Application.Services.AppUsers.Models.Commands.InsertUpdateRole)">
+            <summary>
+            Create new role, Returns id of the new role
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.RolesController.UpdateRole(System.Int32,PreSchool.Application.Services.AppUsers.Models.Commands.InsertUpdateRole)">
+            <summary>
+            Update  role, Can be used for all type of role
+            </summary>
+            <param name="id">Id of the role</param>
+            <param name="role">Role</param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:PreSchool.Controllers.RolesController.InternalUserRoles">
+            <summary>
+            Get internal user role
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.RolesController.InsertInternalUserRoles(PreSchool.Application.Services.AppUsers.Models.Commands.InsertUpdateRole)">
+            <summary>
+            Add internal user role
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.RolesController.Role(System.Int32)">
+            <summary>
+            Get role by Id, can be used for all type of roles
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.RolesController.AddUpdatePermissionsForRole(System.Collections.Generic.List{PreSchool.Application.Services.AppConfigurations.Models.Commands.AddUpdateRolePermission})">
+            <summary>
+            Add / Update permission of the role, Returns true or false
+            </summary>
+            <param name="rolePermissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.RolesController.GetPermissionsOfRole(System.Int32)">
+            <summary>
+            Get permissions of the role
+            </summary>
+            <param name="id">Id of role</param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.RolesController.DeleteAppUser(System.Int32)">
+            <summary>
+            Delete the role, Returns ture or false
+            </summary>
+            <param name="roleId">role Id </param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.SettingsController.SeoViewModel">
+            <summary>
+            
+            </summary>
+            <remarks>
+            Required data for seo Post
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.TicketsController.GetTicketList(PreSchool.Application.Services.Tickets.Models.Filters.TicketFilter)">
+            <summary>
+            
+            </summary>
+            <remarks>
+            Sort Example : api/Tickets?SortBy[0].Name=columnName1&amp;SortBy[0].Desc=true&amp;SortBy[1].Name=columnName2
+            </remarks>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Controllers.TicketsController.GetAppUsersAssignedTicket(System.Int32)">
+            <summary>
+            View list of tickets that are assigned to appUser
+            </summary>
+            <param name="appUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreSchool.Extensions.IdentityExtension.HaveSuperPermission(Microsoft.AspNetCore.Http.HttpContext,PreSchool.Data.Enumerations.Permissions,PreSchool.Data.Enumerations.Permissions)">
+            <summary>
+            Check if the current user contain super permission of perticular permission or not
+            Eg: Let SuperPermission be ViewAllUsersDetail
+                and SubPermission be ViewMyUserDetail
+                then user can view all the user detail if user contain ViewAllUserDetail permission 
+                but can only view current user detail if user contain ViewMyUserDetail
+            </summary>
+            <param name="httpContext">Current context</param>
+            <param name="subPermission">sub permission of super permission</param>
+            <param name="superPermission"> super permission of sub permission</param>
+            <returns> True if user contain super permission, false if not else throw forbidden exception </returns>
+        </member>
+        <member name="M:PreSchool.Extensions.ServiceExtensions.ConfigureCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Enabling Cross-Origin Requests (CORS) for angular application
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>

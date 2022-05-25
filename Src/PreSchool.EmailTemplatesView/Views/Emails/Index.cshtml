@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Template List</h1>
+@foreach (var template in ViewBag.Templates)
+{
+    <a href="@Url.Action("Index","Emails",new {template= template })"> @template</a>
+    <br />
+}

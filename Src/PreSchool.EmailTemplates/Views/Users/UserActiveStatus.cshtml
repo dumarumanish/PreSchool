@@ -1,0 +1,17 @@
+﻿@model PreSchool.EmailTemplates.ViewModels.UserActiveStatusEmailViewModel
+
+@{
+    Layout = "_EmailLayoutHtml";
+}
+
+<p>
+    Dear <b> @Model.Username </b>,
+</p>
+<p>
+    This is to inform you that our administrative team, has kept your <b> User status </b> on <b>Active</b>, due to <b> @Model.Remark. </b>
+
+</p>
+<p>
+    We would request you to contact support department at <a href="mailto: @Model.SupportLink"> @Model.SupportLink</a> for further for further assistance.
+
+</p>

@@ -1,0 +1,800 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>eCommerce</name>
+    </assembly>
+    <members>
+        <member name="M:eCommerce.Controllers.AddressesController.GetAllCountries(eCommerce.Application.Services.Addresses.Models.Filters.AddressFilter)">
+            <summary>
+            Get all countries
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.AddressesController.ProvincesByCountryId(System.Int32)">
+            <summary>
+            Get provinces.    
+            </summary>
+            <param name="countryId">0 to get all provinces</param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.AddressesController.CitiesByProvinceId(System.Int32)">
+            <summary>
+            Get Cities.
+            </summary>
+            <param name="provinceId"> 0 to get all provinces </param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.AddressesController.RegionsByCityId(System.Int32)">
+            <summary>
+            Get regions
+            </summary>
+            <param name="cityId">0 to get all regions</param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.AppFeaturesController.GetAllAppFeatures">
+            <summary>
+            Get all the appFeatures of application
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.AppFeaturesController.GetAllAppFeaturesByGrouping">
+            <summary>
+            Get all the appFeatures of application by grouping
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.AppFeaturesController.GetAllAppFeaturesAsEnum">
+            <summary>
+            Get all the appFeatures of application as enum
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.AppFeaturesController.AddUpdateAppFeaturesForStore(System.Collections.Generic.List{eCommerce.Application.Services.AppUsers.Models.Commands.AddUpdateStoreFeature})">
+            <summary>
+            Add / Update appFeature of the store, Returns true or false
+            </summary>
+            <param name="storeAppFeatures"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.AppFeaturesController.GetAppFeaturesOfStore(System.Int32)">
+            <summary>
+            Get appFeatures of the store
+            </summary>
+            <param name="id">Id of store</param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.AppUsersController.Login(eCommerce.Application.Models.AppUsers.Queries.Login)">
+            <summary>
+            Login to get token
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:eCommerce.Controllers.AppUsersController.InsertAppUser(eCommerce.Application.Services.AppUsers.Models.Commands.InsertAppUser)" -->
+        <member name="M:eCommerce.Controllers.AppUsersController.UpdateAppUser(eCommerce.Application.Services.AppUsers.Models.Commands.UpdateAppUser)">
+            <summary>
+            Update the existing appuser, can be used for any type of user
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CampaignsController.InsertCampaign(eCommerce.Application.Services.Campaigns.Models.Commands.InsertUpdateCampaign)">
+            <summary>
+            Campaign 
+            </summary>
+            <param name="Campaign"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CampaignsController.InsertUpdateCampaignImage(System.Int32,eCommerce.Application.Services.Campaigns.Models.Commands.InsertUpdateCampaignImage)">
+            <summary>
+            Add campaign image
+            </summary>
+            <param name="campaignId"></param>
+            <param name="image"></param>
+            <returns></returns>
+            <remarks>
+            images is array of {
+            imageName string,
+            image string ($binary)
+            }
+            </remarks>
+        </member>
+        <member name="M:eCommerce.Controllers.CatalogsController.GenerateCategoryCode(System.String)">
+            <summary>
+            to generate category code.
+            </summary>
+            <param name="categoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CatalogsController.GetProductForCustomerBySlug(System.String)">
+            <summary>
+            get product by slug.
+            </summary>
+            <param name="Slug"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CatalogsController.ProductsForCustomer(eCommerce.Application.Services.Catalog.Models.Queries.ProductFilterForCustomer)">
+            <summary>
+            can be filter through the pagination by sortorder,page no.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CatalogsController.InsertUpdateProductShipping(System.Int32,eCommerce.Application.Services.Catalog.Models.Commands.InsertUpdateProductShipping)">
+            <summary>
+            add shipping of product.
+            </summary>
+            <param name="productId"></param>
+            <param name="shippingCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CatalogsController.GetProductTags(eCommerce.Application.Services.Catalog.Models.Queries.ProductFilter)">
+            <summary>
+            to get all product tags.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CatalogsController.ProductImportFieldValues">
+            <summary>
+            to get all listed field values.
+            eg: categories , wrantyTypes etc.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.ContactsController.GetContactbyIssueType(System.Int32)">
+            <summary>
+            get contact list by issue type id.
+            </summary>
+            <param name="issueTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CustomersController.InsertCustomer(eCommerce.Application.Services.Customers.Models.Commands.InsertCustomer)">
+            <summary>
+            Customer Registration
+            </summary>
+            <param name="Customer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CustomersController.ResendVerificationCode(eCommerce.Application.Services.Customers.Models.Commands.ResendPhonenumberVerificationCode)">
+            <summary>
+            resend verification code for the account activation.
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CustomersController.EmailVerification(System.String)">
+            <summary>
+            Email Verification use 
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CustomersController.ResendVerificationEmailLink(eCommerce.Application.Services.Customers.Models.Commands.ResendEmailVerificationLink)">
+            <summary>
+            for the resend verification link.
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.CustomersController.InsertUpdateCustomerDocument(System.Int32,eCommerce.Application.Services.Customers.Models.Commands.InsertCustomerDocument)">
+            <summary>
+            Add customer registration document
+            </summary>
+            <param name="customerId"></param>
+            <param name="document"></param>
+            <returns></returns>
+            <remarks>
+            images is array of {
+            imageName string,
+            image string ($binary)
+            }
+            </remarks>
+        </member>
+        <member name="M:eCommerce.Controllers.CustomersController.GetCustomerWishListProduct(System.Int32,System.Int32)">
+            <summary>
+            GetCustomerWishListProduct
+            </summary>
+            <param name="customerId"></param>
+            <param name="productId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.DiscountsController.InsertDiscount(eCommerce.Application.Services.Discounts.Models.Commands.InsertUpdateDiscount)">
+            <summary>
+            Discount 
+            </summary>
+            <param name="Discount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.GroupManagementsController.GetAllGroupmanagements(eCommerce.Application.Services.GroupManagements.Models.Queries.GroupManagementFilter)">
+            <summary>
+            to get all the groups for the customer subscription and the seller registration.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.MarketPlacesController.InsertCampaign(eCommerce.Application.Services.Campaigns.Models.Commands.InsertUpdateCampaign)">
+            <summary>
+            marketPlaces 
+            </summary>
+            <param name="Campaign"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.MarketPlacesController.InsertUpdateCampaignImage(System.Int32,eCommerce.Application.Services.Campaigns.Models.Commands.InsertUpdateCampaignImage)">
+            <summary>
+            Add marketPlaces image
+            </summary>
+            <param name="campaignId"></param>
+            <param name="image"></param>
+            <returns></returns>
+            <remarks>
+            images is array of {
+            imageName string,
+            image string ($binary)
+            }
+            </remarks>
+        </member>
+        <member name="M:eCommerce.Controllers.MarketPlacesController.CampaignProductByCampaignName(eCommerce.Application.Services.Campaigns.Models.Queries.CampaignProductFilter)">
+            <summary>
+            get product by campaign name.
+            </summary>
+            <param name="campaignName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.MarketPlacesController.CampaignListForCustomer">
+            <summary>
+            get all campaign name for customer.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.NotificationsController.TestNotification(eCommerce.Application.Services.Notifications.Models.Commands.InsertNotificationCommand)">
+            <summary>
+            Send notification for testing
+            </summary>
+            <param name="notification"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.NotificationsController.AddNotificationGroupSubscribedActivity(System.Int32,eCommerce.Application.Services.Notifications.Models.Commands.InsertNotificationGroupSubscribedActivity)">
+            <summary>
+            Add update subscribed activity of the notification group
+            </summary>
+            <param name="groupId"></param>
+            <param name="subscribedActivity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.NotificationsController.RemoveNotificationGroupSubscribedActivity(System.Int32,eCommerce.Application.Services.Notifications.Models.Commands.InsertNotificationGroupSubscribedActivity)">
+            <summary>
+            Remove the subscribed activity from the notification group
+            </summary>
+            <param name="subscribedActivity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.NotificationsController.AddNotificationGroupSubscriber(System.Int32,System.Collections.Generic.List{eCommerce.Application.Services.Notifications.Models.Commands.AddNotificationGroupSubscriber})">
+            <summary>
+            Add subscriber (Appusers) to notification group
+            </summary>
+            <param name="groupId"></param>
+            <param name="subscribers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.NotificationsController.RemoveNotificationGroupSubscriber(System.Int32,eCommerce.Application.Services.Notifications.Models.Commands.RemoveNotificationGroupSubscriber)">
+            <summary>
+            Remove subscriber from notification group
+            </summary>
+            <param name="groupId"></param>
+            <param name="subscriber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.NotificationsController.SendNotificationForActivity(eCommerce.Application.Services.Notifications.SendNotificationForActivity)">
+            <summary>
+            Send notification to all subscribed users for particular activity
+            IspId is null if notification is sent to internal user
+            </summary>
+            <param name="notification"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.OrderList(eCommerce.Application.Services.Orders.Models.Queries.OrderFilter)">
+            <summary>
+            
+            </summary>
+            <remarks>
+            Sort Example : api/Orders?SortBy[0].Name=columnName1&amp;SortBy[0].Desc=true&amp;SortBy[1].Name=columnName2
+            </remarks>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.CustomerOrderItem(eCommerce.Application.Services.Orders.Models.Queries.OrderItemFilter)">
+            <summary>
+            All individual order items
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+            <remarks>For vendor, return only vendor's product order</remarks>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.CustomerOrderItemForSeller(eCommerce.Application.Services.Orders.Models.Queries.OrderItemFilter)">
+            <summary>
+            Seller order Items
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.VendorOrderStatuses">
+            <summary>
+            Order item statuses for vendor
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.ChangeVendorOrderStatus(System.Int32,System.Int32,eCommerce.Application.Services.Orders.Models.Commands.ChangeVendorOrderStatus)">
+            <summary>
+            Change vendor order status of the order item
+            </summary>
+            <param name="orderId"></param>
+            <param name="orderItemId"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.OrderItemStatuses">
+            <summary>
+            to get order item status
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.ChangeOrderItemStatus(System.Int32,System.Int32,eCommerce.Application.Services.Orders.Models.Commands.ChangeOrderItemStatus)">
+            <summary>
+            to change order item status
+            </summary>
+            <param name="orderId"></param>
+            <param name="orderItemId"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.OrderStatuses">
+            <summary>
+            Get Order statuses
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.ChangeOrderStatus(System.Int32,eCommerce.Application.Services.Orders.Models.Commands.ChangeOrderStatus)">
+            <summary>
+            Change order status
+            </summary>
+            <param name="orderId"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.ShippingStatuses">
+            <summary>
+            Get shipping statuses
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.ChangeShippingStatus(System.Int32,eCommerce.Application.Services.Orders.Models.Commands.ChangeShippingStatus)">
+            <summary>
+            Change Shipping status
+            </summary>
+            <param name="orderId"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.OrderCancelled(System.Int32)">
+            <summary>
+            order that can be cancel by customer before confirmed.
+            </summary>
+            <param name="orderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.OrdersController.GeneratePackageNumber(System.Int32)">
+            <summary>
+            generate package number of order.
+            </summary>
+            <param name="OrderItemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.AddPageInMenu(System.Int32,System.Int32,eCommerce.Application.Services.PageContents.Models.Commands.AddRemovePageInMenu)">
+            <summary>
+            Add pages to the menus
+            </summary>
+            <param name="menuId"></param>
+            <param name="pageId"></param>
+            <param name="add"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.RemovePageInMenu(System.Int32,System.Int32,eCommerce.Application.Services.PageContents.Models.Commands.AddRemovePageInMenu)">
+            <summary>
+            Remove page from the menus
+            </summary>
+            <param name="menuId"></param>
+            <param name="pageId"></param>
+            <param name="add"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.UpdateSliderImages(eCommerce.Application.Services.PageContents.Models.Commands.UpdateSliderImage)">
+            <summary>
+            Change Slider ShowOnhome
+            </summary>
+            <param name="image"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.GetSectionGroups">
+            <summary>
+            get all section groups.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.InsertSectionGroup(eCommerce.Application.Services.PageContents.Models.Commands.InsertUpdateSectionGroup)">
+            <summary>
+            add section group.
+            </summary>
+            <param name="groupCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.UpdateSectionGroup(System.Int32,eCommerce.Application.Services.PageContents.Models.Commands.InsertUpdateSectionGroup)">
+            <summary>
+            update section group.
+            </summary>
+            <param name="Id"></param>
+            <param name="groupCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.InsertSection(System.Int32,eCommerce.Application.Services.PageContents.Models.Commands.InsertSection)">
+            <summary>
+            add section on section group.
+            </summary>
+            <param name="Id"></param>
+            <param name="sectionCmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.UpdateSection(System.Int32,eCommerce.Application.Services.PageContents.Models.Commands.UpdateSection)">
+            <summary>
+            update section
+            </summary>
+            <param name="sectionCmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.InsertUpdateSubSection(System.Int32,eCommerce.Application.Services.PageContents.Models.Commands.UpdateSubSection)">
+            <summary>
+            update or add sub section on section.
+            </summary>
+            <param name="sectionCmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.DeleteSectionGroup(System.Int32)">
+            <summary>
+            to delete the section group.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.DeleteSection(System.Int32)">
+            <summary>
+            to delete the section.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.DeleteSubSection(System.Int32)">
+            <summary>
+            to delete the sub section of section.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.GetAllSubSectionsForCustomer(System.Int32,eCommerce.Application.Services.PageContents.Models.Queries.SubSectionFilter)">
+            <summary>
+            get all sub section by sectionId.
+            </summary>
+            <param name="SectionId"></param>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.GetDialogContents(eCommerce.Application.Services.PageContents.Models.Queries.DialogContentFilter)">
+            <summary>
+            dialog content for admin side.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.GetDialogContentForCustomer">
+            <summary>
+            dialog content for customer side.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.GetDialogContentForAdmin">
+            <summary>
+            dialog content for admin side.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PageContentsController.UpdateDialogContent(eCommerce.Application.Services.PageContents.Models.Commands.UpdateDialogContent)">
+            <summary>
+            Change dialog content ShowOnhome,isactive or admin section show.
+            </summary>
+            <param name="image"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PaymentsController.PaymentStatuses">
+            <summary>
+            Get Payment statuses
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PaymentsController.GetPaymentTransactionToken(eCommerce.Application.Services.Payments.Models.Commands.GetPaymentToken)">
+            <summary>
+            Get transaction token for the order
+            </summary>
+            <param name="getPaymentToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PermissionsController.GetAllPermissions">
+            <summary>
+            Get all the permissions of application
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PermissionsController.GetAllPermissionsByGrouping">
+            <summary>
+            Get all the permissions of application by grouping
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.PermissionsController.GetAllPermissionsAsEnum">
+            <summary>
+            Get all the permissions of application as enum
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.ReviewsController.GetAllReviewsofProductByProductId(eCommerce.Application.Services.Reviews.Models.Queries.ProductReviewsFilter)">
+            <summary>
+            get all customer product reviews
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.ReviewsController.GetReviewByProductId(System.Int32)">
+            <summary>
+            get custer purchase review by product id.
+            </summary>
+            <param name="ProductId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.ReviewsController.ReviewPublish(System.Int32,eCommerce.Application.Services.Reviews.Models.Commands.ReviewPublish)">
+            <summary>
+            reviews can be published that are shown on product detail.
+            </summary>
+            <param name="ReviewId"></param>
+            <param name="reviewCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.ReviewsController.ReplyReviewed(System.Int32,eCommerce.Application.Services.Reviews.Models.Commands.ReplyReviewed)">
+            <summary>
+            reply to the reviewed of customer.
+            </summary>
+            <param name="ReviewId"></param>
+            <param name="reviewCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.ReviewsController.ViewReplyMessage(System.Int32,eCommerce.Application.Services.Reviews.Models.Commands.ViewReplyMessage)">
+            <summary>
+            chang show/published the reply message of approved reviews.
+            </summary>
+            <param name="ReviewId"></param>
+            <param name="reviewCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.ReviewsController.PublisedReviewLikeDislike(System.Int32,eCommerce.Application.Services.Reviews.Models.Commands.PublisedReviewLikeDislike)">
+            <summary>
+            published review can be like or disklike by other customer.
+            </summary>
+            <param name="ReviewId"></param>
+            <param name="reviewCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.GetAllRoles">
+            <summary>
+            Get all roles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.InsertRole(eCommerce.Application.Services.AppUsers.Models.Commands.InsertUpdateRole)">
+            <summary>
+            Create new role, Returns id of the new role
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.UpdateRole(System.Int32,eCommerce.Application.Services.AppUsers.Models.Commands.InsertUpdateRole)">
+            <summary>
+            Update  role, Can be used for all type of role
+            </summary>
+            <param name="id">Id of the role</param>
+            <param name="role">Role</param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.InternalUserRoles">
+            <summary>
+            Get internal user role
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.InsertInternalUserRoles(eCommerce.Application.Services.AppUsers.Models.Commands.InsertUpdateRole)">
+            <summary>
+            Add internal user role
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.StoresUserRoles(System.Int32)">
+            <summary>
+            Get role of particular store
+            </summary>
+            <param name="storeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.InsertStoreUserRoles(eCommerce.Application.Services.AppUsers.Models.Commands.InsertUpdateStoreRole)">
+            <summary>
+            Add role of particular store
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.VendorsUserRoles(System.Int32,System.Int32)">
+            <summary>
+            Get role of particular vendor
+            </summary>
+            <param name="storeId"></param>
+            <param name="vendorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.InsertVendorUserRoles(eCommerce.Application.Services.AppUsers.Models.Commands.InsertUpdateVendorRole)">
+            <summary>
+            Add role of particular vendor
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.Role(System.Int32)">
+            <summary>
+            Get role by Id, can be used for all type of roles
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.AddUpdatePermissionsForRole(System.Collections.Generic.List{eCommerce.Application.Services.AppConfigurations.Models.Commands.AddUpdateRolePermission})">
+            <summary>
+            Add / Update permission of the role, Returns true or false
+            </summary>
+            <param name="rolePermissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.GetPermissionsOfRole(System.Int32)">
+            <summary>
+            Get permissions of the role
+            </summary>
+            <param name="id">Id of role</param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.RolesController.DeleteAppUser(System.Int32)">
+            <summary>
+            Delete the role, Returns ture or false
+            </summary>
+            <param name="roleId">role Id </param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.SettingsController.SeoViewModel">
+            <summary>
+            
+            </summary>
+            <remarks>
+            Required data for seo Post
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.ShippingsController.ChangeShippingStatus(System.Int32,eCommerce.Application.Services.Shippings.Models.Commands.ChangeOrderItemShippingStatus)">
+            <summary>
+            Change Shipping status
+            </summary>
+            <param name="Id"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.ShippingsController.CustomerShippingAddress">
+            <summary>
+            to get all the existing shipping address of customer.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.ShippingsController.CustomerRemoveOldShippingAddress(System.Int32)">
+             <summary>
+            use for customer weather to show or not this shipping address in ordering next order.
+             </summary>
+             <param name="ShippingAddressId"></param>
+             <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.TicketsController.GetTicketList(eCommerce.Application.Services.Tickets.Models.Filters.TicketFilter)">
+            <summary>
+            
+            </summary>
+            <remarks>
+            Sort Example : api/Tickets?SortBy[0].Name=columnName1&amp;SortBy[0].Desc=true&amp;SortBy[1].Name=columnName2
+            </remarks>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.TicketsController.GetAppUsersAssignedTicket(System.Int32)">
+            <summary>
+            View list of tickets that are assigned to appUser
+            </summary>
+            <param name="appUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.VendorsController.EmailVerification(System.String)">
+            <summary>
+            Email Verification use 
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.VendorsController.ResendVerificationEmailLink(eCommerce.Application.Services.Vendors.Models.Commands.SendEmailVerificationLink)">
+            <summary>
+            for the resend verification link.
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.VendorsController.GetVendorType">
+            <summary>
+            Vendor type like IndividualSeller, Brand, Reseller,..
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.VendorsController.GetDocumentTypes">
+            <summary>
+            Type of document for vendor registration
+            Eg: Citizenship, PAN, ...
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.VendorsController.InsertVendor(eCommerce.Application.Services.Vendors.Models.Commands.InsertUpdateVendor)">
+            <summary>
+            Vendor Registration
+            </summary>
+            <param name="Vendor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eCommerce.Controllers.VendorsController.InsertUpdateVendorDocument(System.Int32,eCommerce.Application.Services.Vendors.Models.Commands.InsertVendorDocument)">
+            <summary>
+            Add vendor registration document
+            </summary>
+            <param name="vendorId"></param>
+            <param name="document"></param>
+            <returns></returns>
+            <remarks>
+            images is array of {
+            imageName string,
+            image string ($binary)
+            }
+            </remarks>
+        </member>
+        <member name="M:eCommerce.Extensions.IdentityExtension.HaveSuperPermission(Microsoft.AspNetCore.Http.HttpContext,eCommerce.Data.Enumerations.Permissions,eCommerce.Data.Enumerations.Permissions)">
+            <summary>
+            Check if the current user contain super permission of perticular permission or not
+            Eg: Let SuperPermission be ViewAllUsersDetail
+                and SubPermission be ViewMyUserDetail
+                then user can view all the user detail if user contain ViewAllUserDetail permission 
+                but can only view current user detail if user contain ViewMyUserDetail
+            </summary>
+            <param name="httpContext">Current context</param>
+            <param name="subPermission">sub permission of super permission</param>
+            <param name="superPermission"> super permission of sub permission</param>
+            <returns> True if user contain super permission, false if not else throw forbidden exception </returns>
+        </member>
+        <member name="M:eCommerce.Extensions.ServiceExtensions.ConfigureCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Enabling Cross-Origin Requests (CORS) for angular application
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>

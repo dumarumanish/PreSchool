@@ -1,0 +1,19 @@
+﻿@model PreSchool.EmailTemplates.ViewModels.BlogPublishedEmailViewModel
+
+@{
+    Layout = "_EmailLayoutHtml";
+}
+
+<p>
+    Dear <b> @Model.Username </b>,
+</p>
+<p>
+    Congratulations your blog has been published.
+</p>
+<p>
+    Your blog with <b>@Model.BlogTitle</b>, has been published by our admin team. You can view your published blog on <b><a href="@Model.BlogUrl">@Model.BlogUrl</a></b>.
+</p>
+
+<p>
+    We would like to thank you for your contribution and look forward for further participation on this academic journey.
+</p>

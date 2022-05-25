@@ -1,0 +1,1727 @@
+2022-02-14 16:07:17.436 +05:45 [INF] Web Application Starts...
+2022-02-14 16:07:34.215 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-14 16:07:34.396 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:07:36.580 +05:45 [INF] Executed DbCommand (312ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:07:36.906 +05:45 [INF] Executed DbCommand (309ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:07:37.195 +05:45 [INF] Executed DbCommand (285ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:07:37.490 +05:45 [INF] Executed DbCommand (293ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:07:37.798 +05:45 [INF] Executed DbCommand (290ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-14 16:07:37.827 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-14 16:07:38.119 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:07:38.409 +05:45 [INF] Executed DbCommand (287ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-14 16:07:38.990 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:39.314 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-14 16:07:39.619 +05:45 [INF] Executed DbCommand (289ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:39.911 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-14 16:07:40.273 +05:45 [INF] Executed DbCommand (288ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:40.566 +05:45 [INF] Executed DbCommand (285ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-14 16:07:40.871 +05:45 [INF] Executed DbCommand (287ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:41.170 +05:45 [INF] Executed DbCommand (287ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:41.605 +05:45 [INF] Executed DbCommand (297ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-14 16:07:42.159 +05:45 [INF] Executed DbCommand (290ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:42.455 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:42.893 +05:45 [INF] Executed DbCommand (315ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:43.207 +05:45 [INF] Executed DbCommand (285ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-14 16:07:43.508 +05:45 [INF] Executed DbCommand (292ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-14 16:07:43.801 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-14 16:07:44.103 +05:45 [INF] Executed DbCommand (293ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-14 16:07:44.398 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:44.690 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:44.984 +05:45 [INF] Executed DbCommand (285ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:45.277 +05:45 [INF] Executed DbCommand (285ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:45.568 +05:45 [INF] Executed DbCommand (285ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-14 16:07:45.858 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:46.156 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-14 16:07:46.448 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:46.737 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:07:47.680 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-14 16:07:47.838 +05:45 [INF] Creating key {15ab823f-7960-4181-ac43-a0f5e722c8ee} with creation date 2022-02-14 10:22:47Z, activation date 2022-02-14 10:22:47Z, and expiration date 2022-05-15 10:22:47Z.
+2022-02-14 16:07:47.867 +05:45 [INF] Writing data to file 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys\key-15ab823f-7960-4181-ac43-a0f5e722c8ee.xml'.
+2022-02-14 16:07:48.223 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/  
+2022-02-14 16:07:48.223 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-14 16:07:48.223 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/  
+2022-02-14 16:07:48.270 +05:45 [INF] Request finished in 40.4513ms 200 
+2022-02-14 16:07:48.422 +05:45 [INF] Request finished in 207.9063ms 301 
+2022-02-14 16:07:48.423 +05:45 [INF] Request finished in 208.8666ms 301 
+2022-02-14 16:07:48.443 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-14 16:07:48.495 +05:45 [INF] Request finished in 51.8847ms 200 text/html;charset=utf-8
+2022-02-14 16:07:48.501 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-14 16:07:48.505 +05:45 [INF] Request finished in 4.3688ms 200 text/html;charset=utf-8
+2022-02-14 16:07:48.533 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui.css  
+2022-02-14 16:07:48.533 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/profiler/includes.min.js?v=4.0.138+gcc91adf599  
+2022-02-14 16:07:48.533 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui-bundle.js  
+2022-02-14 16:07:48.551 +05:45 [INF] Request finished in 18.2708ms 200 application/javascript
+2022-02-14 16:07:48.610 +05:45 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-02-14 16:07:48.610 +05:45 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-02-14 16:07:48.614 +05:45 [INF] Request finished in 81.0914ms 200 text/css
+2022-02-14 16:07:48.614 +05:45 [INF] Request finished in 81.0167ms 200 application/javascript
+2022-02-14 16:07:48.627 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui-standalone-preset.js  
+2022-02-14 16:07:48.635 +05:45 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-02-14 16:07:48.636 +05:45 [INF] Request finished in 8.5813ms 200 application/javascript
+2022-02-14 16:07:49.021 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-14 16:07:49.079 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/favicon-32x32.png  
+2022-02-14 16:07:49.080 +05:45 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-02-14 16:07:49.081 +05:45 [INF] Request finished in 1.4039ms 200 image/png
+2022-02-14 16:07:49.316 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/profiler/includes.min.css?v=4.0.138+gcc91adf599  
+2022-02-14 16:07:49.317 +05:45 [INF] Request finished in 0.7069ms 200 text/css
+2022-02-14 16:07:50.720 +05:45 [INF] Request finished in 1699.7192ms 200 application/json;charset=utf-8
+2022-02-14 16:07:50.733 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-14 16:07:50.778 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:50.780 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:50.785 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:50.789 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:50.799 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:50.805 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:50.817 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:51.022 +05:45 [INF] Request finished in 233.3877ms 200 application/json
+2022-02-14 16:07:51.022 +05:45 [INF] Request finished in 205.2155ms 200 application/json
+2022-02-14 16:07:51.022 +05:45 [INF] Request finished in 244.2093ms 200 application/json
+2022-02-14 16:07:51.022 +05:45 [INF] Request finished in 223.8289ms 200 application/json
+2022-02-14 16:07:51.027 +05:45 [INF] Request finished in 221.9892ms 200 application/json
+2022-02-14 16:07:51.030 +05:45 [INF] Request finished in 250.6345ms 200 application/json
+2022-02-14 16:07:51.024 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:51.031 +05:45 [INF] Request finished in 7.1631ms 200 application/json
+2022-02-14 16:07:51.032 +05:45 [INF] Request finished in 247.9257ms 200 application/json
+2022-02-14 16:07:52.072 +05:45 [INF] Request finished in 1338.9495ms 200 application/json;charset=utf-8
+2022-02-14 16:07:52.108 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:52.110 +05:45 [INF] Request finished in 2.1867ms 200 application/json
+2022-02-14 16:07:52.122 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:52.122 +05:45 [INF] Request finished in 0.6218ms 200 application/json
+2022-02-14 16:07:52.123 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:52.124 +05:45 [INF] Request finished in 0.4478ms 200 application/json
+2022-02-14 16:07:52.128 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:52.128 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:52.128 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:52.129 +05:45 [INF] Request finished in 0.4615ms 200 application/json
+2022-02-14 16:07:52.129 +05:45 [INF] Request finished in 0.4446ms 200 application/json
+2022-02-14 16:07:52.129 +05:45 [INF] Request finished in 0.2178ms 200 application/json
+2022-02-14 16:07:52.135 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:52.135 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:52.135 +05:45 [INF] Request finished in 0.461ms 200 application/json
+2022-02-14 16:07:52.135 +05:45 [INF] Request finished in 0.461ms 200 application/json
+2022-02-14 16:07:52.140 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:52.140 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:07:52.140 +05:45 [INF] Request finished in 0.4459ms 200 application/json
+2022-02-14 16:07:52.140 +05:45 [INF] Request finished in 0.4459ms 200 application/json
+2022-02-14 16:09:55.105 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/api/AppUsers/Login application/json-patch+json 61
+2022-02-14 16:09:55.111 +05:45 [INF] CORS policy execution successful.
+2022-02-14 16:09:55.687 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.AppUsersController.Login (PreSchool)'
+2022-02-14 16:09:55.742 +05:45 [INF] Route matched with {action = "Login", controller = "AppUsers"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.Services.AppUsers.Models.Dtos.ValidUserDto] Login(PreSchool.Application.Models.AppUsers.Queries.Login) on controller PreSchool.Controllers.AppUsersController (PreSchool).
+2022-02-14 16:09:56.014 +05:45 [INF] Executing action method PreSchool.Controllers.AppUsersController.Login (PreSchool) - Validation state: "Valid"
+2022-02-14 16:09:56.026 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:09:56.546 +05:45 [INF] Executed DbCommand (361ms) [Parameters=[@__loginCommand_UserName_0='superadmin' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Active], [t].[AddressId], [t].[AdminComment], [t].[AppUserTypeId], [t].[CannotLoginUntilDate], [t].[CreatedBy], [t].[CreatedOn], [t].[DepartmentId], [t].[Email], [t].[FacebookUserId], [t].[FailedLoginAttempts], [t].[FirstName], [t].[GoogleUserId], [t].[IsDeleted], [t].[IsEmailVerified], [t].[IsPhoneVerified], [t].[IsSystemAccount], [t].[JobTitle], [t].[LastName], [t].[LimitedToStores], [t].[MiddleName], [t].[ModifiedBy], [t].[ModifiedOn], [t].[PhoneNumber], [t].[RegisteredInStoreId], [t].[RequireReLogin], [t].[SystemName], [t].[Username], [p].[Id], [p].[AppUserId], [p].[CreatedOn], [p].[EnablePasswordLifetime], [p].[IsCurrent], [p].[PasswordExpiredOn], [p].[PasswordHash], [p].[PasswordSalt], [p].[RequiredPasswordChange], [l].[Id], [l].[AppUserId], [l].[IpAddress], [l].[LoginDateTime], [t0].[Id], [t0].[AppUserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[IsDeleted], [t0].[ModifiedBy], [t0].[ModifiedOn], [t0].[RoleId], [t1].[Id], [t1].[AppUserId], [t1].[CreatedBy], [t1].[CreatedOn], [t1].[IsDeleted], [t1].[ModifiedBy], [t1].[ModifiedOn], [t1].[StoreId], [t2].[Id], [t2].[AppUserId], [t2].[CreatedBy], [t2].[CreatedOn], [t2].[IsAssociateUser], [t2].[IsDeleted], [t2].[ModifiedBy], [t2].[ModifiedOn], [t2].[VendorId]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+    FROM [AppUser].[AppUser] AS [a]
+    WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = @__loginCommand_UserName_0)
+) AS [t]
+LEFT JOIN [AppUser].[Password] AS [p] ON [t].[Id] = [p].[AppUserId]
+LEFT JOIN [AppUser].[LoginHistory] AS [l] ON [t].[Id] = [l].[AppUserId]
+LEFT JOIN (
+    SELECT [a0].[Id], [a0].[AppUserId], [a0].[CreatedBy], [a0].[CreatedOn], [a0].[IsDeleted], [a0].[ModifiedBy], [a0].[ModifiedOn], [a0].[RoleId]
+    FROM [AppUser].[AppUserRole] AS [a0]
+    WHERE [a0].[IsDeleted] <> CAST(1 AS bit)
+) AS [t0] ON [t].[Id] = [t0].[AppUserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[AppUserId], [u].[CreatedBy], [u].[CreatedOn], [u].[IsDeleted], [u].[ModifiedBy], [u].[ModifiedOn], [u].[StoreId]
+    FROM [Store].[User] AS [u]
+    WHERE [u].[IsDeleted] <> CAST(1 AS bit)
+) AS [t1] ON [t].[Id] = [t1].[AppUserId]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[AppUserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[IsAssociateUser], [u0].[IsDeleted], [u0].[ModifiedBy], [u0].[ModifiedOn], [u0].[VendorId]
+    FROM [Vendor].[User] AS [u0]
+    WHERE [u0].[IsDeleted] <> CAST(1 AS bit)
+) AS [t2] ON [t].[Id] = [t2].[AppUserId]
+ORDER BY [t].[Id], [p].[Id], [l].[Id], [t0].[Id], [t1].[Id], [t2].[Id]
+2022-02-14 16:10:00.168 +05:45 [INF] Executed DbCommand (287ms) [Parameters=[@p0='4', @p1='::1' (Size = 4000), @p2='2022-02-14T16:09:59'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AppUser].[LoginHistory] ([AppUserId], [IpAddress], [LoginDateTime])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AppUser].[LoginHistory]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-02-14 16:10:00.890 +05:45 [INF] Executed DbCommand (285ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [r].[PermissionId]
+FROM [AppUser].[RolePermission] AS [r]
+WHERE ([r].[IsDeleted] <> CAST(1 AS bit)) AND [r].[RoleId] IN (1)
+2022-02-14 16:10:01.164 +05:45 [INF] Executed action method PreSchool.Controllers.AppUsersController.Login (PreSchool), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 5144.6037ms.
+2022-02-14 16:10:01.174 +05:45 [INF] Executing ObjectResult, writing value of type 'PreSchool.Application.Services.AppUsers.Models.Dtos.ValidUserDto'.
+2022-02-14 16:10:01.207 +05:45 [INF] Executed action PreSchool.Controllers.AppUsersController.Login (PreSchool) in 5457.452ms
+2022-02-14 16:10:01.208 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.AppUsersController.Login (PreSchool)'
+2022-02-14 16:10:01.210 +05:45 [INF] HTTP POST /api/AppUsers/Login responded 200 in 5523.7000 ms
+2022-02-14 16:10:01.213 +05:45 [INF] Request finished in 6108.5908ms 200 application/json; charset=utf-8
+2022-02-14 16:10:01.214 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:10:01.225 +05:45 [INF] Request finished in 11.5318ms 200 application/json
+2022-02-14 16:10:24.899 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Notifications/AppUser/4  
+2022-02-14 16:10:25.065 +05:45 [INF] Successfully validated the token.
+2022-02-14 16:10:25.068 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.NotificationsController.GetNotifications (PreSchool)'
+2022-02-14 16:10:25.090 +05:45 [INF] Route matched with {action = "GetNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.Notifications.Models.Dtos.NotificationListDto]] GetNotifications(Int32, PreSchool.Application.Services.Notifications.Models.Queries.NotificationFilter) on controller PreSchool.Controllers.NotificationsController (PreSchool).
+2022-02-14 16:10:25.203 +05:45 [INF] Executed action PreSchool.Controllers.NotificationsController.GetNotifications (PreSchool) in 113.3953ms
+2022-02-14 16:10:25.204 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.NotificationsController.GetNotifications (PreSchool)'
+2022-02-14 16:10:25.204 +05:45 [ERR] HTTP GET /api/Notifications/AppUser/4 responded 500 in 137.5312 ms
+System.InvalidOperationException: Unable to resolve service for type 'Hangfire.IBackgroundJobClient' while attempting to activate 'PreSchool.Application.Services.BackgroundTasks.BackgroundTaskService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2022-02-14 16:10:25.323 +05:45 [ERR] Unable to resolve service for type 'Hangfire.IBackgroundJobClient' while attempting to activate 'PreSchool.Application.Services.BackgroundTasks.BackgroundTaskService'.
+System.InvalidOperationException: Unable to resolve service for type 'Hangfire.IBackgroundJobClient' while attempting to activate 'PreSchool.Application.Services.BackgroundTasks.BackgroundTaskService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInj2022-02-14 16:20:12.760 +05:45 [INF] Web Application Starts...
+2022-02-14 16:20:21.159 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-14 16:20:21.327 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:20:23.382 +05:45 [INF] Executed DbCommand (331ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:20:23.746 +05:45 [INF] Executed DbCommand (333ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:20:24.037 +05:45 [INF] Executed DbCommand (287ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:20:24.326 +05:45 [INF] Executed DbCommand (288ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:20:24.638 +05:45 [INF] Executed DbCommand (290ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-14 16:20:24.670 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-14 16:20:24.978 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:20:25.281 +05:45 [INF] Executed DbCommand (300ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-14 16:20:25.939 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:26.249 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-14 16:20:26.545 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:26.832 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-14 16:20:27.177 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:27.465 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-14 16:20:27.767 +05:45 [INF] Executed DbCommand (287ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:28.067 +05:45 [INF] Executed DbCommand (290ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:28.431 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-14 16:20:28.946 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:29.246 +05:45 [INF] Executed DbCommand (289ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:29.621 +05:45 [INF] Executed DbCommand (308ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:29.929 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-14 16:20:30.220 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-14 16:20:30.513 +05:45 [INF] Executed DbCommand (287ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-14 16:20:30.811 +05:45 [INF] Executed DbCommand (289ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-14 16:20:31.101 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:31.391 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:31.679 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:31.966 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:32.257 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-14 16:20:32.544 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:32.831 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-14 16:20:33.225 +05:45 [INF] Executed DbCommand (388ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:33.522 +05:45 [INF] Executed DbCommand (286ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:20:34.244 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-14 16:20:34.643 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-14 16:20:34.643 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-14 16:20:34.671 +05:45 [INF] Request finished in 34.1624ms 200 
+2022-02-14 16:20:34.802 +05:45 [INF] Request finished in 166.9796ms 200 text/html;charset=utf-8
+2022-02-14 16:20:35.161 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-14 16:20:36.673 +05:45 [INF] Request finished in 1512.4372ms 200 application/json;charset=utf-8
+2022-02-14 16:20:36.674 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:20:36.675 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:20:36.975 +05:45 [INF] Request finished in 302.7507ms 200 application/json
+2022-02-14 16:20:36.975 +05:45 [INF] Request finished in 300.3068ms 200 application/json
+2022-02-14 16:20:39.804 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Notifications/AppUser/4  
+2022-02-14 16:20:40.215 +05:45 [INF] Successfully validated the token.
+2022-02-14 16:20:40.222 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.NotificationsController.GetNotifications (PreSchool)'
+2022-02-14 16:20:40.301 +05:45 [INF] Route matched with {action = "GetNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.Notifications.Models.Dtos.NotificationListDto]] GetNotifications(Int32, PreSchool.Application.Services.Notifications.Models.Queries.NotificationFilter) on controller PreSchool.Controllers.NotificationsController (PreSchool).
+2022-02-14 16:20:40.333 +05:45 [INF] Executed action PreSchool.Controllers.NotificationsController.GetNotifications (PreSchool) in 25.2302ms
+2022-02-14 16:20:40.334 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.NotificationsController.GetNotifications (PreSchool)'
+2022-02-14 16:20:40.336 +05:45 [ERR] HTTP GET /api/Notifications/AppUser/4 responded 500 in 114.9767 ms
+System.InvalidOperationException: Unable to resolve service for type 'Hangfire.IBackgroundJobClient' while attempting to activate 'PreSchool.Application.Services.BackgroundTasks.BackgroundTaskService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at PreSchool.Middlewares.CustomExceptionMiddleware.Invoke(HttpContext context) in D:\Krenova\Project\PreSchool\Src\PreSchool\Middlewares\CustomExceptionMiddleware.cs:line 29
+2022-02-14 16:20:40.451 +05:45 [ERR] Unable to resolve service for type 'Hangfire.IBackgroundJobClient' while attempting to activate 'PreSchool.Application.Services.BackgroundTasks.BackgroundTaskService'.
+System.InvalidOperationException: Unable to resolve service for type 'Hangfire.IBackgroundJobClient' while attempting to activate 'PreSchool.Application.Services.BackgroundTasks.BackgroundTaskService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.<>c__DisplayClass7_0.<GetCallSite>b__0(Type type)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.Servic2022-02-14 16:30:59.833 +05:45 [INF] Web Application Starts...
+2022-02-14 16:31:07.439 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-14 16:31:07.752 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:31:10.282 +05:45 [INF] Executed DbCommand (315ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:31:10.618 +05:45 [INF] Executed DbCommand (312ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:31:10.896 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:31:11.175 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:31:11.469 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-14 16:31:11.497 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-14 16:31:11.778 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:31:12.057 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-14 16:31:12.769 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:13.085 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-14 16:31:13.372 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:13.652 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-14 16:31:14.002 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:14.282 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-14 16:31:14.572 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:14.855 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:15.239 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-14 16:31:15.900 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:16.183 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:16.564 +05:45 [INF] Executed DbCommand (298ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:16.889 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-14 16:31:17.173 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-14 16:31:17.457 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-14 16:31:17.745 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-14 16:31:18.030 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:18.320 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:18.608 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:18.890 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:19.173 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-14 16:31:19.465 +05:45 [INF] Executed DbCommand (285ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:19.746 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-14 16:31:20.026 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:20.310 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:31:21.524 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-14 16:31:21.721 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-14 16:31:21.725 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-14 16:31:22.225 +05:45 [INF] Server desktop-03qevr8:1960:3d1cbce7 successfully announced in 286.0823 ms
+2022-02-14 16:31:22.241 +05:45 [INF] Server desktop-03qevr8:1960:3d1cbce7 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-14 16:31:22.578 +05:45 [INF] Server desktop-03qevr8:1960:3d1cbce7 all the dispatchers started
+2022-02-14 16:31:22.697 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-14 16:31:22.698 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-14 16:31:22.698 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Notifications/AppUser/4  
+2022-02-14 16:31:22.742 +05:45 [INF] Request finished in 47.8003ms 200 
+2022-02-14 16:31:22.895 +05:45 [INF] Request finished in 203.1596ms 200 text/html;charset=utf-8
+2022-02-14 16:31:23.204 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-14 16:31:23.355 +05:45 [INF] Successfully validated the token.
+2022-02-14 16:31:23.362 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.NotificationsController.GetNotifications (PreSchool)'
+2022-02-14 16:31:23.422 +05:45 [INF] Route matched with {action = "GetNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.Notifications.Models.Dtos.NotificationListDto]] GetNotifications(Int32, PreSchool.Application.Services.Notifications.Models.Queries.NotificationFilter) on controller PreSchool.Controllers.NotificationsController (PreSchool).
+2022-02-14 16:31:23.712 +05:45 [INF] Executing action method PreSchool.Controllers.NotificationsController.GetNotifications (PreSchool) - Validation state: "Valid"
+2022-02-14 16:31:23.730 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:31:24.276 +05:45 [INF] Executed DbCommand (417ms) [Parameters=[@__appUserId_0='4' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[ActivityTypeId], [n].[DeliveredDate], [n].[Email], [n].[FirstName], [n].[IsDeletedForRecipient], [n].[IsDeletedForSender], [n].[IsSent], [n].[LastName], [n].[Message], [n].[NotificationTypeId], [n].[PhoneNumber], [n].[ReadDate], [n].[RecipientId], [n].[SenderId], [n].[SentDate], [n].[SourceEntityId], [n].[Title], [a].[Id], [a].[Description], [a].[DisplayName], [a].[GroupName], [a].[Name], [a].[RedirectUrl]
+FROM [Not2022-02-14 16:38:56.072 +05:45 [INF] Web Application Starts...
+2022-02-14 16:39:04.050 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-14 16:39:04.300 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:39:06.306 +05:45 [INF] Executed DbCommand (300ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:39:06.623 +05:45 [INF] Executed DbCommand (299ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:39:06.905 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:39:07.186 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:39:07.505 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-14 16:39:07.533 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-14 16:39:07.818 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:39:08.122 +05:45 [INF] Executed DbCommand (300ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-14 16:39:08.776 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:09.083 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-14 16:39:09.371 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:09.656 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-14 16:39:09.990 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:10.279 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-14 16:39:10.574 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:10.873 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:11.254 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-14 16:39:11.740 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:12.027 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:12.377 +05:45 [INF] Executed DbCommand (299ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:12.683 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-14 16:39:12.970 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-14 16:39:13.256 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-14 16:39:13.544 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-14 16:39:13.833 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:14.118 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:14.401 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:14.686 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:14.971 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-14 16:39:15.254 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:15.548 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-14 16:39:15.835 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:16.121 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:39:16.791 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-14 16:39:16.942 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-14 16:39:16.943 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-14 16:39:17.254 +05:45 [INF] Server desktop-03qevr8:3876:b079c1d8 successfully announced in 241.6437 ms
+2022-02-14 16:39:17.266 +05:45 [INF] Server desktop-03qevr8:3876:b079c1d8 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-14 16:39:17.558 +05:45 [INF] Server desktop-03qevr8:3876:b079c1d8 all the dispatchers started
+2022-02-14 16:39:17.669 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-14 16:39:17.669 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-14 16:39:17.669 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-14 16:39:17.706 +05:45 [INF] Request finished in 36.6798ms 200 
+2022-02-14 16:39:17.889 +05:45 [INF] Request finished in 225.2891ms 200 text/html;charset=utf-8
+2022-02-14 16:39:17.893 +05:45 [INF] Request finished in 229.5ms 200 text/html;charset=utf-8
+2022-02-14 16:39:18.216 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-14 16:39:20.257 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-14 16:39:20.262 +05:45 [INF] Request finished in 2046.2006ms 200 application/json;charset=utf-8
+2022-02-14 16:39:20.308 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:39:20.308 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:39:20.312 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:39:20.382 +05:45 [INF] Request finished in 74.1799ms 200 application/json
+2022-02-14 16:39:20.382 +05:45 [INF] Request finished in 70.2498ms 200 application/json
+2022-02-14 16:39:20.383 +05:45 [INF] Request finished in 74.6341ms 200 application/json
+2022-02-14 16:39:21.659 +05:45 [INF] Request finished in 1402.073ms 200 application/json;charset=utf-8
+2022-02-14 16:39:21.707 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:39:21.708 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:39:21.709 +05:45 [INF] Request finished in 1.9478ms 200 application/json
+2022-02-14 16:39:21.709 +05:45 [INF] Request finished in 0.8715ms 200 application/json
+2022-02-14 16:39:21.710 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:39:21.711 +05:45 [INF] Request finished in 0.6072ms 200 application/json
+2022-02-14 16:40:00.708 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/api/AppUsers/Login application/json-patch+json 61
+2022-02-14 16:40:00.712 +05:45 [INF] CORS policy execution successful.
+2022-02-14 16:40:00.923 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.AppUsersController.Login (PreSchool)'
+2022-02-14 16:40:00.975 +05:45 [INF] Route matched with {action = "Login", controller = "AppUsers"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.Services.AppUsers.Models.Dtos.ValidUserDto] Login(PreSchool.Application.Models.AppUsers.Queries.Login) on controller PreSchool.Controllers.AppUsersController (PreSchool).
+2022-02-14 16:40:01.207 +05:45 [INF] Executing action method PreSchool.Controllers.AppUsersController.Login (PreSchool) - Validation state: "Valid"
+2022-02-14 16:40:01.228 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:40:01.752 +05:45 [INF] Executed DbCommand (355ms) [Parameters=[@__loginCommand_UserName_0='superadmin' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Active], [t].[AddressId], [t].[AdminComment], [t].[AppUserTypeId], [t].[CannotLoginUntilDate], [t].[CreatedBy], [t].[CreatedOn], [t].[DepartmentId], [t].[Email], [t].[FacebookUserId], [t].[FailedLoginAttempts], [t].[FirstName], [t].[GoogleUserId], [t].[IsDeleted], [t].[IsEmailVerified], [t].[IsPhoneVerified], [t].[IsSystemAccount], [t].[JobTitle], [t].[LastName], [t].[LimitedToStores], [t].[MiddleName], [t].[ModifiedBy], [t].[ModifiedOn], [t].[PhoneNumber], [t].[RegisteredInStoreId], [t].[RequireReLogin], [t].[SystemName], [t].[Username], [p].[Id], [p].[AppUserId], [p].[CreatedOn], [p].[EnablePasswordLifetime], [p].[IsCurrent], [p].[PasswordExpiredOn], [p].[PasswordHash], [p].[PasswordSalt], [p].[RequiredPasswordChange], [l].[Id], [l].[AppUserId], [l].[IpAddress], [l].[LoginDateTime], [t0].[Id], [t0].[AppUserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[IsDeleted], [t0].[ModifiedBy], [t0].[ModifiedOn], [t0].[RoleId], [t1].[Id], [t1].[AppUserId], [t1].[CreatedBy], [t1].[CreatedOn], [t1].[IsDeleted], [t1].[ModifiedBy], [t1].[ModifiedOn], [t1].[StoreId], [t2].[Id], [t2].[AppUserId], [t2].[CreatedBy], [t2].[CreatedOn], [t2].[IsAssociateUser], [t2].[IsDeleted], [t2].[ModifiedBy], [t2].[ModifiedOn], [t2].[VendorId]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+    FROM [AppUser].[AppUser] AS [a]
+    WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = @__loginCommand_UserName_0)
+) AS [t]
+LEFT JOIN [AppUser].[Password] AS [p] ON [t].[Id] = [p].[AppUserId]
+LEFT JOIN [AppUser].[LoginHistory] AS [l] ON [t].[Id] = [l].[AppUserId]
+LEFT JOIN (
+    SELECT [a0].[Id], [a0].[AppUserId], [a0].[CreatedBy], [a0].[CreatedOn], [a0].[IsDeleted], [a0].[ModifiedBy], [a0].[ModifiedOn], [a0].[RoleId]
+    FROM [AppUser].[AppUserRole] AS [a0]
+    WHERE [a0].[IsDeleted] <> CAST(1 AS bit)
+) AS [t0] ON [t].[Id] = [t0].[AppUserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[AppUserId], [u].[CreatedBy], [u].[CreatedOn], [u].[IsDeleted], [u].[ModifiedBy], [u].[ModifiedOn], [u].[StoreId]
+    FROM [Store].[User] AS [u]
+    WHERE [u].[IsDeleted] <> CAST(1 AS bit)
+) AS [t1] ON [t].[Id] = [t1].[AppUserId]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[AppUserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[IsAssociateUser], [u0].[IsDeleted], [u0].[ModifiedBy], [u0].[ModifiedOn], [u0].[VendorId]
+    FROM [Vendor].[User] AS [u0]
+    WHERE [u0].[IsDeleted] <> CAST(1 AS bit)
+) AS [t2] ON [t].[Id] = [t2].[AppUserId]
+ORDER BY [t].[Id], [p].[Id], [l].[Id], [t0].[Id], [t1].[Id], [t2].[Id]
+2022-02-14 16:40:05.307 +05:45 [INF] Executed DbCommand (300ms) [Parameters=[@p0='4', @p1='::1' (Size = 4000), @p2='2022-02-14T16:40:04'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AppUser].[LoginHistory] ([AppUserId], [IpAddress], [LoginDateTime])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AppUser].[LoginHistory]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-02-14 16:40:06.010 +05:45 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [r].[PermissionId]
+FROM [AppUser].[RolePermission] AS [r]
+WHERE ([r].[IsDeleted] <> CAST(1 AS bit)) AND [r].[RoleId] IN (1)
+2022-02-14 16:40:06.264 +05:45 [INF] Executed action method PreSchool.Controllers.AppUsersController.Login (PreSchool), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 5050.453ms.
+2022-02-14 16:40:06.273 +05:45 [INF] Executing ObjectResult, writing value of type 'PreSchool.Application.Services.AppUsers.Models.Dtos.ValidUserDto'.
+2022-02-14 16:40:06.302 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:40:06.304 +05:45 [INF] Request finished in 1.8005ms 404 text/plain
+2022-02-14 16:40:06.309 +05:45 [INF] Executed action PreSchool.Controllers.AppUsersController.Login (PreSchool) in 5322.0451ms
+2022-02-14 16:40:06.310 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.AppUsersController.Login (PreSchool)'
+2022-02-14 16:40:06.313 +05:45 [INF] HTTP POST /api/AppUsers/Login responded 200 in 5390.8494 ms
+2022-02-14 16:40:06.320 +05:45 [INF] Request finished in 5612.556ms 200 application/json; charset=utf-8
+2022-02-14 16:40:34.682 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Customers  
+2022-02-14 16:40:34.777 +05:45 [INF] Successfully validated the token.
+2022-02-14 16:40:34.779 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool)'
+2022-02-14 16:40:34.787 +05:45 [INF] Route matched with {action = "GetCustomerList", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.Customers.Models.Dtos.CustomerListDto]] GetCustomerList(PreSchool.Application.Services.Customers.Models.Filters.CustomerFilter) on controller PreSchool.Controllers.CustomersController (PreSchool).
+2022-02-14 16:40:34.843 +05:45 [INF] Executing action method PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool) - Validation state: "Valid"
+2022-02-14 16:40:34.879 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:40:35.258 +05:45 [INF] Executed action PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool) in 470.0327ms
+2022-02-14 16:40:35.258 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool)'
+2022-02-14 16:40:35.258 +05:45 [ERR] HTTP GET /api/Customers responded 500 in 479.5861 ms
+System.InvalidOperationException: The LINQ expression 'DbSet<Customer>
+    .Where(c => !(c.IsDeleted))
+    .OrderBy(c => __filter_SortBy_0)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to either AsEnumerable(), AsAsyncEnumerable(), ToList(), or ToListAsync(). See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|8_0(ShapedQueryExpression translated, <>c__DisplayClass8_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQueryCore[TFunc](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PreSchool.Application.IQueryableExtension.GetPagedAsync[T](IQueryable`1 query, Int32 pageNumber, Nullable`1 pageSize) in D:\Krenova\Project\PreSchool\Src\PreSchool.Application\Extensions\IQueryableExtension.cs:line 35
+   at PreSchool.Application.Services.Customers.CustomerService.GetCustomers(CustomerFilter filter) in D:\Krenova\Project\PreSchool\Src\PreSchool.Application\Services\Customers\CustomerService.cs:line 470
+   at PreSchool.Controllers.CustomersController.GetCustomerList(CustomerFilter filter) in D:\Krenova\Project\PreSchool\Src\PreSchool\Controllers\CustomersController.cs:line 115
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+2022-02-14 16:40:35.330 +05:45 [ERR] The LINQ expression 'DbSet<Customer>
+    .Where(c => !(c.IsDeleted))
+    .OrderBy(c => __filter_SortBy_0)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to either AsEnumerable(), AsAsyncEnumerable(), ToList(), or ToListAsync(). See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<Customer>
+    .Where(c => !(c.IsDeleted))
+    .OrderBy(c => __filter_SortBy_0)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to either AsEnumerable(), AsAsyncEnumerable(), ToList(), or ToListAsync(). See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|8_0(ShapedQueryExpression translated, <>c__DisplayClass8_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQueryCore[TFunc](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PreSchool.Application.IQueryableExtension.GetPagedAsync[T](IQueryable`1 query, Int32 pageNumber, Nullable`1 pageSize) in D:\Krenova\Project\PreSchool\Src\PreSchool.Application\Extensions\IQueryableExtension.cs:line 35
+   at PreSchool.Application.Services.Customers.CustomerService.GetCustomers(CustomerFilter filter) in D:\Krenova\Project\PreSchool\Src\PreSchool.Application\Services\Customers\CustomerService.cs:line 470
+   at PreSchool.Controllers.CustomersController.GetCustomerList(CustomerFilter filter) in D:\Kreno2022-02-14 16:41:27.662 +05:45 [INF] Web Application Starts...
+2022-02-14 16:41:35.967 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-14 16:41:36.116 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:41:38.360 +05:45 [INF] Executed DbCommand (307ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:41:38.679 +05:45 [INF] Executed DbCommand (300ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:41:38.961 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:41:39.239 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:41:39.543 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-14 16:41:39.576 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-14 16:41:39.874 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:41:40.157 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-14 16:41:40.912 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:41.232 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-14 16:41:41.525 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:41.812 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-14 16:41:42.130 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:42.413 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-14 16:41:42.706 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:42.994 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:43.346 +05:45 [INF] Executed DbCommand (289ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-14 16:41:43.908 +05:45 [INF] Executed DbCommand (303ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:44.200 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:44.584 +05:45 [INF] Executed DbCommand (301ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:44.901 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-14 16:41:45.184 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-14 16:41:45.471 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-14 16:41:45.756 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-14 16:41:46.043 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:46.327 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:46.610 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:46.893 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:47.179 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-14 16:41:47.460 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:47.751 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-14 16:41:48.034 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:48.314 +05:45 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:41:49.106 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-14 16:41:49.245 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-14 16:41:49.245 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-14 16:41:49.488 +05:45 [INF] Server desktop-03qevr8:4452:987965fa successfully announced in 207.1912 ms
+2022-02-14 16:41:49.503 +05:45 [INF] Server desktop-03qevr8:4452:987965fa is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-14 16:41:49.493 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-14 16:41:49.493 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-14 16:41:49.493 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Customers  
+2022-02-14 16:41:49.689 +05:45 [INF] Request finished in 108.3133ms 200 
+2022-02-14 16:41:49.904 +05:45 [INF] Server desktop-03qevr8:4452:987965fa all the dispatchers started
+2022-02-14 16:41:50.067 +05:45 [INF] Request finished in 580.5197ms 200 text/html;charset=utf-8
+2022-02-14 16:41:50.415 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-14 16:41:50.522 +05:45 [INF] Successfully validated the token.
+2022-02-14 16:41:50.532 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool)'
+2022-02-14 16:41:50.586 +05:45 [INF] Route matched with {action = "GetCustomerList", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.Customers.Models.Dtos.CustomerListDto]] GetCustomerList(PreSchool.Application.Services.Customers.Models.Filters.CustomerFilter) on controller PreSchool.Controllers.CustomersController (PreSchool).
+2022-02-14 16:41:50.814 +05:45 [INF] Executing action method PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool) - Validation state: "Valid"
+2022-02-14 16:41:50.826 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:41:51.381 +05:45 [INF] Executed action PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool) in 784.438ms
+2022-02-14 16:41:51.384 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool)'
+2022-02-14 16:41:51.387 +05:45 [ERR] HTTP GET /api/Customers responded 500 in 855.4447 ms
+System.InvalidOperationException: The LINQ expression 'DbSet<Customer>
+    .Where(c => !(c.IsDeleted))
+    .OrderBy(c => __filter_SortBy_0)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to either AsEnumerable(), AsAsyncEnumerable(), ToList(), or ToListAsync(). See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|8_0(ShapedQueryExpression translated, <>c__DisplayClass8_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQueryCore[TFunc](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PreSchool.Application.IQueryableExtension.GetPagedAsync[T](IQueryable`1 query, Int32 pageNumber, Nullable`1 pageSize) in D:\Krenova\Project\PreSchool\Src\PreSchool.Application\Extensions\IQueryableExtension.cs:line 35
+   at PreSchool.Application.Services.Customers.CustomerService.GetCustomers(CustomerFilter filter) in D:\Krenova\Project\PreSchool\Src\PreSchool.Application\Services\Customers\CustomerService.cs:line 469
+   at PreSchool.Controllers.CustomersController.GetCustomerList(CustomerFilter filter) in D:\Krenova\Project\PreSchool\Src\PreSchool\Controllers\CustomersController.cs:line 115
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at PreSchool.Middlewares.CustomExceptionMiddleware.Invoke(HttpContext context) in D:\Krenova\Project\PreSchool\Src\PreSchool\Middlewares\CustomExceptionMiddleware.cs:line 29
+2022-02-14 16:41:51.466 +05:45 [ERR] The LINQ expression 'DbSet<Customer>
+    .Where(c => !(c.IsDeleted))
+    .OrderBy(c => __filter_SortBy_0)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to either AsEnumerable(), AsAsyncEnumerable(), ToList(), or ToListAsync(). See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<Customer>
+    .Where(c => !(c.IsDeleted))
+    .OrderBy(c => __filter_SortBy_0)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to either AsEnumerable(), AsAsyncEnumerable(), ToList(), or ToListAsync(). See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|8_0(ShapedQueryExpression translated, <>c__DisplayClass8_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQueryCore[TFunc](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PreSchool.Application.IQueryableExtension.GetPagedAsync[T](IQueryable`1 query, Int32 pageNumber, Nullable`1 pageSize) in D:\Krenova\Project\PreSchool\Src\PreSchool.Application\Extensions\IQueryableExtension.cs:line 35
+   at PreSchool.Application.Services.Customers.CustomerService.GetCustomers(CustomerFilter filter) in D:\Krenova\Project\PreSchool\Src\PreSchool.Application\Services\Customers\CustomerService.cs:line 469
+   at PreSchool.Controllers.CustomersController.GetCustomerList(CustomerFilter filter) in D:\Krenova\Project\PreSchool\Src\PreSchool\Controllers\CustomersController.cs:line 115
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at PreSchool.Middlewares.CustomExceptionMiddleware.Invoke(HttpContext context) in D:\Krenova\Project\PreSchool\Src\PreSchool\Middlewares\CustomExceptionMiddleware.cs:line 29
+2022-02-14 16:41:51.474 +05:45 [INF] Request finished in 1987.4352ms 500 application/json
+2022-02-14 16:41:51.651 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:41:51.788 +05:45 [INF] Request finished in 137.1126ms 200 application/json
+2022-02-14 16:41:53.360 +05:45 [INF] Request finished in 2944.562ms 200 application/json;charset=utf-8
+2022-02-14 16:41:53.476 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:41:53.476 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-14 16:41:53.480 +05:45 [INF] Request finished in 4.3744ms 200 application/json
+2022-02-14 16:41:53.480 +05:45 [INF] Request finished in 4.3743ms 200 application/json
+2022-02-14 16:41:56.839 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Customers  
+2022-02-14 16:41:56.849 +05:45 [INF] Successfully validated the token.
+2022-02-14 16:41:56.849 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool)'
+2022-02-14 16:41:56.878 +05:45 [INF] Route matched with {action = "GetCustomerList", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.Customers.Models.Dtos.CustomerListDto]] GetCustomerList(PreSchool.Application.Services.Customers.Models.Filters.CustomerFilter) on controller PreSchool.Controllers.CustomersController (PreSchool).
+2022-02-14 16:41:56.943 +05:45 [INF] Executing action method PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool) - Validation state: "Valid"
+2022-02-14 16:41:56.976 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:41:57.229 +05:45 [INF] Executed action PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool) in 350.812ms
+2022-02-14 16:41:57.230 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool)'
+2022-02-14 16:41:57.230 +05:45 [ERR] HTTP GET /api/Customers responded 500 in 380.7980 ms
+System.InvalidOperationException: The LINQ expression 'DbSet<Customer>
+    .Where(c => !(c.IsDeleted))
+    .OrderBy(c => __filter_SortBy_0)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to either AsEnumerable(), AsAsyncEnumerable(), ToList(), or ToListAsync(). See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|8_0(ShapedQueryExpression translated, <>c__DisplayClass8_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQueryCore[TFunc](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PreSchool.Application.IQueryableExtension.GetPagedAsync[T](IQueryable`1 query, Int32 pageNumber, Nullable`1 pageSize) in D:\Krenova\Project\PreSchool\Src\PreSchool.Application\Extensions\IQueryableExtension.cs:line 35
+   at PreSchool.Application.Services.Customers.CustomerService.GetCustomers(CustomerFilter filter) in D:\Krenova\Project\PreSchool\Src\PreSchool.Application\Services\Customers\CustomerService.cs:line 469
+   at PreSchool.Controllers.CustomersController.GetCustomerList(CustomerFilter filter) in D:\Krenova\Project\PreSchool\Src\PreSchool\Controllers\CustomersController.cs:line 115
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+2022-02-14 16:41:57.280 +05:45 [ERR] The LINQ expression 'DbSet<Customer>
+    .Where(c => !(c.IsDeleted))
+    .OrderBy(c => __filter_SortBy_0)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to either AsEnumerable(), AsAsyncEnumerable(), ToList(), or ToListAsync(). See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<Customer>
+    .Where(c => !(c.IsDeleted))
+    .OrderBy(c => __filter_SortBy_0)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to either AsEnumerable(), AsAsyncEnumerable(), ToList(), or ToListAsync(). See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|8_0(ShapedQueryExpression translated, <>c__DisplayClass8_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean 2022-02-14 16:57:09.688 +05:45 [INF] Web Application Starts...
+2022-02-14 16:57:20.615 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-14 16:57:20.872 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:57:23.169 +05:45 [INF] Executed DbCommand (302ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:57:23.479 +05:45 [INF] Executed DbCommand (296ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:57:23.760 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:57:24.032 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-14 16:57:24.326 +05:45 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-14 16:57:24.359 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-14 16:57:24.677 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-14 16:57:24.951 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-14 16:57:25.555 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:25.878 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-14 16:57:26.166 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:26.444 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-14 16:57:26.772 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:27.049 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-14 16:57:27.335 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:27.617 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:27.974 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-14 16:57:28.398 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:28.677 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:29.073 +05:45 [INF] Executed DbCommand (302ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:29.371 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-14 16:57:29.651 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-14 16:57:29.930 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-14 16:57:30.214 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-14 16:57:30.496 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:30.772 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:31.063 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:31.343 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:31.630 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-14 16:57:31.905 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:32.187 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-14 16:57:32.468 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:32.743 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-14 16:57:33.341 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-14 16:57:33.484 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-14 16:57:33.484 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-14 16:57:33.880 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/api/Customers  
+2022-02-14 16:57:33.880 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-14 16:57:33.880 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-14 16:57:33.892 +05:45 [INF] Server desktop-03qevr8:13684:98c51792 successfully announced in 370.8063 ms
+2022-02-14 16:57:33.913 +05:45 [INF] Server desktop-03qevr8:13684:98c51792 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-14 16:57:33.957 +05:45 [INF] Request finished in 78.8092ms 200 
+2022-02-14 16:57:34.313 +05:45 [INF] Server desktop-03qevr8:13684:98c51792 all the dispatchers started
+2022-02-14 16:57:34.467 +05:45 [INF] Request finished in 592.783ms 200 text/html;charset=utf-8
+2022-02-14 16:57:34.898 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-14 16:57:35.014 +05:45 [INF] Successfully validated the token.
+2022-02-14 16:57:35.029 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool)'
+2022-02-14 16:57:35.109 +05:45 [INF] Route matched with {action = "GetCustomerList", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.PagedResult`1[PreSchool.Application.Services.Customers.Models.Dtos.CustomerListDto]] GetCustomerList(PreSchool.Application.Services.Customers.Models.Filters.CustomerFilter) on controller PreSchool.Controllers.CustomersController (PreSchool).
+2022-02-14 16:57:35.471 +05:45 [INF] Executing action method PreSchool.Controllers.CustomersController.GetCustomerList (PreSchool) - Validation state: "Valid"
+2022-02-14 16:57:35.483 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-14 16:57:35.827 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customer].[Customer] AS [c]
+WHERE [c].[IsDeleted] <> CAST(1 AS bit)
+2022-02-14 16:57:36.261 +05:45 [INF] Executed DbCommand (345ms) [Parameters=[@__p_0='0', @__p_1='67'], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AppUserId], [c].[CompanyName], [c].[DateOfBirth], [c].[Email], [c].[FirstName], [c].[GenderId], [c].[Id], [c].[IsIndividual], [c].[LastName], [c].[MiddleName], [c].[PanNumber], [c].[PhoneNumber], CASE
+    WHEN [c].[GenderId] IS NULL THEN NULL
+    ELSE [g].[DisplayName]
+END AS [

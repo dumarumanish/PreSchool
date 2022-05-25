@@ -1,0 +1,656 @@
+2022-02-17 17:28:35.972 +05:45 [INF] Web Application Starts...
+2022-02-17 17:28:46.359 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-17 17:28:46.530 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-17 17:28:48.984 +05:45 [INF] Executed DbCommand (361ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-17 17:28:49.362 +05:45 [INF] Executed DbCommand (310ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-17 17:28:49.645 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-17 17:28:49.918 +05:45 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-17 17:28:50.210 +05:45 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-17 17:28:50.250 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-17 17:28:50.557 +05:45 [INF] Executed DbCommand (301ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-17 17:28:50.853 +05:45 [INF] Executed DbCommand (292ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-17 17:28:51.699 +05:45 [INF] Executed DbCommand (450ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:28:52.111 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-17 17:28:52.433 +05:45 [INF] Executed DbCommand (304ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:28:52.714 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-17 17:28:53.140 +05:45 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:28:53.431 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-17 17:28:53.726 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:28:54.018 +05:45 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:29:29.160 +05:45 [ERR] Failed executing DbCommand (35,058ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-17 17:29:29.233 +05:45 [ERR] An exception occurred while iterating over the results of a query for context type 'PreSchool.Infrastructure.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:f2cc9c53-2e26-4dc9-92b8-ad26902a031c
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at PreSchool.Infrastructure.DbInitializer.SeedUser() in D:\Krenova\Project\PreSchool\Src\PreSchool.Infrastructure\DbInitializer.cs:line 3569
+   at PreSchool.Infrastructure.DbInitializer.SeedEveryThing(Boolean reseedEnumValue) in D:\Krenova\Project\PreSchool\Src\PreSchool.Infrastructure\DbInitializer.cs:line 51
+   at PreSchool.Infrastructure.DbInitializer.Initialize(ApplicationDbContext context) in D:\Krenova\Project\PreSchool\Src\PreSchool.Infrastructure\DbInitializer.cs:line 37
+   at PreSchool.Program.Main(String[] args) in D:\Krenova\Project\PreSchool\Src\PreSchool\Program.cs:line 85
+ClientConnectionId:f2cc9c53-2e26-4dc9-92b8-ad26902a031c
+Error Number:-2,State:0,Class:11
+2022-02-17 17:29:29.240 +05:45 [ERR] An error occurred while migrating or initializing the database.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at PreSchool.Infrastructure.DbInitializer.SeedUser() in D:\Krenova\Project\PreSchool\Src\PreSchool.Infrastructure\DbInitializer.cs:line 3569
+   at PreSchool.Infrastructure.DbInitializer.SeedEveryThing(Boolean reseedEnumValue) in D:\Krenova\Project\PreSchool\Src\PreSchool.Infrastructure\DbInitializer.cs:line 51
+   at PreSchool.Infrastructure.DbInitializer.Initialize(ApplicationDbContext context) in D:\Krenova\Project\PreSchool\Src\PreSchool.Infrastructure\DbInitializer.cs:line 37
+   at PreSchool.Program.Main(String[] args) in D:\Krenova\Project\PreSchool\Src\PreSchool\Program.cs:line 85
+ClientConnectionId:f2cc9c53-2e26-4dc9-92b8-ad26902a031c
+Error Number:-2,State:0,Class:11
+2022-02-17 17:29:30.230 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-17 17:29:30.477 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-17 17:29:30.478 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-17 17:29:30.753 +05:45 [INF] Server desktop-03qevr8:7220:4b48c7b6 successfully announced in 219.3734 ms
+2022-02-17 17:29:30.767 +05:45 [INF] Server desktop-03qevr8:7220:4b48c7b6 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-17 17:29:31.066 +05:45 [INF] Server desktop-03qevr8:7220:4b48c7b6 all the dispatchers started
+2022-02-17 17:29:31.154 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-17 17:29:31.154 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/  
+2022-02-17 17:29:31.154 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/  
+2022-02-17 17:29:31.193 +05:45 [INF] Request finished in 36.3095ms 200 
+2022-02-17 17:29:31.300 +05:45 [INF] Request finished in 150.0916ms 301 
+2022-02-17 17:29:31.300 +05:45 [INF] Request finished in 150.0917ms 301 
+2022-02-17 17:29:31.322 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-17 17:29:31.367 +05:45 [INF] Request finished in 45.5189ms 200 text/html;charset=utf-8
+2022-02-17 17:29:31.376 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-17 17:29:31.377 +05:45 [INF] Request finished in 1.6312ms 200 text/html;charset=utf-8
+2022-02-17 17:29:31.564 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/profiler/includes.min.js?v=4.0.138+gcc91adf599  
+2022-02-17 17:29:31.570 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui.css  
+2022-02-17 17:29:31.571 +05:45 [INF] Request finished in 7.5235ms 200 application/javascript
+2022-02-17 17:29:31.607 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui-bundle.js  
+2022-02-17 17:29:31.738 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger-ui-standalone-preset.js  
+2022-02-17 17:29:31.789 +05:45 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-02-17 17:29:31.790 +05:45 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-02-17 17:29:31.795 +05:45 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-02-17 17:29:31.796 +05:45 [INF] Request finished in 58.5853ms 200 application/javascript
+2022-02-17 17:29:31.796 +05:45 [INF] Request finished in 225.8179ms 200 text/css
+2022-02-17 17:29:31.796 +05:45 [INF] Request finished in 188.6939ms 200 application/javascript
+2022-02-17 17:29:32.823 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-17 17:29:32.873 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/profiler/includes.min.css?v=4.0.138+gcc91adf599  
+2022-02-17 17:29:32.874 +05:45 [INF] Request finished in 1.5119ms 200 text/css
+2022-02-17 17:29:35.175 +05:45 [INF] Request finished in 2352.268ms 200 application/json;charset=utf-8
+2022-02-17 17:29:35.175 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-17 17:29:35.237 +05:45 [INF] Request st2022-02-17 17:46:21.486 +05:45 [INF] Web Application Starts...
+2022-02-17 17:46:27.951 +05:45 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data, this mode should only be enabled during development.
+2022-02-17 17:46:28.063 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-17 17:46:29.925 +05:45 [INF] Executed DbCommand (297ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-17 17:46:30.255 +05:45 [INF] Executed DbCommand (305ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-17 17:46:30.528 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-17 17:46:30.798 +05:45 [INF] Executed DbCommand (268ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-17 17:46:31.088 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-17 17:46:31.128 +05:45 [INF] No migrations were applied. The database is already up to date.
+2022-02-17 17:46:31.404 +05:45 [INF] Executed DbCommand (267ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-17 17:46:31.690 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-02-17 17:46:32.235 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Store].[Store] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:32.567 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AppUser].[Type] AS [t]
+2022-02-17 17:46:32.847 +05:45 [INF] Executed DbCommand (268ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[PermissionGroup] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:33.124 +05:45 [INF] Executed DbCommand (268ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[PermissionGroup] AS [p]
+2022-02-17 17:46:33.435 +05:45 [INF] Executed DbCommand (268ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [App].[Permission] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:33.710 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [App].[Permission] AS [p]
+2022-02-17 17:46:33.993 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[Role] AS [r]
+        WHERE [r].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:34.271 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUser].[AppUser] AS [a]
+        WHERE [a].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:34.618 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ([a].[Username] = N'superadmin')
+2022-02-17 17:46:35.044 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer].[Gender] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:35.323 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Setting].[Seo] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:35.687 +05:45 [INF] Executed DbCommand (319ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Address].[Country] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:35.993 +05:45 [INF] Executed DbCommand (273ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Store].[ImageType] AS [i]
+WHERE [i].[IsDeleted] <> CAST(1 AS bit)
+2022-02-17 17:46:36.284 +05:45 [INF] Executed DbCommand (268ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[DocumentType] AS [d]
+2022-02-17 17:46:36.577 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Type] AS [t]
+2022-02-17 17:46:36.857 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor].[Status] AS [s]
+2022-02-17 17:46:37.135 +05:45 [INF] Executed DbCommand (271ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Category] AS [c]
+        WHERE [c].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:37.411 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tax].[Setting] AS [s]
+        WHERE [s].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:37.686 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[DeliveryDateRange] AS [d]
+        WHERE [d].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:37.963 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Shipping].[ProductAvailabilityRange] AS [p]
+        WHERE [p].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:38.245 +05:45 [INF] Executed DbCommand (268ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Payment].[PaymentMode] AS [p]
+2022-02-17 17:46:38.524 +05:45 [INF] Executed DbCommand (267ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GroupManagement].[NotificationType] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:38.805 +05:45 [INF] Executed DbCommand (268ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GroupManagement].[SendOption] AS [s]
+2022-02-17 17:46:39.081 +05:45 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contact].[IssueType] AS [i]
+        WHERE [i].[IsDeleted] <> CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:39.368 +05:45 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SectionGroups] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-02-17 17:46:39.923 +05:45 [INF] User profile is available. Using 'C:\Users\krennova\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-17 17:46:40.084 +05:45 [INF] Starting Hangfire Server using job storage: 'Hangfire.MemoryStorage.MemoryStorage'
+2022-02-17 17:46:40.085 +05:45 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-17 17:46:40.307 +05:45 [INF] Server desktop-03qevr8:11440:d46180a1 successfully announced in 187.6358 ms
+2022-02-17 17:46:40.321 +05:45 [INF] Server desktop-03qevr8:11440:d46180a1 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-17 17:46:40.607 +05:45 [INF] Server desktop-03qevr8:11440:d46180a1 all the dispatchers started
+2022-02-17 17:46:40.719 +05:45 [INF] Request starting HTTP/1.1 DEBUG http://localhost:50254/  0
+2022-02-17 17:46:40.719 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/index.html  
+2022-02-17 17:46:40.748 +05:45 [INF] Request finished in 30.2022ms 200 
+2022-02-17 17:46:40.885 +05:45 [INF] Request finished in 169.8424ms 200 text/html;charset=utf-8
+2022-02-17 17:46:41.279 +05:45 [INF] Request starting HTTP/1.1 GET http://localhost:44375/swagger/v1/swagger.json  
+2022-02-17 17:46:42.814 +05:45 [INF] Request finished in 1534.6771ms 200 application/json;charset=utf-8
+2022-02-17 17:46:42.838 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-17 17:46:42.849 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-17 17:46:42.913 +05:45 [INF] Request finished in 63.9866ms 200 application/json
+2022-02-17 17:46:42.913 +05:45 [INF] Request finished in 75.1786ms 200 application/json
+2022-02-17 17:47:19.567 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/api/AppUsers/ForgotPassword application/json-patch+json 82
+2022-02-17 17:47:19.573 +05:45 [INF] CORS policy execution failed.
+2022-02-17 17:47:19.574 +05:45 [INF] Request origin https://localhost:44375 does not have permission to access the resource.
+2022-02-17 17:47:20.392 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.AppUsersController.ForgotPassword (PreSchool)'
+2022-02-17 17:47:20.451 +05:45 [INF] Route matched with {action = "ForgotPassword", controller = "AppUsers"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] ForgotPassword(PreSchool.Application.Services.AppUsers.Models.Commands.ForgotPasswordCommand) on controller PreSchool.Controllers.AppUsersController (PreSchool).
+2022-02-17 17:47:20.759 +05:45 [INF] Executing action method PreSchool.Controllers.AppUsersController.ForgotPassword (PreSchool) - Validation state: "Valid"
+2022-02-17 17:47:20.780 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-17 17:47:21.186 +05:45 [INF] Executed DbCommand (348ms) [Parameters=[@__forgotPassword_Username_0='dumarumanish@gmail.com' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+FROM [AppUser].[AppUser] AS [a]
+WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND (([a].[Username] = @__forgotPassword_Username_0) OR ([a].[PhoneNumber] = @__forgotPassword_Username_0))
+2022-02-17 17:47:21.933 +05:45 [INF] Executed DbCommand (281ms) [Parameters=[@p0='8063', @p1='29804768' (Size = 4000), @p2='2022-02-18T03:47:21', @p3='2022-02-17T17:47:21', @p4=NULL (DbType = DateTime2), @p5='False'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AppUser].[OtpCode] ([AppUserId], [Code], [CodeExpireOn], [CodeGeneratedOn], [CodeUsedOn], [IsCodeUsed])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [AppUser].[OtpCode]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-02-17 17:47:22.819 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-17 17:47:23.131 +05:45 [INF] Executed action method PreSchool.Controllers.AppUsersController.ForgotPassword (PreSchool), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2364.4999ms.
+2022-02-17 17:47:23.148 +05:45 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2022-02-17 17:47:23.187 +05:45 [INF] Executed action PreSchool.Controllers.AppUsersController.ForgotPassword (PreSchool) in 2720.6276ms
+2022-02-17 17:47:23.189 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.AppUsersController.ForgotPassword (PreSchool)'
+2022-02-17 17:47:23.193 +05:45 [INF] HTTP POST /api/AppUsers/ForgotPassword responded 200 in 2800.1788 ms
+2022-02-17 17:47:23.208 +05:45 [INF] Request finished in 3641.0553ms 200 application/json; charset=utf-8
+2022-02-17 17:47:23.209 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-17 17:47:23.225 +05:45 [INF] Request finished in 16.2155ms 200 application/json
+2022-02-17 17:47:23.410 +05:45 [INF] Executed DbCommand (295ms) [Parameters=[@p0='<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="margin: 0;">
+    <div class="main-wrapper"
+         style="background: #f3f3f3; overflow: hidden; padding: 44px 24px 64px; font-family: 'Lato', 'Open Sans', sans-serif; font-size: 14px;">
+        <div class="content-wrapper"
+             style="background-blend-mode: 14; background: #fefefe; overflow: hidden; font-family: 'Lato', 'Open Sans', sans-serif; font-size: 14px; border-radius: 20px;">
+            <div class="header-img"
+                 style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 24px; padding-top: 24px;">
+          
+                <div class="right-img" style="margin-bottom: 14px; padding-left: 24px; padding-right: 34px;margin-left: auto;">
+                    <div class="company-logo">
+                        <img src="https://localhost:44375/Images/hattiya_logo_big.png" alt="" style="height: 40px;" />
+                    </div>
+                </div>
+            </div>
+
+            
+
+<div class="content" style="padding: 0 24px 24px;">
+    <div class="welcome"
+         style="font-size: 20px; font-weight: 700; margin-bottom: 24px; font-family: 'Open Sans', 'Lato', sans-serif;">
+        Recover your Hattiya account.
+    </div>
+    <div class="greeting" style="margin-bottom: 14px;">
+        <span style="margin-right: 2px;">Dear </span>
+        <span style="font-weight: 700;">dumarumanish@gmail.com</span>,
+    </div>
+
+    <div style="margin-bottom: 14px;">
+        Please use 29804768, for accessing your account. We would request you to change your password immediately after login for secure browsing.
+    </div>
+    <div style="margin-bottom: 14px;">
+        If you haven’t requested for reset or for password change, we request you to immediately inform our support department at support@hattiya.com for further assistance.
+    </div>
+</div>
+            <div class="email-footer" style="margin-top: 14px; padding: 0 24px 24px;">
+                <div class="regard-wrap" style="margin-bottom: 24px;">
+                    <div class="regard" style="margin-bottom: 4px;">
+                        Regards,
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        Hattiya Pvt. Ltd
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        New Baneshwor, Kathmandu
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        <a href="support@hattiya.com" style="text-decoration: underline;color: #2196F3;">support@hattiya.com</a>
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        <a href="www.hattiya.com" style="text-decoration: underline;color: #2196F3;">www.hattiya.com</a>
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        <img src="https://localhost:44375/Images/hattiya_logo_big.png" alt="" style="height: 40px;" />
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+                                                                                </div>
+                                                                            </body>
+
+</html>
+' (Size = 4000), @p1='True', @p2='2022-02-17T17:47:22', @p3=NULL (DbType = Int32), @p4='Recover your Hattiya account.' (Size = 4000), @p5='dumarumanish@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Email].[History] ([Body], [SendByAppUser], [SendDateTime], [SenderId], [Subject], [ToEmailId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Email].[History]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-02-17 18:14:53.937 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/api/AppUsers/ResetPassword application/json-patch+json 148
+2022-02-17 18:14:53.942 +05:45 [INF] CORS policy execution failed.
+2022-02-17 18:14:53.942 +05:45 [INF] Request origin https://localhost:44375 does not have permission to access the resource.
+2022-02-17 18:14:53.952 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.AppUsersController.ResetPassword (PreSchool)'
+2022-02-17 18:14:53.968 +05:45 [INF] Route matched with {action = "ResetPassword", controller = "AppUsers"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] ResetPassword(PreSchool.Application.Services.AppUsers.Models.Commands.ResetPasswordCommand) on controller PreSchool.Controllers.AppUsersController (PreSchool).
+2022-02-17 18:14:54.040 +05:45 [INF] Executing action method PreSchool.Controllers.AppUsersController.ResetPassword (PreSchool) - Validation state: "Valid"
+2022-02-17 18:14:54.045 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-17 18:14:55.539 +05:45 [INF] Executed DbCommand (286ms) [Parameters=[@__resetPassword_Username_0='dumarumanish@gmail.com' (Size = 128), @__resetPassword_AppUserTypeId_1='4'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Active], [t].[AddressId], [t].[AdminComment], [t].[AppUserTypeId], [t].[CannotLoginUntilDate], [t].[CreatedBy], [t].[CreatedOn], [t].[DepartmentId], [t].[Email], [t].[FacebookUserId], [t].[FailedLoginAttempts], [t].[FirstName], [t].[GoogleUserId], [t].[IsDeleted], [t].[IsEmailVerified], [t].[IsPhoneVerified], [t].[IsSystemAccount], [t].[JobTitle], [t].[LastName], [t].[LimitedToStores], [t].[MiddleName], [t].[ModifiedBy], [t].[ModifiedOn], [t].[PhoneNumber], [t].[RegisteredInStoreId], [t].[RequireReLogin], [t].[SystemName], [t].[Username], [p].[Id], [p].[AppUserId], [p].[CreatedOn], [p].[EnablePasswordLifetime], [p].[IsCurrent], [p].[PasswordExpiredOn], [p].[PasswordHash], [p].[PasswordSalt], [p].[RequiredPasswordChange]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username]
+    FROM [AppUser].[AppUser] AS [a]
+    WHERE ([a].[IsDeleted] <> CAST(1 AS bit)) AND ((([a].[Username] = @__resetPassword_Username_0) OR ([a].[PhoneNumber] = @__resetPassword_Username_0)) AND ([a].[AppUserTypeId] = @__resetPassword_AppUserTypeId_1))
+    ORDER BY [a].[Id] DESC
+) AS [t]
+LEFT JOIN [AppUser].[Password] AS [p] ON [t].[Id] = [p].[AppUserId]
+ORDER BY [t].[Id] DESC, [p].[Id]
+2022-02-17 18:14:55.892 +05:45 [INF] Executed DbCommand (279ms) [Parameters=[@__user_Id_0='8063', @__resetPassword_Code_1='29804768' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[AppUserId], [o].[Code], [o].[CodeExpireOn], [o].[CodeGeneratedOn], [o].[CodeUsedOn], [o].[IsCodeUsed]
+FROM [AppUser].[OtpCode] AS [o]
+WHERE (([o].[AppUserId] = @__user_Id_0) AND ([o].[IsCodeUsed] <> CAST(1 AS bit))) AND ([o].[Code] = @__resetPassword_Code_1)
+ORDER BY [o].[Id] DESC
+2022-02-17 18:14:56.488 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[@p2='8041', @p0='2022-02-17T18:14:55' (Nullable = true), @p1='True'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AppUser].[OtpCode] SET [CodeUsedOn] = @p0, [IsCodeUsed] = @p1
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+2022-02-17 18:14:56.777 +05:45 [INF] Executed DbCommand (280ms) [Parameters=[@p1='8060', @p0='False'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AppUser].[Password] SET [IsCurrent] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2022-02-17 18:14:57.061 +05:45 [INF] Executed DbCommand (282ms) [Parameters=[@p0='8063', @p1='2022-02-17T18:14:55', @p2='False', @p3='True', @p4=NULL (DbType = DateTime2), @p5='0x64D5E8F0942C141133D8C1554F7D9751396733B7F72002DD88DA51A187E8B273...' (Nullable = false) (Size = 8000), @p6='0x41610A469D4D28B6CDEA0D8B67357BE8332649912951C064FEBF718A207E8201...' (Nullable = false) (Size = 8000), @p7='False'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AppUser].[Password] ([AppUserId], [CreatedOn], [EnablePasswordLifetime], [IsCurrent], [PasswordExpiredOn], [PasswordHash], [PasswordSalt], [RequiredPasswordChange])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [AppUser].[Password]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-02-17 18:14:57.389 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-17 18:14:57.672 +05:45 [INF] Executed action method PreSchool.Controllers.AppUsersController.ResetPassword (PreSchool), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3632.1911ms.
+2022-02-17 18:14:57.673 +05:45 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2022-02-17 18:14:57.675 +05:45 [INF] Executed action PreSchool.Controllers.AppUsersController.ResetPassword (PreSchool) in 3706.6124ms
+2022-02-17 18:14:57.675 +05:45 [INF] Executed endpoint 'PreSchool.Controllers.AppUsersController.ResetPassword (PreSchool)'
+2022-02-17 18:14:57.675 +05:45 [INF] HTTP POST /api/AppUsers/ResetPassword responded 200 in 3723.0356 ms
+2022-02-17 18:14:57.676 +05:45 [INF] Request finished in 3740.4452ms 200 application/json; charset=utf-8
+2022-02-17 18:14:57.694 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/profiler/results application/json 45
+2022-02-17 18:14:57.696 +05:45 [INF] Request finished in 2.4582ms 200 application/json
+2022-02-17 18:14:57.945 +05:45 [INF] Executed DbCommand (278ms) [Parameters=[@p0='<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="margin: 0;">
+    <div class="main-wrapper"
+         style="background: #f3f3f3; overflow: hidden; padding: 44px 24px 64px; font-family: 'Lato', 'Open Sans', sans-serif; font-size: 14px;">
+        <div class="content-wrapper"
+             style="background-blend-mode: 14; background: #fefefe; overflow: hidden; font-family: 'Lato', 'Open Sans', sans-serif; font-size: 14px; border-radius: 20px;">
+            <div class="header-img"
+                 style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 24px; padding-top: 24px;">
+          
+                <div class="right-img" style="margin-bottom: 14px; padding-left: 24px; padding-right: 34px;margin-left: auto;">
+                    <div class="company-logo">
+                        <img src="https://localhost:44375/Images/hattiya_logo_big.png" alt="" style="height: 40px;" />
+                    </div>
+                </div>
+            </div>
+
+            
+
+<p>
+    Dear <b> dumarumanish@gmail.com </b>,
+</p>
+
+<p>
+    Your password has been successfully reset for the account <b>dumarumanish@gmail.com</b>.
+</p>
+
+<p>
+    If you haven’t requested for reset or for password change, we request you to immediately inform our support department at <a href="mailto: support@hattiya.com">support@hattiya.com</a> for further assistance.
+
+</p>
+            <div class="email-footer" style="margin-top: 14px; padding: 0 24px 24px;">
+                <div class="regard-wrap" style="margin-bottom: 24px;">
+                    <div class="regard" style="margin-bottom: 4px;">
+                        Regards,
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        Hattiya Pvt. Ltd
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        New Baneshwor, Kathmandu
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        <a href="support@hattiya.com" style="text-decoration: underline;color: #2196F3;">support@hattiya.com</a>
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        <a href="www.hattiya.com" style="text-decoration: underline;color: #2196F3;">www.hattiya.com</a>
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        <img src="https://localhost:44375/Images/hattiya_logo_big.png" alt="" style="height: 40px;" />
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+                                                                                </div>
+                                                                            </body>
+
+</html>
+' (Size = 4000), @p1='True', @p2='2022-02-17T18:14:57', @p3=NULL (DbType = Int32), @p4='Password reset successfully  ' (Size = 4000), @p5='dumarumanish@gmail.com' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Email].[History] ([Body], [SendByAppUser], [SendDateTime], [SenderId], [Subject], [ToEmailId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Email].[History]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-02-17 18:15:21.743 +05:45 [INF] Request starting HTTP/1.1 POST http://localhost:44375/api/AppUsers/CustomerLogin application/json-patch+json 64
+2022-02-17 18:15:21.744 +05:45 [INF] CORS policy execution failed.
+2022-02-17 18:15:21.744 +05:45 [INF] Request origin https://localhost:44375 does not have permission to access the resource.
+2022-02-17 18:15:21.753 +05:45 [INF] Executing endpoint 'PreSchool.Controllers.AppUsersController.CustomerLogin (PreSchool)'
+2022-02-17 18:15:21.758 +05:45 [INF] Route matched with {action = "CustomerLogin", controller = "AppUsers"}. Executing controller action with signature System.Threading.Tasks.Task`1[PreSchool.Application.Services.AppUsers.Models.Dtos.ValidUserDto] CustomerLogin(PreSchool.Application.Models.AppUsers.Queries.CustomerLogin) on controller PreSchool.Controllers.AppUsersController (PreSchool).
+2022-02-17 18:15:21.837 +05:45 [INF] Executing action method PreSchool.Controllers.AppUsersController.CustomerLogin (PreSchool) - Validation state: "Valid"
+2022-02-17 18:15:21.843 +05:45 [INF] Entity Framework Core 3.1.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: SensitiveDataLoggingEnabled 
+2022-02-17 18:15:22.197 +05:45 [INF] Executed DbCommand (288ms) [Parameters=[@__loginCommand_UserName_0='dumarumanish@gmail.com' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Active], [t0].[AddressId], [t0].[AdminComment], [t0].[AppUserTypeId], [t0].[CannotLoginUntilDate], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[DepartmentId], [t0].[Email], [t0].[FacebookUserId], [t0].[FailedLoginAttempts], [t0].[FirstName], [t0].[GoogleUserId], [t0].[IsDeleted], [t0].[IsEmailVerified], [t0].[IsPhoneVerified], [t0].[IsSystemAccount], [t0].[JobTitle], [t0].[LastName], [t0].[LimitedToStores], [t0].[MiddleName], [t0].[ModifiedBy], [t0].[ModifiedOn], [t0].[PhoneNumber], [t0].[RegisteredInStoreId], [t0].[RequireReLogin], [t0].[SystemName], [t0].[Username], [t0].[Id0], [t0].[AppUserId], [t0].[CustomerId], [t0].[Id1], [t0].[CompanyName], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[DateOfBirth], [t0].[Email0], [t0].[FirstName0], [t0].[GenderId], [t0].[IsDeleted0], [t0].[IsIndividual], [t0].[LastName0], [t0].[MiddleName0], [t0].[ModifiedBy0], [t0].[ModifiedOn0], [t0].[PanNumber], [t0].[PhoneNumber0], [p].[Id], [p].[AppUserId], [p].[CreatedOn], [p].[EnablePasswordLifetime], [p].[IsCurrent], [p].[PasswordExpiredOn], [p].[PasswordHash], [p].[PasswordSalt], [p].[RequiredPasswordChange], [l].[Id], [l].[AppUserId], [l].[IpAddress], [l].[LoginDateTime], [t1].[Id], [t1].[AppUserId], [t1].[CreatedBy], [t1].[CreatedOn], [t1].[IsDeleted], [t1].[ModifiedBy], [t1].[ModifiedOn], [t1].[RoleId]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[Active], [a].[AddressId], [a].[AdminComment], [a].[AppUserTypeId], [a].[CannotLoginUntilDate], [a].[CreatedBy], [a].[CreatedOn], [a].[DepartmentId], [a].[Email], [a].[FacebookUserId], [a].[FailedLoginAttempts], [a].[FirstName], [a].[GoogleUserId], [a].[IsDeleted], [a].[IsEmailVerified], [a].[IsPhoneVerified], [a].[IsSystemAccount], [a].[JobTitle], [a].[LastName], [a].[LimitedToStores], [a].[MiddleName], [a].[ModifiedBy], [a].[ModifiedOn], [a].[PhoneNumber], [a].[RegisteredInStoreId], [a].[RequireReLogin], [a].[SystemName], [a].[Username], [a0].[Id] AS [Id0], [a0].[AppUserId], [a0].[CustomerId], [t].[Id] AS [Id1], [t].[CompanyName], [t].[CreatedBy] AS [CreatedBy0], [t].[CreatedOn] AS [CreatedOn0], [t].[DateOfBirth], [t].[Email] AS [Email0], [t].[FirstName] AS [FirstName0], [t].[GenderId], [t].[IsDeleted] AS [IsDeleted0], [t].[IsIndividual], [t].[LastName] AS [LastName0], [t].[MiddleName] AS [MiddleName0], [t].[ModifiedBy] AS [ModifiedBy0], [t].[ModifiedOn] AS [ModifiedOn0], [t].[PanNumber], [t].[PhoneNumber] AS [PhoneNumber0]
+    FROM [AppUser].[AppUser] AS [a]

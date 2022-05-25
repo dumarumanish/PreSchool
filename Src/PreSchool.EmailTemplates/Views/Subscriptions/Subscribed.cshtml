@@ -1,0 +1,30 @@
+﻿@model PreSchool.EmailTemplates.ViewModels.SubscribedEmailViewModel
+
+@{
+    Layout = "_EmailLayoutHtml";
+}
+
+<div class="content" style="padding: 0 24px 24px;">
+    <div class="welcome"
+         style="font-size: 20px; font-weight: 700; margin-bottom: 24px; font-family: 'Open Sans', 'Lato', sans-serif;">
+        @Model.Subject
+    </div>
+    <div class="greeting" style="margin-bottom: 14px;">
+        <span style="margin-right: 2px;">Dear </span>
+        <span style="font-weight: 700;">@Model.Username</span>,
+    </div>
+
+    <div style="margin-bottom: 14px;">
+        Thank you for subscribing to Hattiya, PreSchool with  service. By signing the PreSchool you will be the first one to be notified with any of our offers, services and products.
+    </div>
+
+    <div style="margin-bottom: 14px;">
+        You can browse our various products and services by visiting us at @Model.WebSiteLink
+    </div>
+</div>
+
+
+
+
+
+

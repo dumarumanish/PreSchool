@@ -1,0 +1,54 @@
+﻿@model PreSchool.EmailTemplates.ViewModels.BaseEmailViewModel
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="margin: 0;">
+    <div class="main-wrapper"
+         style="background: #f3f3f3; overflow: hidden; padding: 44px 24px 64px; font-family: 'Lato', 'Open Sans', sans-serif; font-size: 14px;">
+        <div class="content-wrapper"
+             style="background-blend-mode: 14; background: #fefefe; overflow: hidden; font-family: 'Lato', 'Open Sans', sans-serif; font-size: 14px; border-radius: 20px;">
+            <div class="header-img"
+                 style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 24px; padding-top: 24px;">
+          
+                <div class="right-img" style="margin-bottom: 14px; padding-left: 24px; padding-right: 34px;margin-left: auto;">
+                    <div class="company-logo">
+                        <img src="@ViewData["BaseUrl"]Images/hattiya_logo_big.png" alt="" style="height: 40px;" />
+                    </div>
+                </div>
+            </div>
+
+            @RenderBody()
+            <div class="email-footer" style="margin-top: 14px; padding: 0 24px 24px;">
+                <div class="regard-wrap" style="margin-bottom: 24px;">
+                    <div class="regard" style="margin-bottom: 4px;">
+                        Regards,
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        Hattiya Pvt. Ltd
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        New Baneshwor, Kathmandu
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        <a href="@Model.SupportLink" style="text-decoration: underline;color: #2196F3;">@Model.SupportLink</a>
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        <a href="@Model.WebSiteLink" style="text-decoration: underline;color: #2196F3;">@Model.WebSiteLink</a>
+                    </div>
+                    <div class="name" style="margin-bottom: 4px; font-weight: 700;">
+                        <img src="@ViewData["BaseUrl"]Images/hattiya_logo_big.png" alt="" style="height: 40px;" />
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+                                                                                </div>
+                                                                            </body>
+
+</html>
